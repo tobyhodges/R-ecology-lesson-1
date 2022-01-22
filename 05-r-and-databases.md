@@ -743,7 +743,7 @@ my_db
 ```
 
 ```{.output}
-#> src:  sqlite 3.37.0 [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data/portal-database-output.sqlite]
+#> src:  sqlite 3.37.0 [data/portal-database-output.sqlite]
 #> tbls:
 ```
 
@@ -783,6 +783,6 @@ e.g. memory.
 
 
 
-<p style="text-align: right; font-size: small;">Page built on: 📆 2022-01-06 ‒ 🕢 01:52:07</p>
+<p style="text-align: right; font-size: small;">Page built on: 📆 2022-01-22 ‒ 🕢 01:07:53</p>
 
 
