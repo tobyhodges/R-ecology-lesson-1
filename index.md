@@ -206,6 +206,6 @@ The list of contributors to this lesson is available [here](https://datacarpentr
 
 
 
-<p style="text-align: right; font-size: small;">Page built on: 📆 2022-01-26 ‒ 🕢 01:07:57</p>
+<p style="text-align: right; font-size: small;">Page built on: 📆 2022-02-01 ‒ 🕢 01:54:12</p>
 
 
