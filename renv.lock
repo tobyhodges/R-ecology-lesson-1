@@ -33,10 +33,16 @@
     },
     "MASS": {
       "Package": "MASS",
-      "Version": "7.3-54",
-      "Source": "Repository",
+      "Version": "7.3-55",
+      "Source": "CRAN",
       "Repository": "CRAN",
-      "Hash": "0e59129db205112e3963904db67fd0dc",
+      "RemoteType": "standard",
+      "RemotePkgRef": "MASS",
+      "RemoteRef": "MASS",
+      "RemoteRepos": "https://cloud.r-project.org",
+      "RemotePkgPlatform": "source",
+      "RemoteSha": "7.3-55",
+      "Hash": "c5232ffb549f6d7a04a152c34ca1353d",
       "Requirements": []
     },
     "Matrix": {
@@ -1131,10 +1137,16 @@
     },
     "nlme": {
       "Package": "nlme",
-      "Version": "3.1-153",
-      "Source": "Repository",
+      "Version": "3.1-155",
+      "Source": "CRAN",
       "Repository": "CRAN",
-      "Hash": "2d632e0d963a653a0329756ce701ecdd",
+      "RemoteType": "standard",
+      "RemotePkgRef": "nlme",
+      "RemoteRef": "nlme",
+      "RemoteRepos": "https://cloud.r-project.org",
+      "RemotePkgPlatform": "source",
+      "RemoteSha": "3.1-155",
+      "Hash": "74ad940dccc9e977189a5afe5fcdb7ba",
       "Requirements": [
         "lattice"
       ]
@@ -1403,10 +1415,10 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.14.0",
+      "Version": "0.15.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "30e5eba91b67f7f4d75d31de14bbfbdc",
+      "Hash": "206c4ef8b7ad6fb1060d69aa7b9dfe69",
       "Requirements": []
     },
     "reprex": {
