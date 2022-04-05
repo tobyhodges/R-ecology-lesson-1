@@ -451,7 +451,7 @@ sessionInfo()
 #> [29] ps_1.6.0         fansi_0.5.0      highr_0.9        broom_0.7.10    
 #> [33] Rcpp_1.0.7       renv_0.15.4      scales_1.1.1     backports_1.4.0 
 #> [37] cachem_1.0.6     jsonlite_1.7.2   bit_4.0.4        fs_1.5.1        
-#> [41] hms_1.1.1        stringi_1.7.6    processx_3.5.2   grid_4.1.3      
+#> [41] hms_1.1.1        stringi_1.7.6    processx_3.5.3   grid_4.1.3      
 #> [45] cli_3.1.0        tools_4.1.3      magrittr_2.0.1   crayon_1.4.2    
 #> [49] pkgconfig_2.0.3  ellipsis_0.3.2   xml2_1.3.3       reprex_2.0.1    
 #> [53] lubridate_1.8.0  assertthat_0.2.1 httr_1.4.2       rstudioapi_0.13 
@@ -501,6 +501,6 @@ comfortable eventually creating your own scripts.
 
 
 
-<p style="text-align: right; font-size: small;">Page built on: 📆 2022-03-11 ‒ 🕢 15:50:38</p>
+<p style="text-align: right; font-size: small;">Page built on: 📆 2022-04-05 ‒ 🕢 13:57:01</p>
 
 
