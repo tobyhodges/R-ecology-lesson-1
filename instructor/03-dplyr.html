@@ -257,7 +257,7 @@
 <p>This addresses a common problem with R in that all operations are conducted in-memory and thus the amount of data you can work with is limited by available memory. The database connections essentially remove that limitation in that you can connect to a database of many hundreds of GB, conduct queries on it directly, and pull back into R only what you need for analysis.</p>
 <p>The package <strong><code>tidyr</code></strong> addresses the common problem of wanting to reshape your data for plotting and usage by different R functions. For example, sometimes we want data sets where we have one row per measurement. Other times we want a data frame where each measurement type has its own column, and rows are instead more aggregated groups (e.g., a time period, an experimental unit like a plot or a batch number). Moving back and forth between these formats is non-trivial, and <strong><code>tidyr</code></strong> gives you tools for this and more sophisticated data manipulation.</p>
 <p>To learn more about <strong><code>dplyr</code></strong> and <strong><code>tidyr</code></strong> after the workshop, you may want to check out this <a href="https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf" class="external-link">handy data transformation with <strong><code>dplyr</code></strong> cheatsheet</a> and this <a href="https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf" class="external-link">one about <strong><code>tidyr</code></strong></a>.</p>
-<p>As before, we’ll read in our data using the <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> function from the tidyverse package <strong><code>readr</code></strong>.</p>
+<p>As before, we’ll read in our data using the <code>read_csv()</code> function from the tidyverse package <strong><code>readr</code></strong>.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -300,21 +300,21 @@
 </div>
 <p>Next, we’re going to learn some of the most common <strong><code>dplyr</code></strong> functions:</p>
 <ul><li>
-<code><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select()</a></code>: subset columns</li>
+<code>select()</code>: subset columns</li>
 <li>
-<code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code>: subset rows on conditions</li>
+<code>filter()</code>: subset rows on conditions</li>
 <li>
-<code><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate()</a></code>: create new columns by using information from other columns</li>
+<code>mutate()</code>: create new columns by using information from other columns</li>
 <li>
-<code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize()</a></code>: create summary statistics on grouped data</li>
+<code>group_by()</code> and <code>summarize()</code>: create summary statistics on grouped data</li>
 <li>
-<code><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange()</a></code>: sort results</li>
+<code>arrange()</code>: sort results</li>
 <li>
-<code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count()</a></code>: count discrete values</li>
+<code>count()</code>: count discrete values</li>
 </ul></div>
 <div class="section level2">
 <h2 id="selecting-columns-and-filtering-rows">Selecting columns and filtering rows<a class="anchor" aria-label="anchor" href="#selecting-columns-and-filtering-rows"></a></h2>
-<p>To select columns of a data frame, use <code><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select()</a></code>. The first argument to this function is the data frame (<code>surveys</code>), and the subsequent arguments are the columns to keep.</p>
+<p>To select columns of a data frame, use <code>select()</code>. The first argument to this function is the data frame (<code>surveys</code>), and the subsequent arguments are the columns to keep.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -329,7 +329,7 @@
 <code class="sourceCode R"><span class="fu">select</span><span class="op">(</span><span class="va">surveys</span>, <span class="op">-</span><span class="va">record_id</span>, <span class="op">-</span><span class="va">species_id</span><span class="op">)</span></code></pre>
 </div>
 <p>This will select all the variables in <code>surveys</code> except <code>record_id</code> and <code>species_id</code>.</p>
-<p>To choose rows based on a specific criterion, use <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code>:</p>
+<p>To choose rows based on a specific criterion, use <code>filter()</code>:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -368,7 +368,7 @@
   <span class="fu">filter</span><span class="op">(</span><span class="va">weight</span> <span class="op">&lt;</span> <span class="fl">5</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">select</span><span class="op">(</span><span class="va">species_id</span>, <span class="va">sex</span>, <span class="va">weight</span><span class="op">)</span></code></pre>
 </div>
-<p>In the above code, we use the pipe to send the <code>surveys</code> dataset first through <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code> to keep rows where <code>weight</code> is less than 5, then through <code><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select()</a></code> to keep only the <code>species_id</code>, <code>sex</code>, and <code>weight</code> columns. Since <code>%&gt;%</code> takes the object on its left and passes it as the first argument to the function on its right, we don’t need to explicitly include the data frame as an argument to the <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select()</a></code> functions any more.</p>
+<p>In the above code, we use the pipe to send the <code>surveys</code> dataset first through <code>filter()</code> to keep rows where <code>weight</code> is less than 5, then through <code>select()</code> to keep only the <code>species_id</code>, <code>sex</code>, and <code>weight</code> columns. Since <code>%&gt;%</code> takes the object on its left and passes it as the first argument to the function on its right, we don’t need to explicitly include the data frame as an argument to the <code>filter()</code> and <code>select()</code> functions any more.</p>
 <p>Some may find it helpful to read the pipe like the word “then.” For instance, in the example above, we took the data frame <code>surveys</code>, <em>then</em> we <code>filter</code>ed for rows with <code>weight &lt; 5</code>, <em>then</em> we <code>select</code>ed columns <code>species_id</code>, <code>sex</code>, and <code>weight</code>. The <strong><code>dplyr</code></strong> functions by themselves are somewhat simple, but by combining them into linear workflows with the pipe we can accomplish more complex manipulations of data frames.</p>
 <p>If we want to create a new object with this smaller version of the data, we can assign it a new name:</p>
 <div class="codewrapper sourceCode" id="cb13">
@@ -416,7 +416,7 @@
 </div>
 <div class="section level3">
 <h3 id="mutate">Mutate<a class="anchor" aria-label="anchor" href="#mutate"></a></h3>
-<p>Frequently you’ll want to create new columns based on the values in existing columns, for example to do unit conversions, or to find the ratio of values in two columns. For this we’ll use <code><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate()</a></code>.</p>
+<p>Frequently you’ll want to create new columns based on the values in existing columns, for example to do unit conversions, or to find the ratio of values in two columns. For this we’ll use <code>mutate()</code>.</p>
 <p>To create a new column of weight in kg:</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -425,7 +425,7 @@
 <code class="sourceCode R"><span class="va">surveys</span> <span class="op">%&gt;%</span>
   <span class="fu">mutate</span><span class="op">(</span>weight_kg <span class="op">=</span> <span class="va">weight</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span></code></pre>
 </div>
-<p>You can also create a second new column based on the first new column within the same call of <code><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate()</a></code>:</p>
+<p>You can also create a second new column based on the first new column within the same call of <code>mutate()</code>:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -434,7 +434,7 @@
   <span class="fu">mutate</span><span class="op">(</span>weight_kg <span class="op">=</span> <span class="va">weight</span> <span class="op">/</span> <span class="fl">1000</span>,
          weight_lb <span class="op">=</span> <span class="va">weight_kg</span> <span class="op">*</span> <span class="fl">2.2</span><span class="op">)</span></code></pre>
 </div>
-<p>If this runs off your screen and you just want to see the first few rows, you can use a pipe to view the <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">head()</a></code> of the data. (Pipes work with non-<strong><code>dplyr</code></strong> functions, too, as long as the <strong><code>dplyr</code></strong> or <code>magrittr</code> package is loaded).</p>
+<p>If this runs off your screen and you just want to see the first few rows, you can use a pipe to view the <code>head()</code> of the data. (Pipes work with non-<strong><code>dplyr</code></strong> functions, too, as long as the <strong><code>dplyr</code></strong> or <code>magrittr</code> package is loaded).</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -443,7 +443,7 @@
   <span class="fu">mutate</span><span class="op">(</span>weight_kg <span class="op">=</span> <span class="va">weight</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">head</span><span class="op">(</span><span class="op">)</span></code></pre>
 </div>
-<p>The first few rows of the output are full of <code>NA</code>s, so if we wanted to remove those we could insert a <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code> in the chain:</p>
+<p>The first few rows of the output are full of <code>NA</code>s, so if we wanted to remove those we could insert a <code>filter()</code> in the chain:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -453,7 +453,7 @@
   <span class="fu">mutate</span><span class="op">(</span>weight_kg <span class="op">=</span> <span class="va">weight</span> <span class="op">/</span> <span class="fl">1000</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">head</span><span class="op">(</span><span class="op">)</span></code></pre>
 </div>
-<p><code><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na()</a></code> is a function that determines whether something is an <code>NA</code>. The <code>!</code> symbol negates the result, so we’re asking for every row where weight <em>is not</em> an <code>NA</code>.</p>
+<p><code>is.na()</code> is a function that determines whether something is an <code>NA</code>. The <code>!</code> symbol negates the result, so we’re asking for every row where weight <em>is not</em> an <code>NA</code>.</p>
 <div id="challenge2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -492,10 +492,10 @@
 </div>
 <div class="section level3">
 <h3 id="split-apply-combine-data-analysis-and-the-summarize-function">Split-apply-combine data analysis and the <code>summarize()</code> function<a class="anchor" aria-label="anchor" href="#split-apply-combine-data-analysis-and-the-summarize-function"></a></h3>
-<p>Many data analysis tasks can be approached using the <em>split-apply-combine</em> paradigm: split the data into groups, apply some analysis to each group, and then combine the results. Key function of <strong><code>dplyr</code></strong> for this workflow are <code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize()</a></code>.</p>
+<p>Many data analysis tasks can be approached using the <em>split-apply-combine</em> paradigm: split the data into groups, apply some analysis to each group, and then combine the results. Key function of <strong><code>dplyr</code></strong> for this workflow are <code>group_by()</code> and <code>summarize()</code>.</p>
 <div class="section level4">
 <h4 id="the-group_by-and-summarize-functions">The <code>group_by()</code> and <code>summarize()</code> functions<a class="anchor" aria-label="anchor" href="#the-group_by-and-summarize-functions"></a></h4>
-<p><code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by()</a></code> is often used together with <code><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize()</a></code>, which collapses each group into a single-row summary of that group. <code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by()</a></code> takes as arguments the column names that contain the <strong>categorical</strong> variables for which you want to calculate the summary statistics. So to compute the mean <code>weight</code> by sex:</p>
+<p><code>group_by()</code> is often used together with <code>summarize()</code>, which collapses each group into a single-row summary of that group. <code>group_by()</code> takes as arguments the column names that contain the <strong>categorical</strong> variables for which you want to calculate the summary statistics. So to compute the mean <code>weight</code> by sex:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -515,7 +515,7 @@
   <span class="fu">summarize</span><span class="op">(</span>mean_weight <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">weight</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">tail</span><span class="op">(</span><span class="op">)</span></code></pre>
 </div>
-<p>Here, we used <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail()</a></code> to look at the last six rows of our summary. Before, we had used <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">head()</a></code> to look at the first six rows. We can see that the <code>sex</code> column contains <code>NA</code> values because some animals had escaped before their sex and body weights could be determined. The resulting <code>mean_weight</code> column does not contain <code>NA</code> but <code>NaN</code> (which refers to “Not a Number”) because <code><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean()</a></code> was called on a vector of <code>NA</code> values while at the same time setting <code>na.rm = TRUE</code>. To avoid this, we can remove the missing values for weight before we attempt to calculate the summary statistics on weight. Because the missing values are removed first, we can omit <code>na.rm = TRUE</code> when computing the mean:</p>
+<p>Here, we used <code>tail()</code> to look at the last six rows of our summary. Before, we had used <code>head()</code> to look at the first six rows. We can see that the <code>sex</code> column contains <code>NA</code> values because some animals had escaped before their sex and body weights could be determined. The resulting <code>mean_weight</code> column does not contain <code>NA</code> but <code>NaN</code> (which refers to “Not a Number”) because <code>mean()</code> was called on a vector of <code>NA</code> values while at the same time setting <code>na.rm = TRUE</code>. To avoid this, we can remove the missing values for weight before we attempt to calculate the summary statistics on weight. Because the missing values are removed first, we can omit <code>na.rm = TRUE</code> when computing the mean:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -525,7 +525,7 @@
   <span class="fu">group_by</span><span class="op">(</span><span class="va">sex</span>, <span class="va">species_id</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">summarize</span><span class="op">(</span>mean_weight <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span><span class="op">)</span></code></pre>
 </div>
-<p>Here, again, the output from these calls doesn’t run off the screen anymore. If you want to display more data, you can use the <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code> function at the end of your chain with the argument <code>n</code> specifying the number of rows to display:</p>
+<p>Here, again, the output from these calls doesn’t run off the screen anymore. If you want to display more data, you can use the <code>print()</code> function at the end of your chain with the argument <code>n</code> specifying the number of rows to display:</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -559,7 +559,7 @@
             min_weight <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="fu">arrange</span><span class="op">(</span><span class="va">min_weight</span><span class="op">)</span></code></pre>
 </div>
-<p>To sort in descending order, we need to add the <code><a href="https://dplyr.tidyverse.org/reference/desc.html" class="external-link">desc()</a></code> function. If we want to sort the results by decreasing order of mean weight:</p>
+<p>To sort in descending order, we need to add the <code>desc()</code> function. If we want to sort the results by decreasing order of mean weight:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -574,7 +574,7 @@
 </div>
 <div class="section level4">
 <h4 id="counting">Counting<a class="anchor" aria-label="anchor" href="#counting"></a></h4>
-<p>When working with data, we often want to know the number of observations found for each factor or combination of factors. For this task, <strong><code>dplyr</code></strong> provides <code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count()</a></code>. For example, if we wanted to count the number of rows of data for each sex, we would do:</p>
+<p>When working with data, we often want to know the number of observations found for each factor or combination of factors. For this task, <strong><code>dplyr</code></strong> provides <code>count()</code>. For example, if we wanted to count the number of rows of data for each sex, we would do:</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -582,7 +582,7 @@
 <code class="sourceCode R"><span class="va">surveys</span> <span class="op">%&gt;%</span>
     <span class="fu">count</span><span class="op">(</span><span class="va">sex</span><span class="op">)</span></code></pre>
 </div>
-<p>The <code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count()</a></code> function is shorthand for something we’ve already seen: grouping by a variable, and summarizing it by counting the number of observations in that group. In other words, <code>surveys %&gt;% count()</code> is equivalent to:</p>
+<p>The <code>count()</code> function is shorthand for something we’ve already seen: grouping by a variable, and summarizing it by counting the number of observations in that group. In other words, <code>surveys %&gt;% count()</code> is equivalent to:</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -591,7 +591,7 @@
     <span class="fu">group_by</span><span class="op">(</span><span class="va">sex</span><span class="op">)</span> <span class="op">%&gt;%</span>
     <span class="fu">summarise</span><span class="op">(</span>count <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre>
 </div>
-<p>For convenience, <code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count()</a></code> provides the <code>sort</code> argument:</p>
+<p>For convenience, <code>count()</code> provides the <code>sort</code> argument:</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -599,7 +599,7 @@
 <code class="sourceCode R"><span class="va">surveys</span> <span class="op">%&gt;%</span>
     <span class="fu">count</span><span class="op">(</span><span class="va">sex</span>, sort <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre>
 </div>
-<p>Previous example shows the use of <code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count()</a></code> to count the number of rows/observations for <em>one</em> factor (i.e., <code>sex</code>). If we wanted to count <em>combination of factors</em>, such as <code>sex</code> and <code>species</code>, we would specify the first and the second factor as the arguments of <code><a href="https://dplyr.tidyverse.org/reference/count.html" class="external-link">count()</a></code>:</p>
+<p>Previous example shows the use of <code>count()</code> to count the number of rows/observations for <em>one</em> factor (i.e., <code>sex</code>). If we wanted to count <em>combination of factors</em>, such as <code>sex</code> and <code>species</code>, we would specify the first and the second factor as the arguments of <code>count()</code>:</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -607,7 +607,7 @@
 <code class="sourceCode R"><span class="va">surveys</span> <span class="op">%&gt;%</span>
   <span class="fu">count</span><span class="op">(</span><span class="va">sex</span>, <span class="va">species</span><span class="op">)</span></code></pre>
 </div>
-<p>With the above code, we can proceed with <code><a href="https://dplyr.tidyverse.org/reference/arrange.html" class="external-link">arrange()</a></code> to sort the table according to a number of criteria so that we have a better comparison. For instance, we might want to arrange the table above in (i) an alphabetical order of the levels of the species and (ii) in descending order of the count:</p>
+<p>With the above code, we can proceed with <code>arrange()</code> to sort the table according to a number of criteria so that we have a better comparison. For instance, we might want to arrange the table above in (i) an alphabetical order of the levels of the species and (ii) in descending order of the count:</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -656,7 +656,7 @@
 <h3 class="callout-title">Challenge<em> (continued)</em>
 </h3>
 <div class="callout-content">
-<ol start="2" style="list-style-type: decimal"><li>Use <code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize()</a></code> to find the mean, min, and max hindfoot length for each species (using <code>species_id</code>). Also add the number of observations (hint: see <code><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">?n</a></code>).</li>
+<ol start="2" style="list-style-type: decimal"><li>Use <code>group_by()</code> and <code>summarize()</code> to find the mean, min, and max hindfoot length for each species (using <code>species_id</code>). Also add the number of observations (hint: see <code>?n</code>).</li>
 </ol></div>
 </div>
 </div>
@@ -737,15 +737,15 @@
 <p>We’d need to create a new table where each row (the unit) is comprised of values of variables associated with each plot. In practical terms this means the values in <code>genus</code> would become the names of column variables and the cells would contain the values of the mean weight observed on each plot.</p>
 <p>Having created a new table, it is therefore straightforward to explore the relationship between the weight of different genera within, and between, the plots. The key point here is that we are still following a tidy data structure, but we have <strong>reshaped</strong> the data according to the observations of interest: average genus weight per plot instead of recordings per date.</p>
 <p>The opposite transformation would be to transform column names into values of a variable.</p>
-<p>We can do both these of transformations with two <code>tidyr</code> functions, <code><a href="https://tidyr.tidyverse.org/reference/spread.html" class="external-link">spread()</a></code> and <code><a href="https://tidyr.tidyverse.org/reference/gather.html" class="external-link">gather()</a></code>.</p>
+<p>We can do both these of transformations with two <code>tidyr</code> functions, <code>spread()</code> and <code>gather()</code>.</p>
 <div class="section level4">
 <h4 id="spreading">Spreading<a class="anchor" aria-label="anchor" href="#spreading"></a></h4>
-<p><code><a href="https://tidyr.tidyverse.org/reference/spread.html" class="external-link">spread()</a></code> takes three principal arguments:</p>
+<p><code>spread()</code> takes three principal arguments:</p>
 <ol style="list-style-type: decimal"><li>the data</li>
 <li>the <em>key</em> column variable whose values will become new column names.</li>
 <li>the <em>value</em> column variable whose values will fill the new column variables.</li>
 </ol><p>Further arguments include <code>fill</code> which, if set, fills in missing values with the value provided.</p>
-<p>Let’s use <code><a href="https://tidyr.tidyverse.org/reference/spread.html" class="external-link">spread()</a></code> to transform surveys to find the mean weight of each genus in each plot over the entire survey period. We use <code><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter()</a></code>, <code><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise()</a></code> to filter our observations and variables of interest, and create a new variable for the <code>mean_weight</code>.</p>
+<p>Let’s use <code>spread()</code> to transform surveys to find the mean weight of each genus in each plot over the entire survey period. We use <code>filter()</code>, <code>group_by()</code> and <code>summarise()</code> to filter our observations and variables of interest, and create a new variable for the <code>mean_weight</code>.</p>
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -757,7 +757,7 @@
 
 <span class="fu">str</span><span class="op">(</span><span class="va">surveys_gw</span><span class="op">)</span></code></pre>
 </div>
-<p>This yields <code>surveys_gw</code> where the observations for each plot are spread across multiple rows, 196 observations of 3 variables. Using <code><a href="https://tidyr.tidyverse.org/reference/spread.html" class="external-link">spread()</a></code> to key on <code>genus</code> with values from <code>mean_weight</code> this becomes 24 observations of 11 variables, one row for each plot.</p>
+<p>This yields <code>surveys_gw</code> where the observations for each plot are spread across multiple rows, 196 observations of 3 variables. Using <code>spread()</code> to key on <code>genus</code> with values from <code>mean_weight</code> this becomes 24 observations of 11 variables, one row for each plot.</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -781,12 +781,12 @@
 <h4 id="gathering">Gathering<a class="anchor" aria-label="anchor" href="#gathering"></a></h4>
 <p>The opposing situation could occur if we had been provided with data in the form of <code>surveys_spread</code>, where the genus names are column names, but we wish to treat them as values of a genus variable instead.</p>
 <p>In this situation we are gathering the column names and turning them into a pair of new variables. One variable represents the column names as values, and the other variable contains the values previously associated with the column names.</p>
-<p><code><a href="https://tidyr.tidyverse.org/reference/gather.html" class="external-link">gather()</a></code> takes four principal arguments:</p>
+<p><code>gather()</code> takes four principal arguments:</p>
 <ol style="list-style-type: decimal"><li>the data</li>
 <li>the <em>key</em> column variable we wish to create from column names.</li>
 <li>the <em>values</em> column variable we wish to create and fill with values associated with the key.</li>
 <li>the names of the columns we use to fill the key variable (or to drop).</li>
-</ol><p>To recreate <code>surveys_gw</code> from <code>surveys_spread</code> we would create a key called <code>genus</code> and value called <code>mean_weight</code> and use all columns except <code>plot_id</code> for the key variable. Here we exclude <code>plot_id</code> from being <code><a href="https://tidyr.tidyverse.org/reference/gather.html" class="external-link">gather()</a></code>ed.</p>
+</ol><p>To recreate <code>surveys_gw</code> from <code>surveys_spread</code> we would create a key called <code>genus</code> and value called <code>mean_weight</code> and use all columns except <code>plot_id</code> for the key variable. Here we exclude <code>plot_id</code> from being <code>gather()</code>ed.</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -813,7 +813,7 @@
 <div id="challenge-3" class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<ol style="list-style-type: decimal"><li>Spread the <code>surveys</code> data frame with <code>year</code> as columns, <code>plot_id</code> as rows, and the number of genera per plot as the values. You will need to summarize before reshaping, and use the function <code><a href="https://dplyr.tidyverse.org/reference/n_distinct.html" class="external-link">n_distinct()</a></code> to get the number of unique genera within a particular chunk of data. It’s a powerful function! See <code><a href="https://dplyr.tidyverse.org/reference/n_distinct.html" class="external-link">?n_distinct</a></code> for more.</li>
+<ol style="list-style-type: decimal"><li>Spread the <code>surveys</code> data frame with <code>year</code> as columns, <code>plot_id</code> as rows, and the number of genera per plot as the values. You will need to summarize before reshaping, and use the function <code>n_distinct()</code> to get the number of unique genera within a particular chunk of data. It’s a powerful function! See <code>?n_distinct</code> for more.</li>
 </ol></div>
 </div>
 </div>
@@ -849,7 +849,7 @@
 <h3 class="callout-title">Challenge<em> (continued)</em>
 </h3>
 <div class="callout-content">
-<ol start="2" style="list-style-type: decimal"><li>Now take that data frame and <code><a href="https://tidyr.tidyverse.org/reference/gather.html" class="external-link">gather()</a></code> it again, so each row is a unique <code>plot_id</code> by <code>year</code> combination.</li>
+<ol start="2" style="list-style-type: decimal"><li>Now take that data frame and <code>gather()</code> it again, so each row is a unique <code>plot_id</code> by <code>year</code> combination.</li>
 </ol></div>
 </div>
 </div>
@@ -881,7 +881,7 @@
 <h3 class="callout-title">Challenge<em> (continued)</em>
 </h3>
 <div class="callout-content">
-<ol start="3" style="list-style-type: decimal"><li>The <code>surveys</code> data set has two measurement columns: <code>hindfoot_length</code> and <code>weight</code>. This makes it difficult to do things like look at the relationship between mean values of each measurement per year in different plot types. Let’s walk through a common solution for this type of problem. First, use <code><a href="https://tidyr.tidyverse.org/reference/gather.html" class="external-link">gather()</a></code> to create a dataset where we have a key column called <code>measurement</code> and a <code>value</code> column that takes on the value of either <code>hindfoot_length</code> or <code>weight</code>. <em>Hint</em>: You’ll need to specify which columns are being gathered.</li>
+<ol start="3" style="list-style-type: decimal"><li>The <code>surveys</code> data set has two measurement columns: <code>hindfoot_length</code> and <code>weight</code>. This makes it difficult to do things like look at the relationship between mean values of each measurement per year in different plot types. Let’s walk through a common solution for this type of problem. First, use <code>gather()</code> to create a dataset where we have a key column called <code>measurement</code> and a <code>value</code> column that takes on the value of either <code>hindfoot_length</code> or <code>weight</code>. <em>Hint</em>: You’ll need to specify which columns are being gathered.</li>
 </ol></div>
 </div>
 </div>
@@ -913,7 +913,7 @@
 <h3 class="callout-title">Challenge<em> (continued)</em>
 </h3>
 <div class="callout-content">
-<ol start="4" style="list-style-type: decimal"><li>With this new data set, calculate the average of each <code>measurement</code> in each <code>year</code> for each different <code>plot_type</code>. Then <code><a href="https://tidyr.tidyverse.org/reference/spread.html" class="external-link">spread()</a></code> them into a data set with a column for <code>hindfoot_length</code> and <code>weight</code>. <em>Hint</em>: You only need to specify the key and value columns for <code><a href="https://tidyr.tidyverse.org/reference/spread.html" class="external-link">spread()</a></code>.</li>
+<ol start="4" style="list-style-type: decimal"><li>With this new data set, calculate the average of each <code>measurement</code> in each <code>year</code> for each different <code>plot_type</code>. Then <code>spread()</code> them into a data set with a column for <code>hindfoot_length</code> and <code>weight</code>. <em>Hint</em>: You only need to specify the key and value columns for <code>spread()</code>.</li>
 </ol></div>
 </div>
 </div>
@@ -946,8 +946,8 @@
 <div class="section level1">
 <h1 id="exporting-data">Exporting data<a class="anchor" aria-label="anchor" href="#exporting-data"></a></h1>
 <p>Now that you have learned how to use <strong><code>dplyr</code></strong> to extract information from or summarize your raw data, you may want to export these new data sets to share them with your collaborators or for archival.</p>
-<p>Similar to the <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> function used for reading CSV files into R, there is a <code><a href="https://readr.tidyverse.org/reference/write_delim.html" class="external-link">write_csv()</a></code> function that generates CSV files from data frames.</p>
-<p>Before using <code><a href="https://readr.tidyverse.org/reference/write_delim.html" class="external-link">write_csv()</a></code>, we are going to create a new folder, <code>data</code>, in our working directory that will store this generated dataset. We don’t want to write generated datasets in the same directory as our raw data. It’s good practice to keep them separate. The <code>data_raw</code> folder should only contain the raw, unaltered data, and should be left alone to make sure we don’t delete or modify it. In contrast, our script will generate the contents of the <code>data</code> directory, so even if the files it contains are deleted, we can always re-generate them.</p>
+<p>Similar to the <code>read_csv()</code> function used for reading CSV files into R, there is a <code>write_csv()</code> function that generates CSV files from data frames.</p>
+<p>Before using <code>write_csv()</code>, we are going to create a new folder, <code>data</code>, in our working directory that will store this generated dataset. We don’t want to write generated datasets in the same directory as our raw data. It’s good practice to keep them separate. The <code>data_raw</code> folder should only contain the raw, unaltered data, and should be left alone to make sure we don’t delete or modify it. In contrast, our script will generate the contents of the <code>data</code> directory, so even if the files it contains are deleted, we can always re-generate them.</p>
 <p>In preparation for our next lesson on plotting, we are going to prepare a cleaned up version of the data set that doesn’t include any missing data.</p>
 <p>Let’s start by removing observations of animals for which <code>weight</code> and <code>hindfoot_length</code> are missing, or the <code>sex</code> has not been determined:</p>
 <div class="codewrapper sourceCode" id="cb44">
@@ -1012,7 +1012,7 @@ Page built on: 📆 2022-05-13 ‒ 🕢 00:56:28
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.5.1" class="external-link">sandpaper (0.5.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.5.2" class="external-link">sandpaper (0.5.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.2.6" class="external-link">pegboard (0.2.6)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.1.12" class="external-link">varnish (0.1.12)</a>.</p>
 			</div>
@@ -1036,7 +1036,7 @@ Page built on: 📆 2022-05-13 ‒ 🕢 00:56:28
   "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor/03-dplyr.html",
   "dateCreated": "2022-04-05",
   "dateModified": "2022-05-13",
-  "datePublished": "2022-05-13"
+  "datePublished": "2022-05-17"
 }
 
   </script><script>

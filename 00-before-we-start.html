@@ -325,7 +325,7 @@ How it should look like at the beginning of this lesson
 <div class="section level3">
 <h3 id="the-working-directory">The working directory<a class="anchor" aria-label="anchor" href="#the-working-directory"></a></h3>
 <p>The working directory is an important concept to understand. It is the place from where R will be looking for and saving the files. When you write code for your project, it should refer to files in relation to the root of your working directory and only need files within this structure.</p>
-<p>RStudio assists you in this regard and sets the working directory automatically to the directory where you have placed your project in. If you need to check it, you can use <code><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd()</a></code>. If for some reason your working directory is not what it should be, you can change it in the RStudio interface by navigating in the file browser where your working directory should be, and clicking on the blue gear icon “More”, and select “Set As Working Directory”. Alternatively you can use <code>setwd("/path/to/working/directory")</code> to reset your working directory. However, your scripts should not include this line because it will fail on someone else’s computer.</p>
+<p>RStudio assists you in this regard and sets the working directory automatically to the directory where you have placed your project in. If you need to check it, you can use <code>getwd()</code>. If for some reason your working directory is not what it should be, you can change it in the RStudio interface by navigating in the file browser where your working directory should be, and clicking on the blue gear icon “More”, and select “Set As Working Directory”. Alternatively you can use <code>setwd("/path/to/working/directory")</code> to reset your working directory. However, your scripts should not include this line because it will fail on someone else’s computer.</p>
 </div>
 </section><section id="interacting-with-r"><h2 class="section-heading">Interacting with R</h2>
 <hr class="half-width"><p>The basis of programming is that we write down instructions for the computer to follow, and then we tell the computer to follow those instructions. We write, or <em>code</em>, instructions in R because it is a common language that both the computer and we can understand. We call the instructions <em>commands</em> and we tell the computer to follow the instructions by <em>executing</em> (also called <em>running</em>) those commands.</p>
@@ -339,7 +339,7 @@ How it should look like at the beginning of this lesson
 <hr class="half-width"><div class="section level3">
 <h3 id="searching-function-documentation-with-and">Searching function documentation with <code>?</code> and <code>??</code>
 <a class="anchor" aria-label="anchor" href="#searching-function-documentation-with-and"></a></h3>
-<p>If you need help with a specific function, let’s say <code><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean()</a></code>, you can type <code><a href="https://rdrr.io/r/base/mean.html" class="external-link">?mean</a></code> or press <kbd>F1</kbd> while your cursor is on the function name. If you are looking for a function to do a particular task, but don’t know the function name, you can use the double question mark <code>??</code>, for example <code>??kruskall</code>. Both commands will open matching help files in RStudio’s help panel in the lower right corner. You can also use the help panel to search help directly, as seen in the screenshot.</p>
+<p>If you need help with a specific function, let’s say <code>mean()</code>, you can type <code>?mean</code> or press <kbd>F1</kbd> while your cursor is on the function name. If you are looking for a function to do a particular task, but don’t know the function name, you can use the double question mark <code>??</code>, for example <code>??kruskall</code>. Both commands will open matching help files in RStudio’s help panel in the lower right corner. You can also use the help panel to search help directly, as seen in the screenshot.</p>
 <figure><img src="fig/rstudiohelp.png" alt="RStudio help panel. When typing a word in the search field, it will showrelated suggestions." class="figure mx-auto d-block"></figure></div>
 <div class="section level3">
 <h3 id="automatic-code-completion">Automatic code completion<a class="anchor" aria-label="anchor" href="#automatic-code-completion"></a></h3>
@@ -347,7 +347,7 @@ How it should look like at the beginning of this lesson
 </div>
 <div class="section level3">
 <h3 id="package-vignettes-and-cheat-sheets">Package vignettes and cheat sheets<a class="anchor" aria-label="anchor" href="#package-vignettes-and-cheat-sheets"></a></h3>
-<p>In addition to the documentation for individual functions, many packages have <em>vignettes</em> – instructions for how to use the package to do certain tasks. Vignettes are great for learning by example. Vignettes are accessible via the package help and by using the function <code><a href="https://rdrr.io/r/utils/browseVignettes.html" class="external-link">browseVignettes()</a></code>.</p>
+<p>In addition to the documentation for individual functions, many packages have <em>vignettes</em> – instructions for how to use the package to do certain tasks. Vignettes are great for learning by example. Vignettes are accessible via the package help and by using the function <code>browseVignettes()</code>.</p>
 <p>There is also a Help menu at the top of the RStudio window, that has cheat sheets for popular packages, RStudio keyboard shortcuts, and more.</p>
 </div>
 <div class="section level3">
@@ -373,7 +373,7 @@ How it should look like at the beginning of this lesson
 <ul><li><p>Use the correct words to describe your problem. Otherwise you might get an answer pointing to the misuse of your words rather than answering your question.</p></li>
 <li><p>Generalize what you are trying to do, so people outside your field can understand the question.</p></li>
 <li><p>Reduce what does not work to a simple <em>reproducible example</em>. For instance, instead of using your real data set, create a small generic one. For more information on how to write a reproducible example see <a href="https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html" class="external-link">this article from the reprex package</a>. Learning how to use the <a href="https://cran.r-project.org/package=reprex" class="external-link">reprex</a> package is also very helpful for this.</p></li>
-<li><p>Include the output of <code><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo()</a></code> in your question. It provides information about your platform, the versions of R and the packages that you are using. As an example, here you can see the versions of R and all the packages that we are using to run the code in this lesson:</p></li>
+<li><p>Include the output of <code>sessionInfo()</code> in your question. It provides information about your platform, the versions of R and the packages that you are using. As an example, here you can see the versions of R and all the packages that we are using to run the code in this lesson:</p></li>
 </ul><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -466,7 +466,7 @@ Page built on: 📆 2022-05-13 ‒ 🕢 00:56:18
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.5.1" class="external-link">sandpaper (0.5.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.5.2" class="external-link">sandpaper (0.5.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.2.6" class="external-link">pegboard (0.2.6)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.1.12" class="external-link">varnish (0.1.12)</a>.</p>
 			</div>
@@ -490,7 +490,7 @@ Page built on: 📆 2022-05-13 ‒ 🕢 00:56:18
   "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/00-before-we-start.html",
   "dateCreated": "2022-04-05",
   "dateModified": "2022-05-13",
-  "datePublished": "2022-05-13"
+  "datePublished": "2022-05-17"
 }
 
   </script><script>

@@ -289,8 +289,8 @@
 <p>The <a href="files/code-handout.R">code handout</a> (a link to download it is also available on the top bar of the lesson website) is useful for Data Carpentry workshops. It includes an outline of the lesson content, the text for the challenges, the links for the files that need to be downloaded for the lesson, and pieces of code that may be difficult to type for learners with no programming experience/who are unfamiliar with R’s syntax. We encourage you to distribute it to the learners at the beginning of the lesson. As an instructor, we encourage you to do the live coding directly in this file, so the participants can follow along.</p>
 </section><section id="r-version"><h2 class="section-heading">R Version</h2>
 <hr class="half-width">
-<p>With the release of R 4.0.0 in early 2020, an important change has been made to R: The default for <code>stringsAsFactors</code> is now <code>FALSE</code> instead of <code>TRUE</code>. As a result, the <code><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv()</a></code> and <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> functions do not automatically convert character columns to factors anymore (you can read more about it <a href="https://developer.r-project.org/Blog/public/2020/02/16/stringsasfactors/index.html" class="external-link">in this post on the R developer blog</a>).</p>
-<p>This change should not cause any problems with this lesson, independent of whether R &gt;4.0 is used or not, because we it uses <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> from the <strong><code>tidyverse</code></strong> package throughout. Other than <code><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv()</a></code> from base R, <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> never converts character columns to factors, regardless of the R version.</p>
+<p>With the release of R 4.0.0 in early 2020, an important change has been made to R: The default for <code>stringsAsFactors</code> is now <code>FALSE</code> instead of <code>TRUE</code>. As a result, the <code>read.csv()</code> and <code>data.frame()</code> functions do not automatically convert character columns to factors anymore (you can read more about it <a href="https://developer.r-project.org/Blog/public/2020/02/16/stringsasfactors/index.html" class="external-link">in this post on the R developer blog</a>).</p>
+<p>This change should not cause any problems with this lesson, independent of whether R &gt;4.0 is used or not, because we it uses <code>read_csv()</code> from the <strong><code>tidyverse</code></strong> package throughout. Other than <code>read.csv()</code> from base R, <code>read_csv()</code> never converts character columns to factors, regardless of the R version.</p>
 <p>Nevertheless, it is recommended that learners install a version of R ≥4.0.0, and instructors and helpers should be aware of this potential source of error.</p>
 </section><section id="rstudio-and-multiple-r-installs"><h2 class="section-heading">RStudio and Multiple R Installs</h2>
 <hr class="half-width">
@@ -301,7 +301,7 @@
 <p>Then restart RStudio.</p>
 </section><section id="issues-with-fonts-on-macos"><h2 class="section-heading">Issues with Fonts on MacOS</h2>
 <hr class="half-width">
-<p>On older versions of MacOS, it may happen that axis labels do not show up when calling <code><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot()</a></code> (section “renaming factors” in “Starting with Data”). This issue might be due to the default font Arial being deactivated, so that R cannot find it. To resolve this issue, go to Finder, Search for Font Book and open it. Look for the Arial font and, if it is greyed out, turn it on.</p>
+<p>On older versions of MacOS, it may happen that axis labels do not show up when calling <code>plot()</code> (section “renaming factors” in “Starting with Data”). This issue might be due to the default font Arial being deactivated, so that R cannot find it. To resolve this issue, go to Finder, Search for Font Book and open it. Look for the Arial font and, if it is greyed out, turn it on.</p>
 <p>If the problem occurs with <code>ggplot2</code> plots, an alternative workaround is to change the default theme for the R session, so that ggplot uses a <em>serif</em> font. Since Arial is a <em>sans-serif</em> font, R will try to load a different font. This can be done with <code>theme_update(text = element_text(family = "serif"))</code>.</p>
 </section><section id="required-packages"><h2 class="section-heading">Required packages</h2>
 <hr class="half-width">
@@ -348,16 +348,16 @@
 <li>This lesson uses the tidyr package to reshape data for plotting</li>
 <li>After this lesson students should be familiar with the spread() and gather() functions available in tidyr</li>
 <li>While working with the example for mutate(), it is difficult to see the “weight” columns on a zoomed in RStudio screen. Including a select() command to select the columns “weight_kg” and “weight_lb” makes it easier to view how the “weight” columns are changed.</li>
-<li>It is crucial that learners use the function <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> from tidyverse, not <code><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv()</a></code> from base R. Using the wrong function will cause unexpected results further down the line, especially in the section on working with factors.</li>
-<li>Note: If students end up with 30521 rows for <code>surveys_complete</code> instead of the expected 30463 rows at the end of the chapter, then they have likely used <code><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv()</a></code> and not <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> to import the data.</li>
-<li>When explaining <code><a href="https://tibble.tidyverse.org/reference/view.html" class="external-link">view()</a></code>, consider mentioning that is a function of the <strong><code>tibble</code></strong> package, and that the base function <code><a href="https://rdrr.io/r/utils/View.html" class="external-link">View()</a></code> can also be used to view a data frame.</li>
+<li>It is crucial that learners use the function <code>read_csv()</code> from tidyverse, not <code>read.csv()</code> from base R. Using the wrong function will cause unexpected results further down the line, especially in the section on working with factors.</li>
+<li>Note: If students end up with 30521 rows for <code>surveys_complete</code> instead of the expected 30463 rows at the end of the chapter, then they have likely used <code>read.csv()</code> and not <code>read_csv()</code> to import the data.</li>
+<li>When explaining <code>view()</code>, consider mentioning that is a function of the <strong><code>tibble</code></strong> package, and that the base function <code>View()</code> can also be used to view a data frame.</li>
 </ul>
 </div>
 <div class="section level3">
 <h3 id="visualizing-data">Visualizing data<a class="anchor" aria-label="anchor" href="#visualizing-data"></a>
 </h3>
 <ul>
-<li><p>This lesson is a broad overview of ggplot2 and focuses on (1) getting familiar with the layering system of ggplot2, (2) using the argument <code>group</code> in the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes()</a></code> function, (3) basic customization of the plots.</p></li>
+<li><p>This lesson is a broad overview of ggplot2 and focuses on (1) getting familiar with the layering system of ggplot2, (2) using the argument <code>group</code> in the <code>aes()</code> function, (3) basic customization of the plots.</p></li>
 <li>
 <p>It maybe worthwhile to mention that we can also specify colors by color HEX code (<a href="http://colorbrewer2.org" class="external-link">http://colorbrewer2.org</a>)</p>
 <pre><code><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">surveys_complete</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">weight</span>, y <span class="op">=</span> <span class="va">hindfoot_length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
@@ -412,7 +412,7 @@
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.5.1" class="external-link">sandpaper (0.5.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.5.2" class="external-link">sandpaper (0.5.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.2.6" class="external-link">pegboard (0.2.6)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.1.12" class="external-link">varnish (0.1.12)</a>.</p>
 			</div>
@@ -436,8 +436,8 @@
   "url": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor-notes.html",
   "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor-notes.html",
   "dateCreated": "2022-04-05",
-  "dateModified": "2022-05-13",
-  "datePublished": "2022-05-13"
+  "dateModified": "2022-05-17",
+  "datePublished": "2022-05-17"
 }
 
   </script><script>

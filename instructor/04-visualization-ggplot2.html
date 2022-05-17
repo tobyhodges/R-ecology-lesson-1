@@ -271,12 +271,12 @@
 <section id="plotting-with-ggplot2"><h2 class="section-heading">Plotting with <strong><code>ggplot2</code></strong>
 </h2>
 <hr class="half-width"><p><strong><code>ggplot2</code></strong> is a plotting package that provides helpful commands to create complex plots from data in a data frame. It provides a more programmatic interface for specifying what variables to plot, how they are displayed, and general visual properties. Therefore, we only need minimal changes if the underlying data change or if we decide to change from a bar plot to a scatterplot. This helps in creating publication quality plots with minimal amounts of adjustments and tweaking.</p>
-<p><strong><code>ggplot2</code></strong> refers to the name of the package itself. When using the package we use the function <strong><code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot()</a></code></strong> to generate the plots, and so references to using the function will be referred to as <strong><code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot()</a></code></strong> and the package as a whole as <strong><code>ggplot2</code></strong></p>
+<p><strong><code>ggplot2</code></strong> refers to the name of the package itself. When using the package we use the function <strong><code>ggplot()</code></strong> to generate the plots, and so references to using the function will be referred to as <strong><code>ggplot()</code></strong> and the package as a whole as <strong><code>ggplot2</code></strong></p>
 <p><strong><code>ggplot2</code></strong> plots work best with data in the ‘long’ format, i.e., a column for every variable, and a row for every observation. Well-structured data will save you lots of time when making figures with <strong><code>ggplot2</code></strong></p>
 <p>ggplot graphics are built layer by layer by adding new elements. Adding layers in this fashion allows for extensive flexibility and customization of plots.</p>
 <p>To build a ggplot, we will use the following basic template that can be used for different types of plots:</p>
 <pre><code>ggplot(data = &lt;DATA&gt;, mapping = aes(&lt;MAPPINGS&gt;)) +  &lt;GEOM_FUNCTION&gt;()</code></pre>
-<ul><li>use the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot()</a></code> function and bind the plot to a specific data frame using the <code>data</code> argument</li>
+<ul><li>use the <code>ggplot()</code> function and bind the plot to a specific data frame using the <code>data</code> argument</li>
 </ul><div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -293,13 +293,13 @@
 <ul><li>
 <p>add ‘geoms’ – graphical representations of the data in the plot (points, lines, bars). <strong><code>ggplot2</code></strong> offers many different geoms; we will use some common ones today, including:</p>
 <ul><li>
-<code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point()</a></code> for scatter plots, dot plots, etc.</li>
+<code>geom_point()</code> for scatter plots, dot plots, etc.</li>
 <li>
-<code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot()</a></code> for, well, boxplots!</li>
+<code>geom_boxplot()</code> for, well, boxplots!</li>
 <li>
-<code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line()</a></code> for trend lines, time series, etc.</li>
+<code>geom_line()</code> for trend lines, time series, etc.</li>
 </ul></li>
-</ul><p>To add a geom to the plot use <code>+</code> operator. Because we have two continuous variables, let’s use <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point()</a></code> first:</p>
+</ul><p>To add a geom to the plot use <code>+</code> operator. Because we have two continuous variables, let’s use <code>geom_point()</code> first:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -321,11 +321,11 @@
     <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span></code></pre>
 </div>
 <p><strong>Notes</strong></p>
-<ul><li>Anything you put in the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot()</a></code> function can be seen by any geom layers that you add (i.e., these are universal plot settings). This includes the x- and y-axis you set up in <code><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes()</a></code>.</li>
-<li>You can also specify aesthetics for a given geom independently of the aesthetics defined globally in the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot()</a></code> function.</li>
+<ul><li>Anything you put in the <code>ggplot()</code> function can be seen by any geom layers that you add (i.e., these are universal plot settings). This includes the x- and y-axis you set up in <code>aes()</code>.</li>
+<li>You can also specify aesthetics for a given geom independently of the aesthetics defined globally in the <code>ggplot()</code> function.</li>
 <li>The <code>+</code> sign used to add layers must be placed at the end of each line containing a layer. If, instead, the <code>+</code> sign is added in the line before the other layer, <strong><code>ggplot2</code></strong> will not add the new layer and will return an error message.</li>
 <li>You may notice that we sometimes reference ‘ggplot2’ and sometimes ‘ggplot’. To clarify, ‘ggplot2’ is the name of the most recent version of the package. However, any time we call the function itself, it’s just called ‘ggplot’.</li>
-<li>The previous version of the <strong><code>ggplot2</code></strong> package, called <strong><code>ggplot</code></strong>, which also contained the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot()</a></code> function is now unsupported and has been removed from CRAN in order to reduce accidental installations and further confusion.</li>
+<li>The previous version of the <strong><code>ggplot2</code></strong> package, called <strong><code>ggplot</code></strong>, which also contained the <code>ggplot()</code> function is now unsupported and has been removed from CRAN in order to reduce accidental installations and further confusion.</li>
 </ul><div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -353,7 +353,7 @@
 <code class="sourceCode R"><span class="fu">install.packages</span><span class="op">(</span><span class="st">"hexbin"</span><span class="op">)</span>
 <span class="kw">library</span><span class="op">(</span><span class="va">hexbin</span><span class="op">)</span></code></pre>
 </div>
-<p>Then use the <code><a href="https://ggplot2.tidyverse.org/reference/geom_hex.html" class="external-link">geom_hex()</a></code> function:</p>
+<p>Then use the <code>geom_hex()</code> function:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -416,7 +416,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -457,9 +457,9 @@
 <h3 class="callout-title">Challenges</h3>
 <div class="callout-content">
 <p>Boxplots are useful summaries, but hide the <em>shape</em> of the distribution. For example, if there is a bimodal distribution, it would not be observed with a boxplot. An alternative to the boxplot is the violin plot (sometimes known as a beanplot), where the shape (of the density of points) is drawn.</p>
-<ul><li>Replace the box plot with a violin plot; see <code><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html" class="external-link">geom_violin()</a></code>.</li>
+<ul><li>Replace the box plot with a violin plot; see <code>geom_violin()</code>.</li>
 </ul><p>In many types of data, it is important to consider the <em>scale</em> of the observations. For example, it may be worth changing the scale of the axis to better distribute the observations in the space of the plot. Changing the scale of the axes is done similarly to adding/modifying other components (i.e., by incrementally adding commands). Try making these modifications:</p>
-<ul><li>Represent weight on the log<del>10</del> scale; see <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_log10()</a></code>.</li>
+<ul><li>Represent weight on the log<del>10</del> scale; see <code>scale_y_log10()</code>.</li>
 </ul><p>So far, we’ve looked at the distribution of weight within species. Try making a new plot to explore the distribution of another variable within each species.</p>
 <ul><li><p>Create boxplot for <code>hindfoot_length</code>. Overlay the boxplot layer on a jitter layer to show actual measurements.</p></li>
 <li><p>Add color to the data points on your boxplot according to the plot from which the sample was taken (<code>plot_id</code>).</p></li>
@@ -503,7 +503,7 @@
     <span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span></code></pre>
 </div>
 <figure><img src="../fig/04-visualization-ggplot2-rendered-time-series-with-colors-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></section><section id="integrating-the-pipe-operator-with-ggplot2"><h2 class="section-heading">Integrating the pipe operator with ggplot2</h2>
-<hr class="half-width"><p>In the previous lesson, we saw how to use the pipe operator <code>%&gt;%</code> to use different functions in a sequence and create a coherent workflow. We can also use the pipe operator to pass the <code>data</code> argument to the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot()</a></code> function. The hard part is to remember that to build your ggplot, you need to use <code>+</code> and not <code>%&gt;%</code>.</p>
+<hr class="half-width"><p>In the previous lesson, we saw how to use the pipe operator <code>%&gt;%</code> to use different functions in a sequence and create a coherent workflow. We can also use the pipe operator to pass the <code>data</code> argument to the <code>ggplot()</code> function. The hard part is to remember that to build your ggplot, you need to use <code>+</code> and not <code>%&gt;%</code>.</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -585,8 +585,8 @@
 <figure><img src="../fig/04-visualization-ggplot2-rendered-average-weight-time-facet-sex-columns-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p><strong>Note:</strong> <code>ggplot2</code> before version 3.0.0 used formulas to specify how plots are faceted. If you encounter <code>facet_grid</code>/<code>wrap(...)</code> code containing <code>~</code>, please read <a href="https://ggplot2.tidyverse.org/news/#tidy-evaluation" class="external-link">https://ggplot2.tidyverse.org/news/#tidy-evaluation</a>.</p>
 </section><section id="ggplot2-themes"><h2 class="section-heading">
 <strong><code>ggplot2</code></strong> themes</h2>
-<hr class="half-width"><p>Usually plots with white background look more readable when printed. Every single component of a <code>ggplot</code> graph can be customized using the generic <code><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme()</a></code> function, as we will see below. However, there are pre-loaded themes available that change the overall appearance of the graph without much effort.</p>
-<p>For example, we can change our previous graph to have a simpler white background using the <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw()</a></code> function:</p>
+<hr class="half-width"><p>Usually plots with white background look more readable when printed. Every single component of a <code>ggplot</code> graph can be customized using the generic <code>theme()</code> function, as we will see below. However, there are pre-loaded themes available that change the overall appearance of the graph without much effort.</p>
+<p>For example, we can change our previous graph to have a simpler white background using the <code>theme_bw()</code> function:</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -597,7 +597,7 @@
      <span class="fu">facet_wrap</span><span class="op">(</span><span class="fu">vars</span><span class="op">(</span><span class="va">genus</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
      <span class="fu">theme_bw</span><span class="op">(</span><span class="op">)</span></code></pre>
 </div>
-<figure><img src="../fig/04-visualization-ggplot2-rendered-facet-by-species-and-sex-white-bg-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>In addition to <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw()</a></code>, which changes the plot background to white, <strong><code>ggplot2</code></strong> comes with several other themes which can be useful to quickly change the look of your visualization. The complete list of themes is available at <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">https://ggplot2.tidyverse.org/reference/ggtheme.html</a>. <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal()</a></code> and <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_light()</a></code> are popular, and <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_void()</a></code> can be useful as a starting point to create a new hand-crafted theme.</p>
+<figure><img src="../fig/04-visualization-ggplot2-rendered-facet-by-species-and-sex-white-bg-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>In addition to <code>theme_bw()</code>, which changes the plot background to white, <strong><code>ggplot2</code></strong> comes with several other themes which can be useful to quickly change the look of your visualization. The complete list of themes is available at <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">https://ggplot2.tidyverse.org/reference/ggtheme.html</a>. <code>theme_minimal()</code> and <code>theme_light()</code> are popular, and <code>theme_void()</code> can be useful as a starting point to create a new hand-crafted theme.</p>
 <p>The <a href="https://jrnold.github.io/ggthemes/reference/index.html" class="external-link">ggthemes</a> package provides a wide variety of options.</p>
 <div id="challenge2" class="callout challenge">
 <div class="callout-square">
@@ -617,7 +617,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -650,7 +650,7 @@
          y <span class="op">=</span> <span class="st">"Number of individuals"</span><span class="op">)</span> <span class="op">+</span>
     <span class="fu">theme_bw</span><span class="op">(</span><span class="op">)</span></code></pre>
 </div>
-<figure><img src="../fig/04-visualization-ggplot2-rendered-number-species-year-with-right-labels-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>The axes have more informative names, but their readability can be improved by increasing the font size. This can be done with the generic <code><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme()</a></code> function:</p>
+<figure><img src="../fig/04-visualization-ggplot2-rendered-number-species-year-with-right-labels-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>The axes have more informative names, but their readability can be improved by increasing the font size. This can be done with the generic <code>theme()</code> function:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -720,7 +720,7 @@
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">install.packages</span><span class="op">(</span><span class="st">"patchwork"</span><span class="op">)</span></code></pre>
 </div>
-<p>After you have loaded the <code>patchwork</code> package you can use <code>+</code> to place plots next to each other, <code>/</code> to arrange them vertically, and <code><a href="https://patchwork.data-imaginist.com/reference/plot_layout.html" class="external-link">plot_layout()</a></code> to determine how much space each plot uses:</p>
+<p>After you have loaded the <code>patchwork</code> package you can use <code>+</code> to place plots next to each other, <code>/</code> to arrange them vertically, and <code>plot_layout()</code> to determine how much space each plot uses:</p>
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -741,7 +741,7 @@
 <figure><img src="../fig/04-visualization-ggplot2-rendered-patchwork-example-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>You can also use parentheses <code>()</code> to create more complex layouts. There are many useful examples on the <a href="https://patchwork.data-imaginist.com/" class="external-link">patchwork website</a></p>
 </section><section id="exporting-plots"><h2 class="section-heading">Exporting plots</h2>
 <hr class="half-width"><p>After creating your plot, you can save it to a file in your favorite format. The Export tab in the <strong>Plot</strong> pane in RStudio will save your plots at low resolution, which will not be accepted by many journals and will not scale well for posters. The <a href="https://exts.ggplot2.tidyverse.org/" class="external-link"><strong><code>ggplot2</code></strong> extensions website</a> provides a list of packages that extend the capabilities of <strong><code>ggplot2</code></strong>, including additional themes.</p>
-<p>Instead, use the <code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html" class="external-link">ggsave()</a></code> function, which allows you easily change the dimension and resolution of your plot by adjusting the appropriate arguments (<code>width</code>, <code>height</code> and <code>dpi</code>):</p>
+<p>Instead, use the <code>ggsave()</code> function, which allows you easily change the dimension and resolution of your plot by adjusting the appropriate arguments (<code>width</code>, <code>height</code> and <code>dpi</code>):</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -793,7 +793,7 @@ Page built on: 📆 2022-05-13 ‒ 🕢 00:56:48
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.5.1" class="external-link">sandpaper (0.5.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.5.2" class="external-link">sandpaper (0.5.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.2.6" class="external-link">pegboard (0.2.6)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.1.12" class="external-link">varnish (0.1.12)</a>.</p>
 			</div>
@@ -817,7 +817,7 @@ Page built on: 📆 2022-05-13 ‒ 🕢 00:56:48
   "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor/04-visualization-ggplot2.html",
   "dateCreated": "2022-04-05",
   "dateModified": "2022-05-13",
-  "datePublished": "2022-05-13"
+  "datePublished": "2022-05-17"
 }
 
   </script><script>

@@ -280,7 +280,7 @@
 <td>type of plot</td>
 </tr></tbody></table><div class="section level3">
 <h3 id="downloading-the-data">Downloading the data<a class="anchor" aria-label="anchor" href="#downloading-the-data"></a></h3>
-<p>We are going to use the R function <code><a href="https://rdrr.io/r/utils/download.file.html" class="external-link">download.file()</a></code> to download the CSV file that contains the survey data from Figshare, and we will use <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> to load the content of the CSV file into R.</p>
+<p>We are going to use the R function <code>download.file()</code> to download the CSV file that contains the survey data from Figshare, and we will use <code>read_csv()</code> to load the content of the CSV file into R.</p>
 <p>Inside the <code>download.file</code> command, the first entry is a character string with the source URL (“<a href="https://ndownloader.figshare.com/files/2292169" class="external-link">https://ndownloader.figshare.com/files/2292169</a>”). This source URL downloads a CSV file from figshare. The text after the comma (“data_raw/portal_data_joined.csv”) is the destination of the file on your local machine. You’ll need to have a folder on your machine called “data_raw” where you’ll download the file. So this command downloads a file from Figshare, names it “portal_data_joined.csv” and adds it to a preexisting folder named “data_raw”.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -292,8 +292,8 @@
 </div>
 <div class="section level3">
 <h3 id="reading-the-data-into-r">Reading the data into R<a class="anchor" aria-label="anchor" href="#reading-the-data-into-r"></a></h3>
-<p>The file has now been downloaded to the destination you specified, but R has not yet loaded the data from the file into memory. To do this, we can use the <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> function from the <strong><code>tidyverse</code></strong> package.</p>
-<p>Packages in R are basically sets of additional functions that let you do more stuff. The functions we’ve been using so far, like <code><a href="https://rdrr.io/r/base/Round.html" class="external-link">round()</a></code>, <code><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt()</a></code>, or <code><a href="https://rdrr.io/r/base/c.html" class="external-link">c()</a></code> come built into R. Packages give you access to additional functions beyond base R. A similar function to <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> from the tidyverse package is <code><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv()</a></code> from base R. We don’t have time to cover their differences but notice that the exact spelling determines which function is used. Before you use a package for the first time you need to install it on your machine, and then you should import it in every subsequent R session when you need it.</p>
+<p>The file has now been downloaded to the destination you specified, but R has not yet loaded the data from the file into memory. To do this, we can use the <code>read_csv()</code> function from the <strong><code>tidyverse</code></strong> package.</p>
+<p>Packages in R are basically sets of additional functions that let you do more stuff. The functions we’ve been using so far, like <code>round()</code>, <code>sqrt()</code>, or <code>c()</code> come built into R. Packages give you access to additional functions beyond base R. A similar function to <code>read_csv()</code> from the tidyverse package is <code>read.csv()</code> from base R. We don’t have time to cover their differences but notice that the exact spelling determines which function is used. Before you use a package for the first time you need to install it on your machine, and then you should import it in every subsequent R session when you need it.</p>
 <p>To install the <strong><code>tidyverse</code></strong> package, we can type <code>install.packages("tidyverse")</code> straight into the console. In fact, it’s better to write this in the console than in our script for any package, as there’s no need to re-install packages every time we run the script. Then, to load the package type:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -302,7 +302,7 @@
 <code class="sourceCode R"><span class="co">## load the tidyverse packages, incl. dplyr</span>
 <span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></code></pre>
 </div>
-<p>Now we can use the functions from the <strong><code>tidyverse</code></strong> package. Let’s use <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> to read the data into a data frame (we will learn more about data frames later):</p>
+<p>Now we can use the functions from the <strong><code>tidyverse</code></strong> package. Let’s use <code>read_csv()</code> to read the data into a data frame (we will learn more about data frames later):</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -329,9 +329,9 @@
 <span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span>
 <span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></code></pre>
 </div>
-<p>When you execute <code>read_csv</code> on a data file, it looks through the first 1000 rows of each column and guesses its data type. For example, in this dataset, <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> reads <code>weight</code> as <code>col_double</code> (a numeric data type), and <code>species</code> as <code>col_character</code>. You have the option to specify the data type for a column manually by using the <code>col_types</code> argument in <code>read_csv</code>.</p>
+<p>When you execute <code>read_csv</code> on a data file, it looks through the first 1000 rows of each column and guesses its data type. For example, in this dataset, <code>read_csv()</code> reads <code>weight</code> as <code>col_double</code> (a numeric data type), and <code>species</code> as <code>col_character</code>. You have the option to specify the data type for a column manually by using the <code>col_types</code> argument in <code>read_csv</code>.</p>
 <p>We can see the contents of the first few lines of the data by typing its name: <code>surveys</code>. By default, this will show you as many rows and columns of the data as fit on your screen. If you wanted the first 50 rows, you could type <code>print(surveys, n = 50)</code></p>
-<p>We can also extract the first few lines of this data using the function <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">head()</a></code>:</p>
+<p>We can also extract the first few lines of this data using the function <code>head()</code>:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -353,8 +353,8 @@
 <span class="co">#&gt; # … with 4 more variables: genus &lt;chr&gt;, species &lt;chr&gt;, taxa &lt;chr&gt;,</span>
 <span class="co">#&gt; #   plot_type &lt;chr&gt;</span></code></pre>
 </div>
-<p>Unlike the <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code> function, <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">head()</a></code> returns the extracted data. You could use it to assign the first 100 rows of <code>surveys</code> to an object using <code>surveys_sample &lt;- head(surveys, 100)</code>. This can be useful if you want to try out complex computations on a subset of your data before you apply them to the whole data set. There is a similar function that lets you extract the last few lines of the data set. It is called (you might have guessed it) <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail()</a></code>.</p>
-<p>To open the dataset in RStudio’s Data Viewer, use the <code><a href="https://tibble.tidyverse.org/reference/view.html" class="external-link">view()</a></code> function:</p>
+<p>Unlike the <code>print()</code> function, <code>head()</code> returns the extracted data. You could use it to assign the first 100 rows of <code>surveys</code> to an object using <code>surveys_sample &lt;- head(surveys, 100)</code>. This can be useful if you want to try out complex computations on a subset of your data before you apply them to the whole data set. There is a similar function that lets you extract the last few lines of the data set. It is called (you might have guessed it) <code>tail()</code>.</p>
+<p>To open the dataset in RStudio’s Data Viewer, use the <code>view()</code> function:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -368,23 +368,23 @@
 <div id="note" class="callout-inner">
 <h3 class="callout-title">Note</h3>
 <div class="callout-content">
-<p><code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> assumes that fields are delineated by commas. However, in several countries, the comma is used as a decimal separator and the semicolon (;) is used as a field delineator. If you want to read in this type of files in R, you can use the <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv2()</a></code> function. It behaves like <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> but uses different parameters for the decimal and the field separators. There is also the <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_tsv()</a></code> for tab separated data files and <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_delim()</a></code> for less common formats. Check out the help for <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code> by typing <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">?read_csv</a></code> to learn more.</p>
+<p><code>read_csv()</code> assumes that fields are delineated by commas. However, in several countries, the comma is used as a decimal separator and the semicolon (;) is used as a field delineator. If you want to read in this type of files in R, you can use the <code>read_csv2()</code> function. It behaves like <code>read_csv()</code> but uses different parameters for the decimal and the field separators. There is also the <code>read_tsv()</code> for tab separated data files and <code>read_delim()</code> for less common formats. Check out the help for <code>read_csv()</code> by typing <code>?read_csv</code> to learn more.</p>
 <p>In addition to the above versions of the csv format, you should develop the habits of looking at and recording some parameters of your csv files. For instance, the character encoding, control characters used for line ending, date format (if the date is not split into three variables), and the presence of unexpected <a href="https://en.wikipedia.org/wiki/Newline" class="external-link">newlines</a> are important characteristics of your data files. Those parameters will ease up the import step of your data in R.</p>
 </div>
 </div>
 </div>
 </div>
 </section><section id="what-are-data-frames"><h2 class="section-heading">What are data frames?</h2>
-<hr class="half-width"><p>When we loaded the data into R, it got stored as an object of class <code>tibble</code>, which is a special kind of data frame (the difference is not important for our purposes, but you can learn more about tibbles <a href="https://tibble.tidyverse.org/" class="external-link">here</a>). Data frames are the <em>de facto</em> data structure for most tabular data, and what we use for statistics and plotting. Data frames can be created by hand, but most commonly they are generated by functions like <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code>; in other words, when importing spreadsheets from your hard drive or the web.</p>
+<hr class="half-width"><p>When we loaded the data into R, it got stored as an object of class <code>tibble</code>, which is a special kind of data frame (the difference is not important for our purposes, but you can learn more about tibbles <a href="https://tibble.tidyverse.org/" class="external-link">here</a>). Data frames are the <em>de facto</em> data structure for most tabular data, and what we use for statistics and plotting. Data frames can be created by hand, but most commonly they are generated by functions like <code>read_csv()</code>; in other words, when importing spreadsheets from your hard drive or the web.</p>
 <p>A data frame is the representation of data in the format of a table where the columns are vectors that all have the same length. Because columns are vectors, each column must contain a single type of data (e.g., characters, integers, factors). For example, here is a figure depicting a data frame comprising a numeric, a character, and a logical vector.</p>
-<figure><img src="./fig/data-frame.svg" alt="" class="figure mx-auto d-block"> We can see this also when inspecting the <b>str</b>ucture of a data frame with the function <code><a href="https://rdrr.io/r/utils/str.html" class="external-link">str()</a></code>:</figure><div class="codewrapper sourceCode" id="cb10">
+<figure><img src="./fig/data-frame.svg" alt="" class="figure mx-auto d-block"> We can see this also when inspecting the <b>str</b>ucture of a data frame with the function <code>str()</code>:</figure><div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">str</span><span class="op">(</span><span class="va">surveys</span><span class="op">)</span></code></pre>
 </div>
 </section><section id="inspecting-data-frames"><h2 class="section-heading">Inspecting data frames</h2>
-<hr class="half-width"><p>We already saw how the functions <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">head()</a></code> and <code><a href="https://rdrr.io/r/utils/str.html" class="external-link">str()</a></code> can be useful to check the content and the structure of a data frame. Here is a non-exhaustive list of functions to get a sense of the content/structure of the data. Let’s try them out!</p>
+<hr class="half-width"><p>We already saw how the functions <code>head()</code> and <code>str()</code> can be useful to check the content and the structure of a data frame. Here is a non-exhaustive list of functions to get a sense of the content/structure of the data. Let’s try them out!</p>
 <ul><li>
 <p>Size:</p>
 <ul><li>
@@ -404,7 +404,7 @@
 <li>
 <p>Names:</p>
 <ul><li>
-<code>names(surveys)</code> - returns the column names (synonym of <code><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames()</a></code> for <code>data.frame</code> objects)</li>
+<code>names(surveys)</code> - returns the column names (synonym of <code>colnames()</code> for <code>data.frame</code> objects)</li>
 <li>
 <code>rownames(surveys)</code> - returns the row names</li>
 </ul></li>
@@ -572,14 +572,14 @@
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li><p>Create a <code>data.frame</code> (<code>surveys_200</code>) containing only the data in row 200 of the <code>surveys</code> dataset.</p></li>
 <li>
-<p>Notice how <code><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow()</a></code> gave you the number of rows in a <code>data.frame</code>?</p>
+<p>Notice how <code>nrow()</code> gave you the number of rows in a <code>data.frame</code>?</p>
 <ul><li>Use that number to pull out just that last row in the data frame.</li>
-<li>Compare that with what you see as the last row using <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail()</a></code> to make sure it’s meeting expectations.</li>
-<li>Pull out that last row using <code><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow()</a></code> instead of the row number.</li>
+<li>Compare that with what you see as the last row using <code>tail()</code> to make sure it’s meeting expectations.</li>
+<li>Pull out that last row using <code>nrow()</code> instead of the row number.</li>
 <li>Create a new data frame (<code>surveys_last</code>) from that last row.</li>
 </ul></li>
-<li><p>Use <code><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow()</a></code> to extract the row that is in the middle of the data frame. Store the content of this row in an object named <code>surveys_middle</code>.</p></li>
-<li><p>Combine <code><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow()</a></code> with the <code>-</code> notation above to reproduce the behavior of <code>head(surveys)</code>, keeping just the first through 6th rows of the surveys dataset.</p></li>
+<li><p>Use <code>nrow()</code> to extract the row that is in the middle of the data frame. Store the content of this row in an object named <code>surveys_middle</code>.</p></li>
+<li><p>Combine <code>nrow()</code> with the <code>-</code> notation above to reproduce the behavior of <code>head(surveys)</code>, keeping just the first through 6th rows of the surveys dataset.</p></li>
 </ol></div>
 </div>
 </div>
@@ -615,14 +615,14 @@
 <hr class="half-width"><p>When we did <code>str(surveys)</code> we saw that several of the columns consist of integers. The columns <code>genus</code>, <code>species</code>, <code>sex</code>, <code>plot_type</code>, … however, are of the class <code>character</code>. Arguably, these columns contain categorical data, that is, they can only take on a limited number of values.</p>
 <p>R has a special class for working with categorical data, called <code>factor</code>. Factors are very useful and actually contribute to making R particularly well suited to working with data. So we are going to spend a little time introducing them.</p>
 <p>Once created, factors can only contain a pre-defined set of values, known as <em>levels</em>. Factors are stored as integers associated with labels and they can be ordered or unordered. While factors look (and often behave) like character vectors, they are actually treated as integer vectors by R. So you need to be very careful when treating them as strings.</p>
-<p>When importing a data frame with <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code>, the columns that contain text are not automatically coerced (=converted) into the <code>factor</code> data type, but once we have loaded the data we can do the conversion using the <code><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor()</a></code> function:</p>
+<p>When importing a data frame with <code>read_csv()</code>, the columns that contain text are not automatically coerced (=converted) into the <code>factor</code> data type, but once we have loaded the data we can do the conversion using the <code>factor()</code> function:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">surveys</span><span class="op">$</span><span class="va">sex</span> <span class="op">&lt;-</span> <span class="fu">factor</span><span class="op">(</span><span class="va">surveys</span><span class="op">$</span><span class="va">sex</span><span class="op">)</span></code></pre>
 </div>
-<p>We can see that the conversion has worked by using the <code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary()</a></code> function again. This produces a table with the counts for each factor level:</p>
+<p>We can see that the conversion has worked by using the <code>summary()</code> function again. This produces a table with the counts for each factor level:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -636,7 +636,7 @@
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sex</span> <span class="op">&lt;-</span> <span class="fu">factor</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"male"</span>, <span class="st">"female"</span>, <span class="st">"female"</span>, <span class="st">"male"</span><span class="op">)</span><span class="op">)</span></code></pre>
 </div>
-<p>R will assign <code>1</code> to the level <code>"female"</code> and <code>2</code> to the level <code>"male"</code> (because <code>f</code> comes before <code>m</code>, even though the first element in this vector is <code>"male"</code>). You can see this by using the function <code><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels()</a></code> and you can find the number of levels using <code><a href="https://rdrr.io/r/base/nlevels.html" class="external-link">nlevels()</a></code>:</p>
+<p>R will assign <code>1</code> to the level <code>"female"</code> and <code>2</code> to the level <code>"male"</code> (because <code>f</code> comes before <code>m</code>, even though the first element in this vector is <code>"male"</code>). You can see this by using the function <code>levels()</code> and you can find the number of levels using <code>nlevels()</code>:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -721,8 +721,8 @@
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">as.character</span><span class="op">(</span><span class="va">sex</span><span class="op">)</span></code></pre>
 </div>
-<p>In some cases, you may have to convert factors where the levels appear as numbers (such as concentration levels or years) to a numeric vector. For instance, in one part of your analysis the years might need to be encoded as factors (e.g., comparing average weights across years) but in another part of your analysis they may need to be stored as numeric values (e.g., doing math operations on the years). This conversion from factor to numeric is a little trickier. The <code><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric()</a></code> function returns the index values of the factor, not its levels, so it will result in an entirely new (and unwanted in this case) set of numbers. One method to avoid this is to convert factors to characters, and then to numbers.</p>
-<p>Another method is to use the <code><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels()</a></code> function. Compare:</p>
+<p>In some cases, you may have to convert factors where the levels appear as numbers (such as concentration levels or years) to a numeric vector. For instance, in one part of your analysis the years might need to be encoded as factors (e.g., comparing average weights across years) but in another part of your analysis they may need to be stored as numeric values (e.g., doing math operations on the years). This conversion from factor to numeric is a little trickier. The <code>as.numeric()</code> function returns the index values of the factor, not its levels, so it will result in an entirely new (and unwanted in this case) set of numbers. One method to avoid this is to convert factors to characters, and then to numbers.</p>
+<p>Another method is to use the <code>levels()</code> function. Compare:</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -732,7 +732,7 @@
 <span class="fu">as.numeric</span><span class="op">(</span><span class="fu">as.character</span><span class="op">(</span><span class="va">year_fct</span><span class="op">)</span><span class="op">)</span> <span class="co"># Works...</span>
 <span class="fu">as.numeric</span><span class="op">(</span><span class="fu">levels</span><span class="op">(</span><span class="va">year_fct</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="va">year_fct</span><span class="op">]</span>    <span class="co"># The recommended way.</span></code></pre>
 </div>
-<p>Notice that in the <code><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels()</a></code> approach, three important steps occur:</p>
+<p>Notice that in the <code>levels()</code> approach, three important steps occur:</p>
 <ul><li>We obtain all the factor levels using <code>levels(year_fct)</code>
 </li>
 <li>We convert these levels to numeric values using <code>as.numeric(levels(year_fct))</code>
@@ -741,7 +741,7 @@
 </ul></div>
 <div class="section level3">
 <h3 id="renaming-factors">Renaming factors<a class="anchor" aria-label="anchor" href="#renaming-factors"></a></h3>
-<p>When your data is stored as a factor, you can use the <code><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot()</a></code> function to get a quick glance at the number of observations represented by each factor level. Let’s look at the number of males and females captured over the course of the experiment:</p>
+<p>When your data is stored as a factor, you can use the <code>plot()</code> function to get a quick glance at the number of observations represented by each factor level. Let’s look at the number of males and females captured over the course of the experiment:</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -749,7 +749,7 @@
 <code class="sourceCode R"><span class="co">## bar plot of the number of females and males captured during the experiment:</span>
 <span class="fu">plot</span><span class="op">(</span><span class="va">surveys</span><span class="op">$</span><span class="va">sex</span><span class="op">)</span></code></pre>
 </div>
-<figure><img src="fig/02-starting-with-data-rendered-unnamed-chunk-27-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>However, as we saw when we used <code>summary(surveys$sex)</code>, there are about 1700 individuals for which the sex information hasn’t been recorded. To show them in the plot, we can turn the missing values into a factor level with the <code><a href="https://rdrr.io/r/base/factor.html" class="external-link">addNA()</a></code> function. We will also have to give the new factor level a label. We are going to work with a copy of the <code>sex</code> column, so we’re not modifying the working copy of the data frame:</p>
+<figure><img src="fig/02-starting-with-data-rendered-unnamed-chunk-27-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>However, as we saw when we used <code>summary(surveys$sex)</code>, there are about 1700 individuals for which the sex information hasn’t been recorded. To show them in the plot, we can turn the missing values into a factor level with the <code>addNA()</code> function. We will also have to give the new factor level a label. We are going to work with a copy of the <code>sex</code> column, so we’re not modifying the working copy of the data frame:</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -853,7 +853,7 @@
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>
-<p>We have seen how data frames are created when using <code><a href="https://readr.tidyverse.org/reference/read_delim.html" class="external-link">read_csv()</a></code>, but they can also be created by hand with the <code><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame()</a></code> function. There are a few mistakes in this hand-crafted <code>data.frame</code>. Can you spot and fix them? Don’t hesitate to experiment!</p>
+<p>We have seen how data frames are created when using <code>read_csv()</code>, but they can also be created by hand with the <code>data.frame()</code> function. There are a few mistakes in this hand-crafted <code>data.frame</code>. Can you spot and fix them? Don’t hesitate to experiment!</p>
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -888,14 +888,14 @@
 <p>Learn more in this <a href="https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio" class="external-link">RStudio tutorial</a></p>
 </div>
 </section><section id="formatting-dates"><h2 class="section-heading">Formatting dates</h2>
-<hr class="half-width"><p>A common issues that new (and experienced!) R users have is converting date and time information into a variable that is suitable for analyses. One way to store date information is to store each component of the date in a separate column. Using <code><a href="https://rdrr.io/r/utils/str.html" class="external-link">str()</a></code>, we can confirm that our data frame does indeed have a separate column for day, month, and year, and that each of these columns contains integer values.</p>
+<hr class="half-width"><p>A common issues that new (and experienced!) R users have is converting date and time information into a variable that is suitable for analyses. One way to store date information is to store each component of the date in a separate column. Using <code>str()</code>, we can confirm that our data frame does indeed have a separate column for day, month, and year, and that each of these columns contains integer values.</p>
 <div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">str</span><span class="op">(</span><span class="va">surveys</span><span class="op">)</span></code></pre>
 </div>
-<p>We are going to use the <code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">ymd()</a></code> function from the package <strong><code>lubridate</code></strong> (which belongs to the <strong><code>tidyverse</code></strong>; learn more <a href="https://www.tidyverse.org/" class="external-link">here</a>). <strong><code>lubridate</code></strong> gets installed as part as the <strong><code>tidyverse</code></strong> installation. When you load the <strong><code>tidyverse</code></strong> (<code><a href="https://tidyverse.tidyverse.org" class="external-link">library(tidyverse)</a></code>), the core packages (the packages used in most data analyses) get loaded. <strong><code>lubridate</code></strong> however does not belong to the core tidyverse, so you have to load it explicitly with <code><a href="https://lubridate.tidyverse.org" class="external-link">library(lubridate)</a></code></p>
+<p>We are going to use the <code>ymd()</code> function from the package <strong><code>lubridate</code></strong> (which belongs to the <strong><code>tidyverse</code></strong>; learn more <a href="https://www.tidyverse.org/" class="external-link">here</a>). <strong><code>lubridate</code></strong> gets installed as part as the <strong><code>tidyverse</code></strong> installation. When you load the <strong><code>tidyverse</code></strong> (<code><a href="https://tidyverse.tidyverse.org" class="external-link">library(tidyverse)</a></code>), the core packages (the packages used in most data analyses) get loaded. <strong><code>lubridate</code></strong> however does not belong to the core tidyverse, so you have to load it explicitly with <code><a href="https://lubridate.tidyverse.org" class="external-link">library(lubridate)</a></code></p>
 <p>Start by loading the required package:</p>
 <div class="codewrapper sourceCode" id="cb44">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -904,7 +904,7 @@
 <code class="sourceCode R"><span class="kw">library</span><span class="op">(</span><span class="va">lubridate</span><span class="op">)</span></code></pre>
 </div>
 <p>The <strong><code>lubridate</code></strong> package has many useful functions for working with dates. These can help you extract dates from different string representations, convert between timezones, calculate time differences and more. You can find an overview of them in the <a href="https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf" class="external-link">lubridate cheat sheet</a>.</p>
-<p>Here we will use the function <code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">ymd()</a></code>, which takes a vector representing year, month, and day, and converts it to a <code>Date</code> vector. <code>Date</code> is a class of data recognized by R as being a date and can be manipulated as such. The argument that the function requires is flexible, but, as a best practice, is a character vector formatted as “YYYY-MM-DD”.</p>
+<p>Here we will use the function <code>ymd()</code>, which takes a vector representing year, month, and day, and converts it to a <code>Date</code> vector. <code>Date</code> is a class of data recognized by R as being a date and can be manipulated as such. The argument that the function requires is flexible, but, as a best practice, is a character vector formatted as “YYYY-MM-DD”.</p>
 <p>Let’s create a date object and inspect the structure:</p>
 <div class="codewrapper sourceCode" id="cb45">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -922,14 +922,14 @@
 <span class="va">my_date</span> <span class="op">&lt;-</span> <span class="fu">ymd</span><span class="op">(</span><span class="fu">paste</span><span class="op">(</span><span class="st">"2015"</span>, <span class="st">"1"</span>, <span class="st">"1"</span>, sep <span class="op">=</span> <span class="st">"-"</span><span class="op">)</span><span class="op">)</span> 
 <span class="fu">str</span><span class="op">(</span><span class="va">my_date</span><span class="op">)</span></code></pre>
 </div>
-<p>Now we apply this function to the surveys dataset. Create a character vector from the <code>year</code>, <code>month</code>, and <code>day</code> columns of <code>surveys</code> using <code><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste()</a></code>:</p>
+<p>Now we apply this function to the surveys dataset. Create a character vector from the <code>year</code>, <code>month</code>, and <code>day</code> columns of <code>surveys</code> using <code>paste()</code>:</p>
 <div class="codewrapper sourceCode" id="cb47">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">paste</span><span class="op">(</span><span class="va">surveys</span><span class="op">$</span><span class="va">year</span>, <span class="va">surveys</span><span class="op">$</span><span class="va">month</span>, <span class="va">surveys</span><span class="op">$</span><span class="va">day</span>, sep <span class="op">=</span> <span class="st">"-"</span><span class="op">)</span></code></pre>
 </div>
-<p>This character vector can be used as the argument for <code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">ymd()</a></code>:</p>
+<p>This character vector can be used as the argument for <code>ymd()</code>:</p>
 <div class="codewrapper sourceCode" id="cb48">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -941,7 +941,7 @@
 </h3>
 <pre class="warning" tabindex="0"><code><span class="co">#&gt; Warning: 129 failed to parse.</span></code></pre>
 </div>
-<p>There is a warning telling us that some dates could not be parsed (understood) by the <code><a href="https://lubridate.tidyverse.org/reference/ymd.html" class="external-link">ymd()</a></code> function. For these dates, the function has returned <code>NA</code>, which means they are treated as missing values. We will deal with this problem later, but first we add the resulting <code>Date</code> vector to the <code>surveys</code> data frame as a new column called <code>date</code>:</p>
+<p>There is a warning telling us that some dates could not be parsed (understood) by the <code>ymd()</code> function. For these dates, the function has returned <code>NA</code>, which means they are treated as missing values. We will deal with this problem later, but first we add the resulting <code>Date</code> vector to the <code>surveys</code> data frame as a new column called <code>date</code>:</p>
 <div class="codewrapper sourceCode" id="cb50">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -959,7 +959,7 @@
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">str</span><span class="op">(</span><span class="va">surveys</span><span class="op">)</span> <span class="co"># notice the new column, with 'date' as the class</span></code></pre>
 </div>
-<p>Let’s make sure everything worked correctly. One way to inspect the new column is to use <code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary()</a></code>:</p>
+<p>Let’s make sure everything worked correctly. One way to inspect the new column is to use <code>summary()</code>:</p>
 <div class="codewrapper sourceCode" id="cb53">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -975,7 +975,7 @@
 <span class="co">#&gt;        "129"</span></code></pre>
 </div>
 <p>Let’s investigate why some dates could not be parsed.</p>
-<p>We can use the functions we saw previously to deal with missing data to identify the rows in our data frame that are failing. If we combine them with what we learned about subsetting data frames earlier, we can extract the columns “year,”month“,”day" from the records that have <code>NA</code> in our new column <code>date</code>. We will also use <code><a href="https://rdrr.io/r/utils/head.html" class="external-link">head()</a></code> so we don’t clutter the output:</p>
+<p>We can use the functions we saw previously to deal with missing data to identify the rows in our data frame that are failing. If we combine them with what we learned about subsetting data frames earlier, we can extract the columns “year,”month“,”day" from the records that have <code>NA</code> in our new column <code>date</code>. We will also use <code>head()</code> so we don’t clutter the output:</p>
 <div class="codewrapper sourceCode" id="cb55">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1025,7 +1025,7 @@ Page built on: 📆 2022-05-13 ‒ 🕢 00:56:25
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.5.1" class="external-link">sandpaper (0.5.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.5.2" class="external-link">sandpaper (0.5.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.2.6" class="external-link">pegboard (0.2.6)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.1.12" class="external-link">varnish (0.1.12)</a>.</p>
 			</div>
@@ -1049,7 +1049,7 @@ Page built on: 📆 2022-05-13 ‒ 🕢 00:56:25
   "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/02-starting-with-data.html",
   "dateCreated": "2022-04-05",
   "dateModified": "2022-05-13",
-  "datePublished": "2022-05-13"
+  "datePublished": "2022-05-17"
 }
 
   </script><script>
