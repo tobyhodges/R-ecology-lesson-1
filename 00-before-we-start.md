@@ -443,7 +443,7 @@ sessionInfo()
 #> loaded via a namespace (and not attached):
 #>  [1] tidyselect_1.1.1 xfun_0.28        haven_2.4.3      colorspace_2.0-2
 #>  [5] vctrs_0.3.8      generics_0.1.1   blob_1.2.2       utf8_1.2.2      
-#>  [9] rlang_0.4.12     pillar_1.6.4     glue_1.5.1       sandpaper_0.5.1 
+#>  [9] rlang_0.4.12     pillar_1.6.4     glue_1.5.1       sandpaper_0.5.2 
 #> [13] withr_2.4.3      DBI_1.1.1        bit64_4.0.5      dbplyr_2.1.1    
 #> [17] modelr_0.1.8     readxl_1.3.1     lifecycle_1.0.1  munsell_0.5.0   
 #> [21] gtable_0.3.0     cellranger_1.1.0 rvest_1.0.2      memoise_2.0.1   
@@ -501,6 +501,6 @@ comfortable eventually creating your own scripts.
 
 
 
-<p style="text-align: right; font-size: small;">Page built on: 📆 2022-05-13 ‒ 🕢 00:56:18</p>
+<p style="text-align: right; font-size: small;">Page built on: 📆 2022-05-17 ‒ 🕢 19:22:58</p>
 
 
