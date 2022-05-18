@@ -357,6 +357,10 @@ surveys %>%
   tail()
 ```
 
+```{.output}
+#> `summarise()` has grouped output by 'sex'. You can override using the `.groups` argument.
+```
+
 Here, we used `tail()` to look at the last six rows of our summary. Before, we had
 used `head()` to look at the first six rows. We can see that the `sex` column contains
 `NA` values because some animals had escaped before their sex and body weights
@@ -375,6 +379,10 @@ surveys %>%
   summarize(mean_weight = mean(weight))
 ```
 
+```{.output}
+#> `summarise()` has grouped output by 'sex'. You can override using the `.groups` argument.
+```
+
 Here, again, the output from these calls doesn't run off the screen
 anymore. If you want to display more data, you can use the `print()` function
 at the end of your chain with the argument `n` specifying the number of rows to
@@ -387,6 +395,10 @@ surveys %>%
   group_by(sex, species_id) %>%
   summarize(mean_weight = mean(weight)) %>%
   print(n = 15)
+```
+
+```{.output}
+#> `summarise()` has grouped output by 'sex'. You can override using the `.groups` argument.
 ```
 
 Once the data are grouped, you can also summarize multiple variables at the same
@@ -402,6 +414,10 @@ surveys %>%
             min_weight = min(weight))
 ```
 
+```{.output}
+#> `summarise()` has grouped output by 'sex'. You can override using the `.groups` argument.
+```
+
 It is sometimes useful to rearrange the result of a query to inspect the values. For instance, we can sort on `min_weight` to put the lighter species first:
 
 
@@ -414,6 +430,10 @@ surveys %>%
   arrange(min_weight)
 ```
 
+```{.output}
+#> `summarise()` has grouped output by 'sex'. You can override using the `.groups` argument.
+```
+
 To sort in descending order, we need to add the `desc()` function. If we want to sort the results by decreasing order of mean weight:
 
 
@@ -424,6 +444,10 @@ surveys %>%
   summarize(mean_weight = mean(weight),
             min_weight = min(weight)) %>%
   arrange(desc(mean_weight))
+```
+
+```{.output}
+#> `summarise()` has grouped output by 'sex'. You can override using the `.groups` argument.
 ```
 
 #### Counting
@@ -596,7 +620,13 @@ surveys_gw <- surveys %>%
   filter(!is.na(weight)) %>%
   group_by(plot_id, genus) %>%
   summarize(mean_weight = mean(weight))
+```
 
+```{.output}
+#> `summarise()` has grouped output by 'plot_id'. You can override using the `.groups` argument.
+```
+
+```r
 str(surveys_gw)
 ```
 
@@ -692,7 +722,13 @@ surveys_spread_genera <- surveys %>%
   group_by(plot_id, year) %>%
   summarize(n_genera = n_distinct(genus)) %>%
   spread(year, n_genera)
+```
 
+```{.output}
+#> `summarise()` has grouped output by 'plot_id'. You can override using the `.groups` argument.
+```
+
+```r
 head(surveys_spread_genera)
 ```
 
@@ -744,6 +780,10 @@ surveys_long %>%
   group_by(year, measurement, plot_type) %>%
   summarize(mean_value = mean(value, na.rm=TRUE)) %>%
   spread(measurement, mean_value)
+```
+
+```{.output}
+#> `summarise()` has grouped output by 'year', 'measurement'. You can override using the `.groups` argument.
 ```
 
 :::::::::::::::::
@@ -820,6 +860,6 @@ write_csv(surveys_complete, file = "data/surveys_complete.csv")
 
 
 
-<p style="text-align: right; font-size: small;">Page built on: 📆 2022-05-18 ‒ 🕢 16:11:17</p>
+<p style="text-align: right; font-size: small;">Page built on: 📆 2022-05-18 ‒ 🕢 23:37:44</p>
 
 

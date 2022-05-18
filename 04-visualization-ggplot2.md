@@ -522,6 +522,13 @@ of each species changes through the years.
 yearly_weight <- surveys_complete %>%
                 group_by(year, species_id) %>%
                  summarize(avg_weight = mean(weight))
+```
+
+```{.output}
+#> `summarise()` has grouped output by 'year'. You can override using the `.groups` argument.
+```
+
+```r
 ggplot(data = yearly_weight, mapping = aes(x=year, y=avg_weight)) +
    geom_line() +
    facet_wrap(vars(species_id)) +
@@ -720,6 +727,6 @@ saved plot.
 
 
 
-<p style="text-align: right; font-size: small;">Page built on: 📆 2022-05-18 ‒ 🕢 16:11:35</p>
+<p style="text-align: right; font-size: small;">Page built on: 📆 2022-05-18 ‒ 🕢 23:38:02</p>
 
 
