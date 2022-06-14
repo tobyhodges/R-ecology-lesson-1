@@ -338,8 +338,14 @@
     "dbplyr": {
       "Package": "dbplyr",
       "Version": "2.1.1",
-      "Source": "Repository",
-      "Repository": "RSPM",
+      "Source": "CRAN",
+      "Repository": "CRAN",
+      "RemoteType": "standard",
+      "RemotePkgRef": "dbplyr",
+      "RemoteRef": "dbplyr",
+      "RemoteRepos": "https://packagemanager.rstudio.com/all/__linux__/focal/latest",
+      "RemotePkgPlatform": "source",
+      "RemoteSha": "2.1.1",
       "Hash": "1f37fa4ab2f5f7eded42f78b9a887182",
       "Requirements": [
         "DBI",
