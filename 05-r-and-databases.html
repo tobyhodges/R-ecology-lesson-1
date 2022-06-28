@@ -65,7 +65,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="profiles.html">Learner Profiles</a></li><li><a class="dropdown-item" href="reference.html">Learners' Reference</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Learners' Reference</a></li>
           </ul></li>
       </ul></div>
     <form class="d-flex col-md-2 search-form">
@@ -217,13 +217,21 @@
                 </h2>
                 <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlush12">
                   <div class="accordion-body">
-                    <ul><li><a href="profiles.html">Learner Profiles</a></li><li><a href="reference.html">Learners' Reference</a></li>
+                    <ul><li>
+                        <a href="key-points.html">Key Points</a>
+                      </li>
+                      <li>
+                        <a href="reference.html#glossary">Glossary</a>
+                      </li>
+                      <li>
+                        <a href="profiles.html">Learner Profiles</a>
+                      </li>
+                      <li><a href="reference.html">Learners' Reference</a></li>
                     </ul></div>
                 </div>
               </div>
             </div>
-
-            <a href="aio.html">See all in one page</a>
+            <hr class="half-width resources"><a href="aio.html">See all in one page</a>
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
             
@@ -266,16 +274,16 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">install.packages</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"dbplyr"</span>, <span class="st">"RSQLite"</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">install.packages</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"dbplyr"</span>, <span class="st">"RSQLite"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <p>The SQLite database is contained in a single file <code>portal_mammals.sqlite</code> that you generated during <a href="https://datacarpentry.org/sql-ecology-lesson/00-sql-introduction/index.html" class="external-link">the SQL lesson</a>. If you don’t have it, you can download it from Figshare into the <code>data_raw</code> subdirectory using:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">dir.create</span><span class="op">(</span><span class="st">"data_raw"</span>, showWarnings <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="fu">download.file</span><span class="op">(</span>url <span class="op">=</span> <span class="st">"https://ndownloader.figshare.com/files/2292171"</span>,
-              destfile <span class="op">=</span> <span class="st">"data_raw/portal_mammals.sqlite"</span>, mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">dir.create</span><span class="op">(</span><span class="st">"data_raw"</span>, showWarnings <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu">download.file</span><span class="op">(</span>url <span class="op">=</span> <span class="st">"https://ndownloader.figshare.com/files/2292171"</span>,</span>
+<span>              destfile <span class="op">=</span> <span class="st">"data_raw/portal_mammals.sqlite"</span>, mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
 </section><section id="connecting-to-databases"><h2 class="section-heading">Connecting to databases</h2>
@@ -284,27 +292,27 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw">library</span><span class="op">(</span><span class="va">dplyr</span><span class="op">)</span>
-<span class="kw">library</span><span class="op">(</span><span class="va">dbplyr</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">dplyr</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">dbplyr</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'dbplyr'</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'dbplyr'</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; The following objects are masked from 'package:dplyr':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     ident, sql</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; The following objects are masked from 'package:dplyr':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     ident, sql</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">mammals</span> <span class="op">&lt;-</span> <span class="fu">DBI</span><span class="fu">::</span><span class="fu">dbConnect</span><span class="op">(</span><span class="fu">RSQLite</span><span class="fu">::</span><span class="fu">SQLite</span><span class="op">(</span><span class="op">)</span>, <span class="st">"data_raw/portal_mammals.sqlite"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">mammals</span> <span class="op">&lt;-</span> <span class="fu">DBI</span><span class="fu">::</span><span class="fu">dbConnect</span><span class="op">(</span><span class="fu">RSQLite</span><span class="fu">::</span><span class="fu">SQLite</span><span class="op">(</span><span class="op">)</span>, <span class="st">"data_raw/portal_mammals.sqlite"</span><span class="op">)</span></span></code></pre>
 </div>
 <p>This command uses 2 packages that helps <strong><code>dbplyr</code></strong> and <strong><code>dplyr</code></strong> talk to the SQLite database. <strong><code>DBI</code></strong> is not something that you’ll use directly as a user. It allows R to send commands to databases irrespective of the database management system used. The <strong><code>RSQLite</code></strong> package allows R to interface with SQLite databases.</p>
 <p>This command does not load the data into the R session (as the <code>read_csv()</code> function did). Instead, it merely instructs R to connect to the <code>SQLite</code> database contained in the <code>portal_mammals.sqlite</code> file.</p>
@@ -314,13 +322,13 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">src_dbi</span><span class="op">(</span><span class="va">mammals</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">src_dbi</span><span class="op">(</span><span class="va">mammals</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; src:  sqlite 3.37.0 [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span>
-<span class="co">#&gt; tbls: plots, species, surveys</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; src:  sqlite 3.37.0 [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<span><span class="co">#&gt; tbls: plots, species, surveys</span></span></code></pre>
 </div>
 <p>Just like a spreadsheet with multiple worksheets, a SQLite database can contain multiple tables. In this case three of them are listed in the <code>tbls</code> row in the output above:</p>
 <ul><li>plots</li>
@@ -334,7 +342,7 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="fu">sql</span><span class="op">(</span><span class="st">"SELECT year, species_id, plot_id FROM surveys"</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="fu">sql</span><span class="op">(</span><span class="st">"SELECT year, species_id, plot_id FROM surveys"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <p>With this approach you can use any of the SQL queries we have seen in the database lesson.</p>
 </div>
@@ -345,35 +353,35 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">surveys</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="st">"surveys"</span><span class="op">)</span>
-<span class="va">surveys</span> <span class="op">%&gt;%</span>
-    <span class="fu">select</span><span class="op">(</span><span class="va">year</span>, <span class="va">species_id</span>, <span class="va">plot_id</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">surveys</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="st">"surveys"</span><span class="op">)</span></span>
+<span><span class="va">surveys</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">select</span><span class="op">(</span><span class="va">year</span>, <span class="va">species_id</span>, <span class="va">plot_id</span><span class="op">)</span></span></code></pre>
 </div>
 <p>In this case, the <code>surveys</code> object behaves like a data frame. Several functions that can be used with data frames can also be used on tables from a database. For instance, the <code>head()</code> function can be used to check the first 10 rows of the table:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">head</span><span class="op">(</span><span class="va">surveys</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">head</span><span class="op">(</span><span class="va">surveys</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; # Source:   lazy query [?? x 9]</span>
-<span class="co">#&gt; # Database: sqlite 3.37.0</span>
-<span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span>
-<span class="co">#&gt;    record_id month   day  year plot_id species_id sex   hindfoot_length weight</span>
-<span class="co">#&gt;        &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;int&gt;  &lt;int&gt;</span>
-<span class="co">#&gt;  1         1     7    16  1977       2 NL         M                  32     NA</span>
-<span class="co">#&gt;  2         2     7    16  1977       3 NL         M                  33     NA</span>
-<span class="co">#&gt;  3         3     7    16  1977       2 DM         F                  37     NA</span>
-<span class="co">#&gt;  4         4     7    16  1977       7 DM         M                  36     NA</span>
-<span class="co">#&gt;  5         5     7    16  1977       3 DM         M                  35     NA</span>
-<span class="co">#&gt;  6         6     7    16  1977       1 PF         M                  14     NA</span>
-<span class="co">#&gt;  7         7     7    16  1977       2 PE         F                  NA     NA</span>
-<span class="co">#&gt;  8         8     7    16  1977       1 DM         M                  37     NA</span>
-<span class="co">#&gt;  9         9     7    16  1977       1 DM         F                  34     NA</span>
-<span class="co">#&gt; 10        10     7    16  1977       6 PF         F                  20     NA</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; # Source:   lazy query [?? x 9]</span></span>
+<span><span class="co">#&gt; # Database: sqlite 3.37.0</span></span>
+<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<span><span class="co">#&gt;    record_id month   day  year plot_id species_id sex   hindfoot_length weight</span></span>
+<span><span class="co">#&gt;        &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;int&gt;  &lt;int&gt;</span></span>
+<span><span class="co">#&gt;  1         1     7    16  1977       2 NL         M                  32     NA</span></span>
+<span><span class="co">#&gt;  2         2     7    16  1977       3 NL         M                  33     NA</span></span>
+<span><span class="co">#&gt;  3         3     7    16  1977       2 DM         F                  37     NA</span></span>
+<span><span class="co">#&gt;  4         4     7    16  1977       7 DM         M                  36     NA</span></span>
+<span><span class="co">#&gt;  5         5     7    16  1977       3 DM         M                  35     NA</span></span>
+<span><span class="co">#&gt;  6         6     7    16  1977       1 PF         M                  14     NA</span></span>
+<span><span class="co">#&gt;  7         7     7    16  1977       2 PE         F                  NA     NA</span></span>
+<span><span class="co">#&gt;  8         8     7    16  1977       1 DM         M                  37     NA</span></span>
+<span><span class="co">#&gt;  9         9     7    16  1977       1 DM         F                  34     NA</span></span>
+<span><span class="co">#&gt; 10        10     7    16  1977       6 PF         F                  20     NA</span></span></code></pre>
 </div>
 <p>This output of the <code>head</code> command looks just like a regular <code>data.frame</code>: The table has 9 columns and the <code>head()</code> command shows us the first 10 rows. Note that the columns <code>plot_type</code>, <code>taxa</code>, <code>genus</code>, and <code>species</code> are missing. These are now located in the tables <code>plots</code> and <code>species</code> which we will join together in a moment.</p>
 <p>However, some functions don’t work quite as expected. For instance, let’s check how many rows there are in total using <code>nrow()</code>:</p>
@@ -381,12 +389,12 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">nrow</span><span class="op">(</span><span class="va">surveys</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">nrow</span><span class="op">(</span><span class="va">surveys</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] NA</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] NA</span></span></code></pre>
 </div>
 <p>That’s strange - R doesn’t know how many rows the <code>surveys</code> table contains - it returns <code>NA</code> instead. You might have already noticed that the first line of the <code>head()</code> output included <code>??</code> indicating that the number of rows wasn’t known.</p>
 <p>The reason for this behavior highlights a key difference between using <strong><code>dplyr</code></strong> on datasets in memory (e.g. loaded into your R session via <code>read_csv()</code>) and those provided by a database. To understand it, we take a closer look at how <strong><code>dplyr</code></strong> communicates with our SQLite database.</p>
@@ -411,7 +419,7 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">show_query</span><span class="op">(</span><span class="fu">head</span><span class="op">(</span><span class="va">surveys</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">show_query</span><span class="op">(</span><span class="fu">head</span><span class="op">(</span><span class="va">surveys</span>, n <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <p>The output shows the actual SQL query sent to the database; it matches our manually constructed <code>SELECT</code> statement above.</p>
 <p>Instead of having to formulate the SQL query ourselves - and having to mentally switch back and forth between R and SQL syntax - we can delegate this translation to <strong><code>dplyr</code></strong>. (You don’t even need to know SQL to interact with a database via <strong><code>dplyr</code></strong>!)</p>
@@ -426,34 +434,34 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">surveys</span> <span class="op">%&gt;%</span>
-  <span class="fu">filter</span><span class="op">(</span><span class="va">weight</span> <span class="op">&lt;</span> <span class="fl">5</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">select</span><span class="op">(</span><span class="va">species_id</span>, <span class="va">sex</span>, <span class="va">weight</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">surveys</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">filter</span><span class="op">(</span><span class="va">weight</span> <span class="op">&lt;</span> <span class="fl">5</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">species_id</span>, <span class="va">sex</span>, <span class="va">weight</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; # Source:   lazy query [?? x 3]</span>
-<span class="co">#&gt; # Database: sqlite 3.37.0</span>
-<span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span>
-<span class="co">#&gt;    species_id sex   weight</span>
-<span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;  &lt;int&gt;</span>
-<span class="co">#&gt;  1 PF         M          4</span>
-<span class="co">#&gt;  2 PF         F          4</span>
-<span class="co">#&gt;  3 PF         &lt;NA&gt;       4</span>
-<span class="co">#&gt;  4 PF         F          4</span>
-<span class="co">#&gt;  5 PF         F          4</span>
-<span class="co">#&gt;  6 RM         M          4</span>
-<span class="co">#&gt;  7 RM         F          4</span>
-<span class="co">#&gt;  8 RM         M          4</span>
-<span class="co">#&gt;  9 RM         M          4</span>
-<span class="co">#&gt; 10 RM         M          4</span>
-<span class="co">#&gt; # … with more rows</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; # Source:   lazy query [?? x 3]</span></span>
+<span><span class="co">#&gt; # Database: sqlite 3.37.0</span></span>
+<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<span><span class="co">#&gt;    species_id sex   weight</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;  &lt;int&gt;</span></span>
+<span><span class="co">#&gt;  1 PF         M          4</span></span>
+<span><span class="co">#&gt;  2 PF         F          4</span></span>
+<span><span class="co">#&gt;  3 PF         &lt;NA&gt;       4</span></span>
+<span><span class="co">#&gt;  4 PF         F          4</span></span>
+<span><span class="co">#&gt;  5 PF         F          4</span></span>
+<span><span class="co">#&gt;  6 RM         M          4</span></span>
+<span><span class="co">#&gt;  7 RM         F          4</span></span>
+<span><span class="co">#&gt;  8 RM         M          4</span></span>
+<span><span class="co">#&gt;  9 RM         M          4</span></span>
+<span><span class="co">#&gt; 10 RM         M          4</span></span>
+<span><span class="co">#&gt; # … with more rows</span></span></code></pre>
 </div>
 <p>Executing this command will return a table with 10 rows and the requested <code>species_id</code>, <code>sex</code> and <code>weight</code> columns. Great!</p>
 <p>… but wait, why are there only 10 rows?</p>
 <p>The last line:</p>
-<pre><code><span class="co"># ... with more rows</span></code></pre>
+<pre><code><span><span class="co"># ... with more rows</span></span></code></pre>
 <p>indicates that there are more results that fit our filtering criterion. Why was R lazy and only retrieved 10 of them?</p>
 </section><section id="laziness"><h2 class="section-heading">Laziness</h2>
 <hr class="half-width"><p>Hadley Wickham, the author of <strong><code>dplyr</code></strong> <a href="https://cran.r-project.org/web/packages/dbplyr/vignettes/dbplyr.html" class="external-link">explains</a>:</p>
@@ -468,32 +476,32 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">data_subset</span> <span class="op">&lt;-</span> <span class="va">surveys</span> <span class="op">%&gt;%</span>
-  <span class="fu">filter</span><span class="op">(</span><span class="va">weight</span> <span class="op">&lt;</span> <span class="fl">5</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">select</span><span class="op">(</span><span class="va">species_id</span>, <span class="va">sex</span>, <span class="va">weight</span><span class="op">)</span>
-
-<span class="va">data_subset</span> <span class="op">%&gt;%</span>
-  <span class="fu">select</span><span class="op">(</span><span class="op">-</span><span class="va">sex</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">data_subset</span> <span class="op">&lt;-</span> <span class="va">surveys</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">filter</span><span class="op">(</span><span class="va">weight</span> <span class="op">&lt;</span> <span class="fl">5</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">species_id</span>, <span class="va">sex</span>, <span class="va">weight</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">data_subset</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="op">-</span><span class="va">sex</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; # Source:   lazy query [?? x 2]</span>
-<span class="co">#&gt; # Database: sqlite 3.37.0</span>
-<span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span>
-<span class="co">#&gt;    species_id weight</span>
-<span class="co">#&gt;    &lt;chr&gt;       &lt;int&gt;</span>
-<span class="co">#&gt;  1 PF              4</span>
-<span class="co">#&gt;  2 PF              4</span>
-<span class="co">#&gt;  3 PF              4</span>
-<span class="co">#&gt;  4 PF              4</span>
-<span class="co">#&gt;  5 PF              4</span>
-<span class="co">#&gt;  6 RM              4</span>
-<span class="co">#&gt;  7 RM              4</span>
-<span class="co">#&gt;  8 RM              4</span>
-<span class="co">#&gt;  9 RM              4</span>
-<span class="co">#&gt; 10 RM              4</span>
-<span class="co">#&gt; # … with more rows</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; # Source:   lazy query [?? x 2]</span></span>
+<span><span class="co">#&gt; # Database: sqlite 3.37.0</span></span>
+<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<span><span class="co">#&gt;    species_id weight</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;       &lt;int&gt;</span></span>
+<span><span class="co">#&gt;  1 PF              4</span></span>
+<span><span class="co">#&gt;  2 PF              4</span></span>
+<span><span class="co">#&gt;  3 PF              4</span></span>
+<span><span class="co">#&gt;  4 PF              4</span></span>
+<span><span class="co">#&gt;  5 PF              4</span></span>
+<span><span class="co">#&gt;  6 RM              4</span></span>
+<span><span class="co">#&gt;  7 RM              4</span></span>
+<span><span class="co">#&gt;  8 RM              4</span></span>
+<span><span class="co">#&gt;  9 RM              4</span></span>
+<span><span class="co">#&gt; 10 RM              4</span></span>
+<span><span class="co">#&gt; # … with more rows</span></span></code></pre>
 </div>
 <p>Just like the first <code>select(species_id, sex, weight)</code> call, the <code>select(-sex)</code> command is not executed by R. It is sent to the database instead. Only the <em>final</em> result is retrieved and displayed to you.</p>
 <p>Of course, we could always add on more steps, e.g., we could filter by <code>species_id</code> or minimum <code>weight</code>. That’s why R doesn’t retrieve the full set of results - instead it only retrieves the first 10 results from the database by default. (After all, you might want to add an additional step and get the database to do more work…)</p>
@@ -502,10 +510,10 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">data_subset</span> <span class="op">&lt;-</span> <span class="va">surveys</span> <span class="op">%&gt;%</span>
-  <span class="fu">filter</span><span class="op">(</span><span class="va">weight</span> <span class="op">&lt;</span> <span class="fl">5</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">select</span><span class="op">(</span><span class="va">species_id</span>, <span class="va">sex</span>, <span class="va">weight</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">collect</span><span class="op">(</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">data_subset</span> <span class="op">&lt;-</span> <span class="va">surveys</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">filter</span><span class="op">(</span><span class="va">weight</span> <span class="op">&lt;</span> <span class="fl">5</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">species_id</span>, <span class="va">sex</span>, <span class="va">weight</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">collect</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Now we have all 17 rows that match our query in a <code>data.frame</code> and can continue to work with them exclusively in R, without communicating with the database.</p>
 </section><section id="complex-database-queries"><h2 class="section-heading">Complex database queries</h2>
@@ -516,55 +524,55 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">plots</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="st">"plots"</span><span class="op">)</span>
-<span class="va">plots</span></code></pre>
+<code class="sourceCode R"><span><span class="va">plots</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="st">"plots"</span><span class="op">)</span></span>
+<span><span class="va">plots</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; # Source:   table&lt;plots&gt; [?? x 2]</span>
-<span class="co">#&gt; # Database: sqlite 3.37.0</span>
-<span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span>
-<span class="co">#&gt;    plot_id plot_type                </span>
-<span class="co">#&gt;      &lt;int&gt; &lt;chr&gt;                    </span>
-<span class="co">#&gt;  1       1 Spectab exclosure        </span>
-<span class="co">#&gt;  2       2 Control                  </span>
-<span class="co">#&gt;  3       3 Long-term Krat Exclosure </span>
-<span class="co">#&gt;  4       4 Control                  </span>
-<span class="co">#&gt;  5       5 Rodent Exclosure         </span>
-<span class="co">#&gt;  6       6 Short-term Krat Exclosure</span>
-<span class="co">#&gt;  7       7 Rodent Exclosure         </span>
-<span class="co">#&gt;  8       8 Control                  </span>
-<span class="co">#&gt;  9       9 Spectab exclosure        </span>
-<span class="co">#&gt; 10      10 Rodent Exclosure         </span>
-<span class="co">#&gt; # … with more rows</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; # Source:   table&lt;plots&gt; [?? x 2]</span></span>
+<span><span class="co">#&gt; # Database: sqlite 3.37.0</span></span>
+<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<span><span class="co">#&gt;    plot_id plot_type                </span></span>
+<span><span class="co">#&gt;      &lt;int&gt; &lt;chr&gt;                    </span></span>
+<span><span class="co">#&gt;  1       1 Spectab exclosure        </span></span>
+<span><span class="co">#&gt;  2       2 Control                  </span></span>
+<span><span class="co">#&gt;  3       3 Long-term Krat Exclosure </span></span>
+<span><span class="co">#&gt;  4       4 Control                  </span></span>
+<span><span class="co">#&gt;  5       5 Rodent Exclosure         </span></span>
+<span><span class="co">#&gt;  6       6 Short-term Krat Exclosure</span></span>
+<span><span class="co">#&gt;  7       7 Rodent Exclosure         </span></span>
+<span><span class="co">#&gt;  8       8 Control                  </span></span>
+<span><span class="co">#&gt;  9       9 Spectab exclosure        </span></span>
+<span><span class="co">#&gt; 10      10 Rodent Exclosure         </span></span>
+<span><span class="co">#&gt; # … with more rows</span></span></code></pre>
 </div>
 <p>The <code>plot_id</code> column also features in the <code>surveys</code> table:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">surveys</span></code></pre>
+<code class="sourceCode R"><span><span class="va">surveys</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; # Source:   table&lt;surveys&gt; [?? x 9]</span>
-<span class="co">#&gt; # Database: sqlite 3.37.0</span>
-<span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span>
-<span class="co">#&gt;    record_id month   day  year plot_id species_id sex   hindfoot_length weight</span>
-<span class="co">#&gt;        &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;int&gt;  &lt;int&gt;</span>
-<span class="co">#&gt;  1         1     7    16  1977       2 NL         M                  32     NA</span>
-<span class="co">#&gt;  2         2     7    16  1977       3 NL         M                  33     NA</span>
-<span class="co">#&gt;  3         3     7    16  1977       2 DM         F                  37     NA</span>
-<span class="co">#&gt;  4         4     7    16  1977       7 DM         M                  36     NA</span>
-<span class="co">#&gt;  5         5     7    16  1977       3 DM         M                  35     NA</span>
-<span class="co">#&gt;  6         6     7    16  1977       1 PF         M                  14     NA</span>
-<span class="co">#&gt;  7         7     7    16  1977       2 PE         F                  NA     NA</span>
-<span class="co">#&gt;  8         8     7    16  1977       1 DM         M                  37     NA</span>
-<span class="co">#&gt;  9         9     7    16  1977       1 DM         F                  34     NA</span>
-<span class="co">#&gt; 10        10     7    16  1977       6 PF         F                  20     NA</span>
-<span class="co">#&gt; # … with more rows</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; # Source:   table&lt;surveys&gt; [?? x 9]</span></span>
+<span><span class="co">#&gt; # Database: sqlite 3.37.0</span></span>
+<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<span><span class="co">#&gt;    record_id month   day  year plot_id species_id sex   hindfoot_length weight</span></span>
+<span><span class="co">#&gt;        &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;int&gt;  &lt;int&gt;</span></span>
+<span><span class="co">#&gt;  1         1     7    16  1977       2 NL         M                  32     NA</span></span>
+<span><span class="co">#&gt;  2         2     7    16  1977       3 NL         M                  33     NA</span></span>
+<span><span class="co">#&gt;  3         3     7    16  1977       2 DM         F                  37     NA</span></span>
+<span><span class="co">#&gt;  4         4     7    16  1977       7 DM         M                  36     NA</span></span>
+<span><span class="co">#&gt;  5         5     7    16  1977       3 DM         M                  35     NA</span></span>
+<span><span class="co">#&gt;  6         6     7    16  1977       1 PF         M                  14     NA</span></span>
+<span><span class="co">#&gt;  7         7     7    16  1977       2 PE         F                  NA     NA</span></span>
+<span><span class="co">#&gt;  8         8     7    16  1977       1 DM         M                  37     NA</span></span>
+<span><span class="co">#&gt;  9         9     7    16  1977       1 DM         F                  34     NA</span></span>
+<span><span class="co">#&gt; 10        10     7    16  1977       6 PF         F                  20     NA</span></span>
+<span><span class="co">#&gt; # … with more rows</span></span></code></pre>
 </div>
 <p>Because <code>plot_id</code> is listed in both tables, we can use it to look up matching records, and join the two tables.</p>
 <p>If we have two tables named x and y with a common column called “ID”, we can join them using ‘join’ functions, two of which are described and illustrated below.</p>
@@ -577,34 +585,34 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">plots</span> <span class="op">%&gt;%</span>
-  <span class="fu">filter</span><span class="op">(</span><span class="va">plot_id</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">inner_join</span><span class="op">(</span><span class="va">surveys</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">collect</span><span class="op">(</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">plots</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">filter</span><span class="op">(</span><span class="va">plot_id</span> <span class="op">==</span> <span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">inner_join</span><span class="op">(</span><span class="va">surveys</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">collect</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; Joining, by = "plot_id"</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; Joining, by = "plot_id"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; # A tibble: 1,995 × 10</span>
-<span class="co">#&gt;    plot_id plot_type         record_id month   day  year species_id sex  </span>
-<span class="co">#&gt;      &lt;int&gt; &lt;chr&gt;                 &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;</span>
-<span class="co">#&gt;  1       1 Spectab exclosure         6     7    16  1977 PF         M    </span>
-<span class="co">#&gt;  2       1 Spectab exclosure         8     7    16  1977 DM         M    </span>
-<span class="co">#&gt;  3       1 Spectab exclosure         9     7    16  1977 DM         F    </span>
-<span class="co">#&gt;  4       1 Spectab exclosure        78     8    19  1977 PF         M    </span>
-<span class="co">#&gt;  5       1 Spectab exclosure        80     8    19  1977 DS         M    </span>
-<span class="co">#&gt;  6       1 Spectab exclosure       218     9    13  1977 PF         M    </span>
-<span class="co">#&gt;  7       1 Spectab exclosure       222     9    13  1977 DS         M    </span>
-<span class="co">#&gt;  8       1 Spectab exclosure       239     9    13  1977 DS         M    </span>
-<span class="co">#&gt;  9       1 Spectab exclosure       263    10    16  1977 DM         M    </span>
-<span class="co">#&gt; 10       1 Spectab exclosure       270    10    16  1977 DM         F    </span>
-<span class="co">#&gt; # … with 1,985 more rows, and 2 more variables: hindfoot_length &lt;int&gt;,</span>
-<span class="co">#&gt; #   weight &lt;int&gt;</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; # A tibble: 1,995 × 10</span></span>
+<span><span class="co">#&gt;    plot_id plot_type         record_id month   day  year species_id sex  </span></span>
+<span><span class="co">#&gt;      &lt;int&gt; &lt;chr&gt;                 &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;</span></span>
+<span><span class="co">#&gt;  1       1 Spectab exclosure         6     7    16  1977 PF         M    </span></span>
+<span><span class="co">#&gt;  2       1 Spectab exclosure         8     7    16  1977 DM         M    </span></span>
+<span><span class="co">#&gt;  3       1 Spectab exclosure         9     7    16  1977 DM         F    </span></span>
+<span><span class="co">#&gt;  4       1 Spectab exclosure        78     8    19  1977 PF         M    </span></span>
+<span><span class="co">#&gt;  5       1 Spectab exclosure        80     8    19  1977 DS         M    </span></span>
+<span><span class="co">#&gt;  6       1 Spectab exclosure       218     9    13  1977 PF         M    </span></span>
+<span><span class="co">#&gt;  7       1 Spectab exclosure       222     9    13  1977 DS         M    </span></span>
+<span><span class="co">#&gt;  8       1 Spectab exclosure       239     9    13  1977 DS         M    </span></span>
+<span><span class="co">#&gt;  9       1 Spectab exclosure       263    10    16  1977 DM         M    </span></span>
+<span><span class="co">#&gt; 10       1 Spectab exclosure       270    10    16  1977 DM         F    </span></span>
+<span><span class="co">#&gt; # … with 1,985 more rows, and 2 more variables: hindfoot_length &lt;int&gt;,</span></span>
+<span><span class="co">#&gt; #   weight &lt;int&gt;</span></span></code></pre>
 </div>
 <p><strong>Important Note:</strong> Without the <code>collect()</code> statement, only the first 10 matching rows are returned. By adding <code>collect()</code>, the full set of 1,985 is retrieved.</p>
 <div id="challenge1" class="callout challenge">
@@ -635,41 +643,41 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## with dplyr syntax</span>
-<span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="st">"species"</span><span class="op">)</span>
-
-<span class="fu">left_join</span><span class="op">(</span><span class="va">surveys</span>, <span class="va">species</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">filter</span><span class="op">(</span><span class="va">taxa</span> <span class="op">==</span> <span class="st">"Rodent"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">taxa</span>, <span class="va">year</span>, <span class="va">plot_id</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">tally</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">collect</span><span class="op">(</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="co">## with dplyr syntax</span></span>
+<span><span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="st">"species"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">left_join</span><span class="op">(</span><span class="va">surveys</span>, <span class="va">species</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">filter</span><span class="op">(</span><span class="va">taxa</span> <span class="op">==</span> <span class="st">"Rodent"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">taxa</span>, <span class="va">year</span>, <span class="va">plot_id</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">tally</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">collect</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; Joining, by = "species_id"</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; Joining, by = "species_id"</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## with SQL syntax</span>
-<span class="va">query</span> <span class="op">&lt;-</span> <span class="fu">paste</span><span class="op">(</span><span class="st">"
-SELECT a.year, b.taxa,count(*) as count
-FROM surveys a
-JOIN species b
-ON a.species_id = b.species_id
-AND b.taxa = 'Rodent'
-GROUP BY b.taxa, a.year, a.plot_id"</span>,
-sep <span class="op">=</span> <span class="st">""</span> <span class="op">)</span>
-
-<span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="fu">sql</span><span class="op">(</span><span class="va">query</span><span class="op">)</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="co">## with SQL syntax</span></span>
+<span><span class="va">query</span> <span class="op">&lt;-</span> <span class="fu">paste</span><span class="op">(</span><span class="st">"</span></span>
+<span><span class="st">SELECT a.year, b.taxa,count(*) as count</span></span>
+<span><span class="st">FROM surveys a</span></span>
+<span><span class="st">JOIN species b</span></span>
+<span><span class="st">ON a.species_id = b.species_id</span></span>
+<span><span class="st">AND b.taxa = 'Rodent'</span></span>
+<span><span class="st">GROUP BY b.taxa, a.year, a.plot_id"</span>,</span>
+<span>sep <span class="op">=</span> <span class="st">""</span> <span class="op">)</span></span>
+<span></span>
+<span><span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="fu">sql</span><span class="op">(</span><span class="va">query</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -694,19 +702,19 @@ sep <span class="op">=</span> <span class="st">""</span> <span class="op">)</spa
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="st">"species"</span><span class="op">)</span>
-<span class="va">genus_counts</span> <span class="op">&lt;-</span> <span class="fu">left_join</span><span class="op">(</span><span class="va">surveys</span>, <span class="va">plots</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">left_join</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">filter</span><span class="op">(</span><span class="va">taxa</span> <span class="op">==</span> <span class="st">"Rodent"</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">group_by</span><span class="op">(</span><span class="va">plot_type</span>, <span class="va">genus</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">tally</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
-  <span class="fu">collect</span><span class="op">(</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="st">"species"</span><span class="op">)</span></span>
+<span><span class="va">genus_counts</span> <span class="op">&lt;-</span> <span class="fu">left_join</span><span class="op">(</span><span class="va">surveys</span>, <span class="va">plots</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">filter</span><span class="op">(</span><span class="va">taxa</span> <span class="op">==</span> <span class="st">"Rodent"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">plot_type</span>, <span class="va">genus</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">tally</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">collect</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -717,24 +725,24 @@ sep <span class="op">=</span> <span class="st">""</span> <span class="op">)</spa
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="st">"species"</span><span class="op">)</span>
-<span class="va">unique_genera</span> <span class="op">&lt;-</span> <span class="fu">left_join</span><span class="op">(</span><span class="va">surveys</span>, <span class="va">plots</span><span class="op">)</span> <span class="op">%&gt;%</span>
-    <span class="fu">left_join</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">%&gt;%</span>
-    <span class="fu">group_by</span><span class="op">(</span><span class="va">plot_type</span><span class="op">)</span> <span class="op">%&gt;%</span>
-    <span class="fu">summarize</span><span class="op">(</span>
-        n_genera <span class="op">=</span> <span class="fu">n_distinct</span><span class="op">(</span><span class="va">genus</span><span class="op">)</span>
-    <span class="op">)</span> <span class="op">%&gt;%</span>
-    <span class="fu">collect</span><span class="op">(</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">tbl</span><span class="op">(</span><span class="va">mammals</span>, <span class="st">"species"</span><span class="op">)</span></span>
+<span><span class="va">unique_genera</span> <span class="op">&lt;-</span> <span class="fu">left_join</span><span class="op">(</span><span class="va">surveys</span>, <span class="va">plots</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">left_join</span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">plot_type</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">summarize</span><span class="op">(</span></span>
+<span>        n_genera <span class="op">=</span> <span class="fu">n_distinct</span><span class="op">(</span><span class="va">genus</span><span class="op">)</span></span>
+<span>    <span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">collect</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; Joining, by = "plot_id"</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; Joining, by = "plot_id"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; Joining, by = "species_id"</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; Joining, by = "species_id"</span></span></code></pre>
 </div>
 <p><code>n_distinct</code>, like the other <strong><code>dplyr</code></strong> functions we have used in this lesson, works not only on database connections but also on regular data frames.</p>
 </section><section id="creating-a-new-sqlite-database"><h2 class="section-heading">Creating a new SQLite database</h2>
@@ -743,85 +751,85 @@ sep <span class="op">=</span> <span class="st">""</span> <span class="op">)</spa
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">download.file</span><span class="op">(</span><span class="st">"https://ndownloader.figshare.com/files/3299483"</span>,
-              <span class="st">"data_raw/species.csv"</span><span class="op">)</span>
-<span class="fu">download.file</span><span class="op">(</span><span class="st">"https://ndownloader.figshare.com/files/10717177"</span>,
-              <span class="st">"data_raw/surveys.csv"</span><span class="op">)</span>
-<span class="fu">download.file</span><span class="op">(</span><span class="st">"https://ndownloader.figshare.com/files/3299474"</span>,
-              <span class="st">"data_raw/plots.csv"</span><span class="op">)</span>
-<span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span>
-<span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data_raw/species.csv"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">download.file</span><span class="op">(</span><span class="st">"https://ndownloader.figshare.com/files/3299483"</span>,</span>
+<span>              <span class="st">"data_raw/species.csv"</span><span class="op">)</span></span>
+<span><span class="fu">download.file</span><span class="op">(</span><span class="st">"https://ndownloader.figshare.com/files/10717177"</span>,</span>
+<span>              <span class="st">"data_raw/surveys.csv"</span><span class="op">)</span></span>
+<span><span class="fu">download.file</span><span class="op">(</span><span class="st">"https://ndownloader.figshare.com/files/3299474"</span>,</span>
+<span>              <span class="st">"data_raw/plots.csv"</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span>
+<span><span class="va">species</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data_raw/species.csv"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; Rows: 54 Columns: 4</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; Rows: 54 Columns: 4</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span>
-<span class="co">#&gt; Delimiter: ","</span>
-<span class="co">#&gt; chr (4): species_id, genus, species, taxa</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span></span>
+<span><span class="co">#&gt; Delimiter: ","</span></span>
+<span><span class="co">#&gt; chr (4): species_id, genus, species, taxa</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; </span>
-<span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span>
-<span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span></span>
+<span><span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">surveys</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data_raw/surveys.csv"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">surveys</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data_raw/surveys.csv"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; Rows: 35549 Columns: 9</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; Rows: 35549 Columns: 9</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span>
-<span class="co">#&gt; Delimiter: ","</span>
-<span class="co">#&gt; chr (2): species_id, sex</span>
-<span class="co">#&gt; dbl (7): record_id, month, day, year, plot_id, hindfoot_length, weight</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span></span>
+<span><span class="co">#&gt; Delimiter: ","</span></span>
+<span><span class="co">#&gt; chr (2): species_id, sex</span></span>
+<span><span class="co">#&gt; dbl (7): record_id, month, day, year, plot_id, hindfoot_length, weight</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; </span>
-<span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span>
-<span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span></span>
+<span><span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb46">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">plots</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data_raw/plots.csv"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">plots</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data_raw/plots.csv"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; Rows: 24 Columns: 2</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; Rows: 24 Columns: 2</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span>
-<span class="co">#&gt; Delimiter: ","</span>
-<span class="co">#&gt; chr (1): plot_type</span>
-<span class="co">#&gt; dbl (1): plot_id</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span></span>
+<span><span class="co">#&gt; Delimiter: ","</span></span>
+<span><span class="co">#&gt; chr (1): plot_type</span></span>
+<span><span class="co">#&gt; dbl (1): plot_id</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; </span>
-<span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span>
-<span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span></span>
+<span><span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span></span></code></pre>
 </div>
 <p>Also, you can create new SQLite database with <strong><code>dplyr</code></strong> by adding an argument to the same command we used above to open an existing <code>.sqlite</code> file. The <code>create = TRUE</code> argument instructs R to create a new, empty database instead.</p>
 <p><strong>Caution:</strong> When <code>create = TRUE</code> is added, any existing database at the same location is overwritten <em>without warning</em>.</p>
@@ -829,38 +837,38 @@ sep <span class="op">=</span> <span class="st">""</span> <span class="op">)</spa
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_db_file</span> <span class="op">&lt;-</span> <span class="st">"data/portal-database-output.sqlite"</span>
-<span class="va">my_db</span> <span class="op">&lt;-</span> <span class="fu">src_sqlite</span><span class="op">(</span><span class="va">my_db_file</span>, create <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">my_db_file</span> <span class="op">&lt;-</span> <span class="st">"data/portal-database-output.sqlite"</span></span>
+<span><span class="va">my_db</span> <span class="op">&lt;-</span> <span class="fu">src_sqlite</span><span class="op">(</span><span class="va">my_db_file</span>, create <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="warning" tabindex="0"><code><span class="co">#&gt; Warning: `src_sqlite()` was deprecated in dplyr 1.0.0.</span>
-<span class="co">#&gt; Please use `tbl()` directly with a database connection</span>
-<span class="co">#&gt; This warning is displayed once every 8 hours.</span>
-<span class="co">#&gt; Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</span></code></pre>
+<pre class="warning" tabindex="0"><code><span><span class="co">#&gt; Warning: `src_sqlite()` was deprecated in dplyr 1.0.0.</span></span>
+<span><span class="co">#&gt; Please use `tbl()` directly with a database connection</span></span>
+<span><span class="co">#&gt; This warning is displayed once every 8 hours.</span></span>
+<span><span class="co">#&gt; Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.</span></span></code></pre>
 </div>
 <p>Currently, our new database is empty, it doesn’t contain any tables:</p>
 <div class="codewrapper sourceCode" id="cb52">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_db</span></code></pre>
+<code class="sourceCode R"><span><span class="va">my_db</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; src:  sqlite 3.37.0 [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data/portal-database-output.sqlite]</span>
-<span class="co">#&gt; tbls:</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; src:  sqlite 3.37.0 [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data/portal-database-output.sqlite]</span></span>
+<span><span class="co">#&gt; tbls:</span></span></code></pre>
 </div>
 <p>To add tables, we copy the existing data.frames into the database one by one:</p>
 <div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">copy_to</span><span class="op">(</span><span class="va">my_db</span>, <span class="va">surveys</span><span class="op">)</span>
-<span class="fu">copy_to</span><span class="op">(</span><span class="va">my_db</span>, <span class="va">plots</span><span class="op">)</span>
-<span class="va">my_db</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">copy_to</span><span class="op">(</span><span class="va">my_db</span>, <span class="va">surveys</span><span class="op">)</span></span>
+<span><span class="fu">copy_to</span><span class="op">(</span><span class="va">my_db</span>, <span class="va">plots</span><span class="op">)</span></span>
+<span><span class="va">my_db</span></span></code></pre>
 </div>
 <p>If you check the location of our database you’ll see that data is automatically being written to disk. R and <strong><code>dplyr</code></strong> not only provide ways to query existing databases, they also provide functionality to create your own databases from flat files!</p>
 <div id="discussion1" class="callout discussion">
@@ -903,9 +911,9 @@ Page built on: 📆 2022-06-07 ‒ 🕢 02:04:35
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.0" class="external-link">sandpaper (0.6.0)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.2" class="external-link">sandpaper (0.6.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.0" class="external-link">varnish (0.2.0)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.1" class="external-link">varnish (0.2.1)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -927,7 +935,7 @@ Page built on: 📆 2022-06-07 ‒ 🕢 02:04:35
   "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/05-r-and-databases.html",
   "dateCreated": "2022-05-17",
   "dateModified": "2022-06-07",
-  "datePublished": "2022-06-21"
+  "datePublished": "2022-06-28"
 }
 
   </script><script>

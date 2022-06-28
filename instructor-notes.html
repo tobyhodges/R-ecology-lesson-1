@@ -86,7 +86,6 @@
             More <i data-feather="chevron-down"></i>
           </button>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<li><a class="dropdown-item" href="profiles.html">Learner Profiles</a></li>
 <li><a class="dropdown-item" href="reference.html">Learners' Reference</a></li>
           </ul>
 </li>
@@ -257,15 +256,23 @@
                 <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlush12">
                   <div class="accordion-body">
                     <ul>
-<li><a href="profiles.html">Learner Profiles</a></li>
-<li><a href="reference.html">Learners' Reference</a></li>
+<li>
+                        <a href="key-points.html">Key Points</a>
+                      </li>
+                      <li>
+                        <a href="reference.html#glossary">Glossary</a>
+                      </li>
+                      <li>
+                        <a href="profiles.html">Learner Profiles</a>
+                      </li>
+                      <li><a href="reference.html">Learners' Reference</a></li>
                     </ul>
 </div>
                 </div>
               </div>
             </div>
-
-            <a href="aio.html">See all in one page</a>
+            <hr class="half-width resources">
+<a href="aio.html">See all in one page</a>
 
             <hr class="d-none d-sm-block d-md-none">
 <div class="d-grid gap-1">
@@ -316,7 +323,7 @@
 <hr class="half-width">
 <p>Save yourself some aggrevation, and have everyone check and see if they can install all these packages before you start the first day. See the “Preparations” section on the homepage of the course website for package installation instructions.</p>
 <p>Sometimes learners are unable to install the <strong><code>tidyverse</code></strong> package. In that case, they can try to install the individual packages that are actually needed:</p>
-<pre><code><span class="fu">install.packages</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"readr"</span>, <span class="st">"lubridate"</span>, <span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>, <span class="st">"ggplot2"</span>, <span class="st">"dbplyr"</span><span class="op">)</span><span class="op">)</span></code></pre>
+<pre><code><span><span class="fu">install.packages</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"readr"</span>, <span class="st">"lubridate"</span>, <span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>, <span class="st">"ggplot2"</span>, <span class="st">"dbplyr"</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </section><section id="narrative"><h2 class="section-heading">Narrative</h2>
 <hr class="half-width">
 <div class="section level3">
@@ -369,8 +376,8 @@
 <li><p>This lesson is a broad overview of ggplot2 and focuses on (1) getting familiar with the layering system of ggplot2, (2) using the argument <code>group</code> in the <code>aes()</code> function, (3) basic customization of the plots.</p></li>
 <li>
 <p>It maybe worthwhile to mention that we can also specify colors by color HEX code (<a href="http://colorbrewer2.org" class="external-link">http://colorbrewer2.org</a>)</p>
-<pre><code><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">surveys_complete</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">weight</span>, y <span class="op">=</span> <span class="va">hindfoot_length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-    <span class="fu">geom_point</span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.1</span>, color <span class="op">=</span> <span class="st">"#FF0000"</span><span class="op">)</span></code></pre>
+<pre><code><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">surveys_complete</span>, mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">weight</span>, y <span class="op">=</span> <span class="va">hindfoot_length</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">geom_point</span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.1</span>, color <span class="op">=</span> <span class="st">"#FF0000"</span><span class="op">)</span></span></code></pre>
 </li>
 </ul>
 </div>
@@ -421,9 +428,9 @@
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.0" class="external-link">sandpaper (0.6.0)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.2" class="external-link">sandpaper (0.6.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.0" class="external-link">varnish (0.2.0)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.1" class="external-link">varnish (0.2.1)</a>.</p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -445,8 +452,8 @@
   "url": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor-notes.html",
   "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor-notes.html",
   "dateCreated": "2022-05-17",
-  "dateModified": "2022-06-21",
-  "datePublished": "2022-06-21"
+  "dateModified": "2022-06-28",
+  "datePublished": "2022-06-28"
 }
 
   </script><script>

@@ -65,7 +65,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="profiles.html">Learner Profiles</a></li><li><a class="dropdown-item" href="reference.html">Learners' Reference</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Learners' Reference</a></li>
           </ul></li>
       </ul></div>
     <form class="d-flex col-md-2 search-form">
@@ -219,13 +219,21 @@
                 </h2>
                 <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlush12">
                   <div class="accordion-body">
-                    <ul><li><a href="profiles.html">Learner Profiles</a></li><li><a href="reference.html">Learners' Reference</a></li>
+                    <ul><li>
+                        <a href="key-points.html">Key Points</a>
+                      </li>
+                      <li>
+                        <a href="reference.html#glossary">Glossary</a>
+                      </li>
+                      <li>
+                        <a href="profiles.html">Learner Profiles</a>
+                      </li>
+                      <li><a href="reference.html">Learners' Reference</a></li>
                     </ul></div>
                 </div>
               </div>
             </div>
-
-            <a href="aio.html">See all in one page</a>
+            <hr class="half-width resources"><a href="aio.html">See all in one page</a>
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
             
@@ -384,48 +392,48 @@ How it should look like at the beginning of this lesson
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">sessionInfo</span><span class="op">(</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">sessionInfo</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; R version 4.2.0 (2022-04-22)</span>
-<span class="co">#&gt; Platform: x86_64-pc-linux-gnu (64-bit)</span>
-<span class="co">#&gt; Running under: Ubuntu 20.04.4 LTS</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Matrix products: default</span>
-<span class="co">#&gt; BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0</span>
-<span class="co">#&gt; LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; locale:</span>
-<span class="co">#&gt;  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       </span>
-<span class="co">#&gt;  [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   </span>
-<span class="co">#&gt;  [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          </span>
-<span class="co">#&gt; [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; attached base packages:</span>
-<span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; other attached packages:</span>
-<span class="co">#&gt;  [1] RSQLite_2.2.9   forcats_0.5.1   stringr_1.4.0   dplyr_1.0.7    </span>
-<span class="co">#&gt;  [5] purrr_0.3.4     readr_2.1.1     tidyr_1.1.4     tibble_3.1.6   </span>
-<span class="co">#&gt;  [9] ggplot2_3.3.5   tidyverse_1.3.1 knitr_1.36     </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; loaded via a namespace (and not attached):</span>
-<span class="co">#&gt;  [1] tidyselect_1.1.1 xfun_0.28        haven_2.4.3      colorspace_2.0-2</span>
-<span class="co">#&gt;  [5] vctrs_0.3.8      generics_0.1.1   blob_1.2.2       utf8_1.2.2      </span>
-<span class="co">#&gt;  [9] rlang_0.4.12     pillar_1.6.4     glue_1.5.1       withr_2.4.3     </span>
-<span class="co">#&gt; [13] DBI_1.1.1        bit64_4.0.5      dbplyr_2.1.1     modelr_0.1.8    </span>
-<span class="co">#&gt; [17] readxl_1.3.1     lifecycle_1.0.1  munsell_0.5.0    gtable_0.3.0    </span>
-<span class="co">#&gt; [21] cellranger_1.1.0 rvest_1.0.2      memoise_2.0.1    evaluate_0.14   </span>
-<span class="co">#&gt; [25] fastmap_1.1.0    tzdb_0.2.0       fansi_0.5.0      highr_0.9       </span>
-<span class="co">#&gt; [29] broom_0.7.10     Rcpp_1.0.7       renv_0.15.5      scales_1.1.1    </span>
-<span class="co">#&gt; [33] backports_1.4.0  cachem_1.0.6     jsonlite_1.7.2   bit_4.0.4       </span>
-<span class="co">#&gt; [37] fs_1.5.1         hms_1.1.1        stringi_1.7.6    grid_4.2.0      </span>
-<span class="co">#&gt; [41] cli_3.1.0        tools_4.2.0      magrittr_2.0.1   crayon_1.4.2    </span>
-<span class="co">#&gt; [45] pkgconfig_2.0.3  ellipsis_0.3.2   xml2_1.3.3       reprex_2.0.1    </span>
-<span class="co">#&gt; [49] lubridate_1.8.0  assertthat_0.2.1 httr_1.4.2       rstudioapi_0.13 </span>
-<span class="co">#&gt; [53] R6_2.5.1         compiler_4.2.0</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; R version 4.2.0 (2022-04-22)</span></span>
+<span><span class="co">#&gt; Platform: x86_64-pc-linux-gnu (64-bit)</span></span>
+<span><span class="co">#&gt; Running under: Ubuntu 20.04.4 LTS</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Matrix products: default</span></span>
+<span><span class="co">#&gt; BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0</span></span>
+<span><span class="co">#&gt; LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; locale:</span></span>
+<span><span class="co">#&gt;  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       </span></span>
+<span><span class="co">#&gt;  [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   </span></span>
+<span><span class="co">#&gt;  [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          </span></span>
+<span><span class="co">#&gt; [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; attached base packages:</span></span>
+<span><span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; other attached packages:</span></span>
+<span><span class="co">#&gt;  [1] RSQLite_2.2.9   forcats_0.5.1   stringr_1.4.0   dplyr_1.0.7    </span></span>
+<span><span class="co">#&gt;  [5] purrr_0.3.4     readr_2.1.1     tidyr_1.1.4     tibble_3.1.6   </span></span>
+<span><span class="co">#&gt;  [9] ggplot2_3.3.5   tidyverse_1.3.1 knitr_1.36     </span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; loaded via a namespace (and not attached):</span></span>
+<span><span class="co">#&gt;  [1] tidyselect_1.1.1 xfun_0.28        haven_2.4.3      colorspace_2.0-2</span></span>
+<span><span class="co">#&gt;  [5] vctrs_0.3.8      generics_0.1.1   blob_1.2.2       utf8_1.2.2      </span></span>
+<span><span class="co">#&gt;  [9] rlang_0.4.12     pillar_1.6.4     glue_1.5.1       withr_2.4.3     </span></span>
+<span><span class="co">#&gt; [13] DBI_1.1.1        bit64_4.0.5      dbplyr_2.1.1     modelr_0.1.8    </span></span>
+<span><span class="co">#&gt; [17] readxl_1.3.1     lifecycle_1.0.1  munsell_0.5.0    gtable_0.3.0    </span></span>
+<span><span class="co">#&gt; [21] cellranger_1.1.0 rvest_1.0.2      memoise_2.0.1    evaluate_0.14   </span></span>
+<span><span class="co">#&gt; [25] fastmap_1.1.0    tzdb_0.2.0       fansi_0.5.0      highr_0.9       </span></span>
+<span><span class="co">#&gt; [29] broom_0.7.10     Rcpp_1.0.7       renv_0.15.5      scales_1.1.1    </span></span>
+<span><span class="co">#&gt; [33] backports_1.4.0  cachem_1.0.6     jsonlite_1.7.2   bit_4.0.4       </span></span>
+<span><span class="co">#&gt; [37] fs_1.5.1         hms_1.1.1        stringi_1.7.6    grid_4.2.0      </span></span>
+<span><span class="co">#&gt; [41] cli_3.1.0        tools_4.2.0      magrittr_2.0.1   crayon_1.4.2    </span></span>
+<span><span class="co">#&gt; [45] pkgconfig_2.0.3  ellipsis_0.3.2   xml2_1.3.3       reprex_2.0.1    </span></span>
+<span><span class="co">#&gt; [49] lubridate_1.8.0  assertthat_0.2.1 httr_1.4.2       rstudioapi_0.13 </span></span>
+<span><span class="co">#&gt; [53] R6_2.5.1         compiler_4.2.0</span></span></code></pre>
 </div>
 </div>
 </section><section id="how-to-learn-more-after-the-workshop"><h2 class="section-heading">How to learn more after the workshop?</h2>
@@ -471,9 +479,9 @@ Page built on: 📆 2022-06-07 ‒ 🕢 02:03:59
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.0" class="external-link">sandpaper (0.6.0)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.2" class="external-link">sandpaper (0.6.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.0" class="external-link">varnish (0.2.0)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.1" class="external-link">varnish (0.2.1)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -495,7 +503,7 @@ Page built on: 📆 2022-06-07 ‒ 🕢 02:03:59
   "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/00-before-we-start.html",
   "dateCreated": "2022-05-17",
   "dateModified": "2022-06-07",
-  "datePublished": "2022-06-21"
+  "datePublished": "2022-06-28"
 }
 
   </script><script>

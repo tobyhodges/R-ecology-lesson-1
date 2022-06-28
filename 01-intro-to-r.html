@@ -65,7 +65,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="profiles.html">Learner Profiles</a></li><li><a class="dropdown-item" href="reference.html">Learners' Reference</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Learners' Reference</a></li>
           </ul></li>
       </ul></div>
     <form class="d-flex col-md-2 search-form">
@@ -215,13 +215,21 @@
                 </h2>
                 <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlush12">
                   <div class="accordion-body">
-                    <ul><li><a href="profiles.html">Learner Profiles</a></li><li><a href="reference.html">Learners' Reference</a></li>
+                    <ul><li>
+                        <a href="key-points.html">Key Points</a>
+                      </li>
+                      <li>
+                        <a href="reference.html#glossary">Glossary</a>
+                      </li>
+                      <li>
+                        <a href="profiles.html">Learner Profiles</a>
+                      </li>
+                      <li><a href="reference.html">Learners' Reference</a></li>
                     </ul></div>
                 </div>
               </div>
             </div>
-
-            <a href="aio.html">See all in one page</a>
+            <hr class="half-width resources"><a href="aio.html">See all in one page</a>
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
             
@@ -258,15 +266,15 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fl">3</span> <span class="op">+</span> <span class="fl">5</span>
-<span class="fl">12</span> <span class="op">/</span> <span class="fl">7</span></code></pre>
+<code class="sourceCode R"><span><span class="fl">3</span> <span class="op">+</span> <span class="fl">5</span></span>
+<span><span class="fl">12</span> <span class="op">/</span> <span class="fl">7</span></span></code></pre>
 </div>
 <p>However, to do useful and interesting things, we need to assign <em>values</em> to <em>objects</em>. To create an object, we need to give it a name followed by the assignment operator <code>&lt;-</code>, and the value we want to give it:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">55</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">55</span></span></code></pre>
 </div>
 <p><code>&lt;-</code> is the assignment operator. It assigns values on the right to objects on the left. So, after executing <code>x &lt;- 3</code>, the value of <code>x</code> is <code>3</code>. For historical reasons, you can also use <code>=</code> for assignments, but not in every context. Because of the <a href="https://blog.revolutionanalytics.com/2008/12/use-equals-or-arrow-for-assignment.html" class="external-link">slight</a> <a href="https://renkun.me/2014/01/28/difference-between-assignment-operators-in-r/" class="external-link">differences</a> in syntax, it is good practice to always use <code>&lt;-</code> for assignments.</p>
 <p>In RStudio, typing <kbd>Alt</kbd> + <kbd>-</kbd> (push <kbd>Alt</kbd> at the same time as the <kbd>-</kbd> key) will write <code>&lt;-</code> in a single keystroke in a PC, while typing <kbd>Option</kbd> + <kbd>-</kbd> (push <kbd>Option</kbd> at the same time as the <kbd>-</kbd> key) does the same in a Mac.</p>
@@ -294,38 +302,38 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">55</span>    <span class="co"># doesn't print anything</span>
-<span class="op">(</span><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">55</span><span class="op">)</span>  <span class="co"># but putting parenthesis around the call prints the value of `weight_kg`</span>
-<span class="va">weight_kg</span>          <span class="co"># and so does typing the name of the object</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">55</span>    <span class="co"># doesn't print anything</span></span>
+<span><span class="op">(</span><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">55</span><span class="op">)</span>  <span class="co"># but putting parenthesis around the call prints the value of `weight_kg`</span></span>
+<span><span class="va">weight_kg</span>          <span class="co"># and so does typing the name of the object</span></span></code></pre>
 </div>
 <p>Now that R has <code>weight_kg</code> in memory, we can do arithmetic with it. For instance, we may want to convert this weight into pounds (weight in pounds is 2.2 times the weight in kg):</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fl">2.2</span> <span class="op">*</span> <span class="va">weight_kg</span></code></pre>
+<code class="sourceCode R"><span><span class="fl">2.2</span> <span class="op">*</span> <span class="va">weight_kg</span></span></code></pre>
 </div>
 <p>We can also change an object’s value by assigning it a new one:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">57.5</span>
-<span class="fl">2.2</span> <span class="op">*</span> <span class="va">weight_kg</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">57.5</span></span>
+<span><span class="fl">2.2</span> <span class="op">*</span> <span class="va">weight_kg</span></span></code></pre>
 </div>
 <p>This means that assigning a value to one object does not change the values of other objects. For example, let’s store the animal’s weight in pounds in a new object, <code>weight_lb</code>:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_lb</span> <span class="op">&lt;-</span> <span class="fl">2.2</span> <span class="op">*</span> <span class="va">weight_kg</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_lb</span> <span class="op">&lt;-</span> <span class="fl">2.2</span> <span class="op">*</span> <span class="va">weight_kg</span></span></code></pre>
 </div>
 <p>and then change <code>weight_kg</code> to 100.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">100</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fl">100</span></span></code></pre>
 </div>
 <p>What do you think is the current content of the object <code>weight_lb</code>? 126.5 or 220?</p>
 <div class="section level3">
@@ -348,11 +356,11 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">mass</span> <span class="op">&lt;-</span> <span class="fl">47.5</span>            <span class="co"># mass?</span>
-<span class="va">age</span>  <span class="op">&lt;-</span> <span class="fl">122</span>             <span class="co"># age?</span>
-<span class="va">mass</span> <span class="op">&lt;-</span> <span class="va">mass</span> <span class="op">*</span> <span class="fl">2.0</span>      <span class="co"># mass?</span>
-<span class="va">age</span>  <span class="op">&lt;-</span> <span class="va">age</span> <span class="op">-</span> <span class="fl">20</span>        <span class="co"># age?</span>
-<span class="va">mass_index</span> <span class="op">&lt;-</span> <span class="va">mass</span><span class="op">/</span><span class="va">age</span>  <span class="co"># mass_index?</span></code></pre>
+<code class="sourceCode R"><span><span class="va">mass</span> <span class="op">&lt;-</span> <span class="fl">47.5</span>            <span class="co"># mass?</span></span>
+<span><span class="va">age</span>  <span class="op">&lt;-</span> <span class="fl">122</span>             <span class="co"># age?</span></span>
+<span><span class="va">mass</span> <span class="op">&lt;-</span> <span class="va">mass</span> <span class="op">*</span> <span class="fl">2.0</span>      <span class="co"># mass?</span></span>
+<span><span class="va">age</span>  <span class="op">&lt;-</span> <span class="va">age</span> <span class="op">-</span> <span class="fl">20</span>        <span class="co"># age?</span></span>
+<span><span class="va">mass_index</span> <span class="op">&lt;-</span> <span class="va">mass</span><span class="op">/</span><span class="va">age</span>  <span class="co"># mass_index?</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -365,7 +373,7 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fu">sqrt</span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_kg</span> <span class="op">&lt;-</span> <span class="fu">sqrt</span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Here, the value of 10 is given to the <code>sqrt()</code> function, the <code>sqrt()</code> function calculates the square root, and returns the value which is then assigned to the object <code>weight_kg</code>. This function takes one argument, other functions might take several.</p>
 <p>The return ‘value’ of a function need not be numerical (like that of <code>sqrt()</code>), and it also does not need to be a single item: it can be a set of things, or even a dataset. We’ll see that when we read data files into R.</p>
@@ -375,67 +383,67 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">round</span><span class="op">(</span><span class="fl">3.14159</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">round</span><span class="op">(</span><span class="fl">3.14159</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] 3</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] 3</span></span></code></pre>
 </div>
 <p>Here, we’ve called <code>round()</code> with just one argument, <code>3.14159</code>, and it has returned the value <code>3</code>. That’s because the default is to round to the nearest whole number. If we want more digits we can see how to do that by getting information about the <code>round</code> function. We can use <code>args(round)</code> to find what arguments it takes, or look at the help for this function using <code>?round</code>.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">args</span><span class="op">(</span><span class="va">round</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">args</span><span class="op">(</span><span class="va">round</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; function (x, digits = 0) </span>
-<span class="co">#&gt; NULL</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; function (x, digits = 0) </span></span>
+<span><span class="co">#&gt; NULL</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="op">?</span><span class="va">round</span></code></pre>
+<code class="sourceCode R"><span><span class="op">?</span><span class="va">round</span></span></code></pre>
 </div>
 <p>We see that if we want a different number of digits, we can type <code>digits = 2</code> or however many we want.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">round</span><span class="op">(</span><span class="fl">3.14159</span>, digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">round</span><span class="op">(</span><span class="fl">3.14159</span>, digits <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] 3.14</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] 3.14</span></span></code></pre>
 </div>
 <p>If you provide the arguments in the exact same order as they are defined you don’t have to name them:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">round</span><span class="op">(</span><span class="fl">3.14159</span>, <span class="fl">2</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">round</span><span class="op">(</span><span class="fl">3.14159</span>, <span class="fl">2</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] 3.14</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] 3.14</span></span></code></pre>
 </div>
 <p>And if you do name the arguments, you can switch their order:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">round</span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span>, x <span class="op">=</span> <span class="fl">3.14159</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">round</span><span class="op">(</span>digits <span class="op">=</span> <span class="fl">2</span>, x <span class="op">=</span> <span class="fl">3.14159</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] 3.14</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] 3.14</span></span></code></pre>
 </div>
 <p>It’s good practice to put the non-optional arguments (like the number you’re rounding) first in your function call, and to then specify the names of all optional arguments. If you don’t, someone reading your code might have to look up the definition of a function with unfamiliar arguments to understand what you’re doing.</p>
 </div>
@@ -445,16 +453,16 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">50</span>, <span class="fl">60</span>, <span class="fl">65</span>, <span class="fl">82</span><span class="op">)</span>
-<span class="va">weight_g</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">50</span>, <span class="fl">60</span>, <span class="fl">65</span>, <span class="fl">82</span><span class="op">)</span></span>
+<span><span class="va">weight_g</span></span></code></pre>
 </div>
 <p>A vector can also contain characters:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">animals</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="st">"mouse"</span>, <span class="st">"rat"</span>, <span class="st">"dog"</span><span class="op">)</span>
-<span class="va">animals</span></code></pre>
+<code class="sourceCode R"><span><span class="va">animals</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="st">"mouse"</span>, <span class="st">"rat"</span>, <span class="st">"dog"</span><span class="op">)</span></span>
+<span><span class="va">animals</span></span></code></pre>
 </div>
 <p>The quotes around “mouse”, “rat”, etc. are essential here. Without the quotes R will assume objects have been created called <code>mouse</code>, <code>rat</code> and <code>dog</code>. As these objects don’t exist in R’s memory, there will be an error message.</p>
 <p>There are many functions that allow you to inspect the content of a vector. <code>length()</code> tells you how many elements are in a particular vector:</p>
@@ -462,33 +470,33 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">length</span><span class="op">(</span><span class="va">weight_g</span><span class="op">)</span>
-<span class="fu">length</span><span class="op">(</span><span class="va">animals</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">length</span><span class="op">(</span><span class="va">weight_g</span><span class="op">)</span></span>
+<span><span class="fu">length</span><span class="op">(</span><span class="va">animals</span><span class="op">)</span></span></code></pre>
 </div>
 <p>An important feature of a vector, is that all of the elements are the same type of data. The function <code>class()</code> indicates what kind of object you are working with:</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">class</span><span class="op">(</span><span class="va">weight_g</span><span class="op">)</span>
-<span class="fu">class</span><span class="op">(</span><span class="va">animals</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">class</span><span class="op">(</span><span class="va">weight_g</span><span class="op">)</span></span>
+<span><span class="fu">class</span><span class="op">(</span><span class="va">animals</span><span class="op">)</span></span></code></pre>
 </div>
 <p>The function <code>str()</code> provides an overview of the structure of an object and its elements. It is a useful function when working with large and complex objects:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">str</span><span class="op">(</span><span class="va">weight_g</span><span class="op">)</span>
-<span class="fu">str</span><span class="op">(</span><span class="va">animals</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="fu">str</span><span class="op">(</span><span class="va">weight_g</span><span class="op">)</span></span>
+<span><span class="fu">str</span><span class="op">(</span><span class="va">animals</span><span class="op">)</span></span></code></pre>
 </div>
 <p>You can use the <code>c()</code> function to add other elements to your vector:</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="va">weight_g</span>, <span class="fl">90</span><span class="op">)</span> <span class="co"># add to the end of the vector</span>
-<span class="va">weight_g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">30</span>, <span class="va">weight_g</span><span class="op">)</span> <span class="co"># add to the beginning of the vector</span>
-<span class="va">weight_g</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="va">weight_g</span>, <span class="fl">90</span><span class="op">)</span> <span class="co"># add to the end of the vector</span></span>
+<span><span class="va">weight_g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">30</span>, <span class="va">weight_g</span><span class="op">)</span> <span class="co"># add to the beginning of the vector</span></span>
+<span><span class="va">weight_g</span></span></code></pre>
 </div>
 <p>In the first line, we take the original vector <code>weight_g</code>, add the value <code>90</code> to the end of it, and save the result back into <code>weight_g</code>. Then we add the value <code>30</code> to the beginning, again saving the result back into <code>weight_g</code>.</p>
 <p>We can do this over and over again to grow a vector, or assemble a dataset. As we program, this may be useful to add results that we are collecting or calculating.</p>
@@ -517,10 +525,10 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">num_char</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="st">"a"</span><span class="op">)</span>
-<span class="va">num_logical</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="cn">TRUE</span><span class="op">)</span>
-<span class="va">char_logical</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="cn">TRUE</span><span class="op">)</span>
-<span class="va">tricky</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="st">"4"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">num_char</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="st">"a"</span><span class="op">)</span></span>
+<span><span class="va">num_logical</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">char_logical</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">tricky</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="st">"4"</span><span class="op">)</span></span></code></pre>
 </div>
 </li>
 <li><p>Why do you think it happens?</p></li>
@@ -530,7 +538,7 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">combined_logical</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="va">num_logical</span>, <span class="va">char_logical</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">combined_logical</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="va">num_logical</span>, <span class="va">char_logical</span><span class="op">)</span></span></code></pre>
 </div>
 </li>
 <li><p>You’ve probably noticed that objects of different types get converted into a single, shared type within a vector. In R, we call converting objects from one class into another class <em>coercion</em>. These conversions happen according to a hierarchy, whereby some types get preferentially coerced into other types. Can you draw a diagram that represents the hierarchy of how these data types are coerced?</p></li>
@@ -543,37 +551,37 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">animals</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="st">"mouse"</span>, <span class="st">"rat"</span>, <span class="st">"dog"</span>, <span class="st">"cat"</span><span class="op">)</span>
-<span class="va">animals</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></code></pre>
+<code class="sourceCode R"><span><span class="va">animals</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="st">"mouse"</span>, <span class="st">"rat"</span>, <span class="st">"dog"</span>, <span class="st">"cat"</span><span class="op">)</span></span>
+<span><span class="va">animals</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] "rat"</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] "rat"</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">animals</span><span class="op">[</span><span class="fu">c</span><span class="op">(</span><span class="fl">3</span>, <span class="fl">2</span><span class="op">)</span><span class="op">]</span></code></pre>
+<code class="sourceCode R"><span><span class="va">animals</span><span class="op">[</span><span class="fu">c</span><span class="op">(</span><span class="fl">3</span>, <span class="fl">2</span><span class="op">)</span><span class="op">]</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] "dog" "rat"</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] "dog" "rat"</span></span></code></pre>
 </div>
 <p>We can also repeat the indices to create an object with more elements than the original one:</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">more_animals</span> <span class="op">&lt;-</span> <span class="va">animals</span><span class="op">[</span><span class="fu">c</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">2</span>, <span class="fl">1</span>, <span class="fl">4</span><span class="op">)</span><span class="op">]</span>
-<span class="va">more_animals</span></code></pre>
+<code class="sourceCode R"><span><span class="va">more_animals</span> <span class="op">&lt;-</span> <span class="va">animals</span><span class="op">[</span><span class="fu">c</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">2</span>, <span class="fl">1</span>, <span class="fl">4</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="va">more_animals</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] "mouse" "rat"   "dog"   "rat"   "mouse" "cat"</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] "mouse" "rat"   "dog"   "rat"   "mouse" "cat"</span></span></code></pre>
 </div>
 <p>R indices start at 1. Programming languages like Fortran, MATLAB, Julia, and R start counting at 1, because that’s what human beings typically do. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because that’s simpler for computers to do.</p>
 <div class="section level3">
@@ -583,71 +591,71 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">21</span>, <span class="fl">34</span>, <span class="fl">39</span>, <span class="fl">54</span>, <span class="fl">55</span><span class="op">)</span>
-<span class="va">weight_g</span><span class="op">[</span><span class="fu">c</span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span><span class="op">)</span><span class="op">]</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_g</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">21</span>, <span class="fl">34</span>, <span class="fl">39</span>, <span class="fl">54</span>, <span class="fl">55</span><span class="op">)</span></span>
+<span><span class="va">weight_g</span><span class="op">[</span><span class="fu">c</span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span><span class="op">)</span><span class="op">]</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] 21 54 55</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] 21 54 55</span></span></code></pre>
 </div>
 <p>Typically, these logical vectors are not typed by hand, but are the output of other functions or logical tests. For instance, if you wanted to select only the values above 50:</p>
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_g</span> <span class="op">&gt;</span> <span class="fl">50</span>    <span class="co"># will return logicals with TRUE for the indices that meet the condition</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_g</span> <span class="op">&gt;</span> <span class="fl">50</span>    <span class="co"># will return logicals with TRUE for the indices that meet the condition</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] FALSE FALSE FALSE  TRUE  TRUE</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] FALSE FALSE FALSE  TRUE  TRUE</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## so we can use this to select only the values above 50</span>
-<span class="va">weight_g</span><span class="op">[</span><span class="va">weight_g</span> <span class="op">&gt;</span> <span class="fl">50</span><span class="op">]</span></code></pre>
+<code class="sourceCode R"><span><span class="co">## so we can use this to select only the values above 50</span></span>
+<span><span class="va">weight_g</span><span class="op">[</span><span class="va">weight_g</span> <span class="op">&gt;</span> <span class="fl">50</span><span class="op">]</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] 54 55</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] 54 55</span></span></code></pre>
 </div>
 <p>You can combine multiple tests using <code>&amp;</code> (both conditions are true, AND) or <code>|</code> (at least one of the conditions is true, OR):</p>
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_g</span><span class="op">[</span><span class="va">weight_g</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">&amp;</span> <span class="va">weight_g</span> <span class="op">&lt;</span> <span class="fl">50</span><span class="op">]</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_g</span><span class="op">[</span><span class="va">weight_g</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">&amp;</span> <span class="va">weight_g</span> <span class="op">&lt;</span> <span class="fl">50</span><span class="op">]</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] 34 39</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] 34 39</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_g</span><span class="op">[</span><span class="va">weight_g</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">|</span> <span class="va">weight_g</span> <span class="op">==</span> <span class="fl">55</span><span class="op">]</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_g</span><span class="op">[</span><span class="va">weight_g</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">|</span> <span class="va">weight_g</span> <span class="op">==</span> <span class="fl">55</span><span class="op">]</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] 21 55</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] 21 55</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb45">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">weight_g</span><span class="op">[</span><span class="va">weight_g</span> <span class="op">&gt;=</span> <span class="fl">30</span> <span class="op">&amp;</span> <span class="va">weight_g</span> <span class="op">==</span> <span class="fl">21</span><span class="op">]</span></code></pre>
+<code class="sourceCode R"><span><span class="va">weight_g</span><span class="op">[</span><span class="va">weight_g</span> <span class="op">&gt;=</span> <span class="fl">30</span> <span class="op">&amp;</span> <span class="va">weight_g</span> <span class="op">==</span> <span class="fl">21</span><span class="op">]</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; numeric(0)</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; numeric(0)</span></span></code></pre>
 </div>
 <p>Here, <code>&gt;</code> for “greater than”, <code>&lt;</code> stands for “less than”, <code>&lt;=</code> for “less than or equal to”, and <code>==</code> for “equal to”. The double equal sign <code>==</code> is a test for numerical equality between the left and right hand sides, and should not be confused with the single <code>=</code> sign, which performs variable assignment (similar to <code>&lt;-</code>).</p>
 <p>A common task is to search for certain strings in a vector. One could use the “or” operator <code>|</code> to test for equality to multiple values, but this can quickly become tedious. The function <code>%in%</code> allows you to test if any of the elements of a search vector are found:</p>
@@ -655,41 +663,41 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">animals</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="st">"mouse"</span>, <span class="st">"rat"</span>, <span class="st">"dog"</span>, <span class="st">"cat"</span>, <span class="st">"cat"</span><span class="op">)</span>
-
-<span class="co"># return both rat and cat</span>
-<span class="va">animals</span><span class="op">[</span><span class="va">animals</span> <span class="op">==</span> <span class="st">"cat"</span> <span class="op">|</span> <span class="va">animals</span> <span class="op">==</span> <span class="st">"rat"</span><span class="op">]</span></code></pre>
+<code class="sourceCode R"><span><span class="va">animals</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="st">"mouse"</span>, <span class="st">"rat"</span>, <span class="st">"dog"</span>, <span class="st">"cat"</span>, <span class="st">"cat"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># return both rat and cat</span></span>
+<span><span class="va">animals</span><span class="op">[</span><span class="va">animals</span> <span class="op">==</span> <span class="st">"cat"</span> <span class="op">|</span> <span class="va">animals</span> <span class="op">==</span> <span class="st">"rat"</span><span class="op">]</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] "rat" "cat" "cat"</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] "rat" "cat" "cat"</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb49">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># return a logical vector that is TRUE for the elements within animals</span>
-<span class="co"># that are found in the character vector and FALSE for those that are not</span>
-<span class="va">animals</span> <span class="op">%in%</span> <span class="fu">c</span><span class="op">(</span><span class="st">"rat"</span>, <span class="st">"cat"</span>, <span class="st">"dog"</span>, <span class="st">"duck"</span>, <span class="st">"goat"</span>, <span class="st">"bird"</span>, <span class="st">"fish"</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="co"># return a logical vector that is TRUE for the elements within animals</span></span>
+<span><span class="co"># that are found in the character vector and FALSE for those that are not</span></span>
+<span><span class="va">animals</span> <span class="op">%in%</span> <span class="fu">c</span><span class="op">(</span><span class="st">"rat"</span>, <span class="st">"cat"</span>, <span class="st">"dog"</span>, <span class="st">"duck"</span>, <span class="st">"goat"</span>, <span class="st">"bird"</span>, <span class="st">"fish"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE  TRUE</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE  TRUE</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># use the logical vector created by %in% to return elements from animals</span>
-<span class="co"># that are found in the character vector</span>
-<span class="va">animals</span><span class="op">[</span><span class="va">animals</span> <span class="op">%in%</span> <span class="fu">c</span><span class="op">(</span><span class="st">"rat"</span>, <span class="st">"cat"</span>, <span class="st">"dog"</span>, <span class="st">"duck"</span>, <span class="st">"goat"</span>, <span class="st">"bird"</span>, <span class="st">"fish"</span><span class="op">)</span><span class="op">]</span></code></pre>
+<code class="sourceCode R"><span><span class="co"># use the logical vector created by %in% to return elements from animals</span></span>
+<span><span class="co"># that are found in the character vector</span></span>
+<span><span class="va">animals</span><span class="op">[</span><span class="va">animals</span> <span class="op">%in%</span> <span class="fu">c</span><span class="op">(</span><span class="st">"rat"</span>, <span class="st">"cat"</span>, <span class="st">"dog"</span>, <span class="st">"duck"</span>, <span class="st">"goat"</span>, <span class="st">"bird"</span>, <span class="st">"fish"</span><span class="op">)</span><span class="op">]</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span class="co">#&gt; [1] "rat" "dog" "cat" "cat"</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; [1] "rat" "dog" "cat" "cat"</span></span></code></pre>
 </div>
 <div id="discussion3" class="callout discussion">
 <div class="callout-square">
@@ -710,27 +718,27 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">heights</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">4</span>, <span class="cn">NA</span>, <span class="fl">6</span><span class="op">)</span>
-<span class="fu">mean</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span>
-<span class="fu">max</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span>
-<span class="fu">mean</span><span class="op">(</span><span class="va">heights</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu">max</span><span class="op">(</span><span class="va">heights</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">heights</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">4</span>, <span class="cn">NA</span>, <span class="fl">6</span><span class="op">)</span></span>
+<span><span class="fu">mean</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span></span>
+<span><span class="fu">max</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span></span>
+<span><span class="fu">mean</span><span class="op">(</span><span class="va">heights</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu">max</span><span class="op">(</span><span class="va">heights</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
 </div>
 <p>If your data include missing values, you may want to become familiar with the functions <code>is.na()</code>, <code>na.omit()</code>, and <code>complete.cases()</code>. See below for examples.</p>
 <div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co">## Extract those elements which are not missing values.</span>
-<span class="va">heights</span><span class="op">[</span><span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span><span class="op">]</span>
-
-<span class="co">## Returns the object with incomplete cases removed.</span>
-<span class="co">#The returned object is an atomic vector of type `"numeric"` (or #`"double"`).</span>
-<span class="fu">na.omit</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span>
-
-<span class="co">## Extract those elements which are complete cases.</span>
-<span class="co">#The returned object is an atomic vector of type `"numeric"` (or #`"double"`).</span>
-<span class="va">heights</span><span class="op">[</span><span class="fu">complete.cases</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span><span class="op">]</span></code></pre>
+<code class="sourceCode R"><span><span class="co">## Extract those elements which are not missing values.</span></span>
+<span><span class="va">heights</span><span class="op">[</span><span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span><span class="op">]</span></span>
+<span></span>
+<span><span class="co">## Returns the object with incomplete cases removed.</span></span>
+<span><span class="co">#The returned object is an atomic vector of type `"numeric"` (or #`"double"`).</span></span>
+<span><span class="fu">na.omit</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">## Extract those elements which are complete cases.</span></span>
+<span><span class="co">#The returned object is an atomic vector of type `"numeric"` (or #`"double"`).</span></span>
+<span><span class="va">heights</span><span class="op">[</span><span class="fu">complete.cases</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span><span class="op">]</span></span></code></pre>
 </div>
 <p>Recall that you can use the <code>typeof()</code> function to find the type of your atomic vector.</p>
 <div id="challenge1" class="callout challenge">
@@ -746,7 +754,7 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">heights</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">63</span>, <span class="fl">69</span>, <span class="fl">60</span>, <span class="fl">65</span>, <span class="cn">NA</span>, <span class="fl">68</span>, <span class="fl">61</span>, <span class="fl">70</span>, <span class="fl">61</span>, <span class="fl">59</span>, <span class="fl">64</span>, <span class="fl">69</span>, <span class="fl">63</span>, <span class="fl">63</span>, <span class="cn">NA</span>, <span class="fl">72</span>, <span class="fl">65</span>, <span class="fl">64</span>, <span class="fl">70</span>, <span class="fl">63</span>, <span class="fl">65</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">heights</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">63</span>, <span class="fl">69</span>, <span class="fl">60</span>, <span class="fl">65</span>, <span class="cn">NA</span>, <span class="fl">68</span>, <span class="fl">61</span>, <span class="fl">70</span>, <span class="fl">61</span>, <span class="fl">59</span>, <span class="fl">64</span>, <span class="fl">69</span>, <span class="fl">63</span>, <span class="fl">63</span>, <span class="cn">NA</span>, <span class="fl">72</span>, <span class="fl">65</span>, <span class="fl">64</span>, <span class="fl">70</span>, <span class="fl">63</span>, <span class="fl">65</span><span class="op">)</span></span></code></pre>
 </div>
 </li>
 <li><p>Use the function <code>median()</code> to calculate the median of the <code>heights</code> vector.</p></li>
@@ -767,21 +775,21 @@
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">heights</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">63</span>, <span class="fl">69</span>, <span class="fl">60</span>, <span class="fl">65</span>, <span class="cn">NA</span>, <span class="fl">68</span>, <span class="fl">61</span>, <span class="fl">70</span>, <span class="fl">61</span>, <span class="fl">59</span>, <span class="fl">64</span>, <span class="fl">69</span>, <span class="fl">63</span>, <span class="fl">63</span>, <span class="cn">NA</span>, <span class="fl">72</span>, <span class="fl">65</span>, <span class="fl">64</span>, <span class="fl">70</span>, <span class="fl">63</span>, <span class="fl">65</span><span class="op">)</span>
-
-<span class="co"># 1.</span>
-<span class="va">heights_no_na</span> <span class="op">&lt;-</span> <span class="va">heights</span><span class="op">[</span><span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span><span class="op">]</span>
-<span class="co"># or</span>
-<span class="va">heights_no_na</span> <span class="op">&lt;-</span> <span class="fu">na.omit</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span>
-<span class="co"># or</span>
-<span class="va">heights_no_na</span> <span class="op">&lt;-</span> <span class="va">heights</span><span class="op">[</span><span class="fu">complete.cases</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span><span class="op">]</span>
-
-<span class="co"># 2.</span>
-<span class="fu">median</span><span class="op">(</span><span class="va">heights</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="co"># 3.</span>
-<span class="va">heights_above_67</span> <span class="op">&lt;-</span> <span class="va">heights_no_na</span><span class="op">[</span><span class="va">heights_no_na</span> <span class="op">&gt;</span> <span class="fl">67</span><span class="op">]</span>
-<span class="fu">length</span><span class="op">(</span><span class="va">heights_above_67</span><span class="op">)</span></code></pre>
+<code class="sourceCode R"><span><span class="va">heights</span> <span class="op">&lt;-</span> <span class="fu">c</span><span class="op">(</span><span class="fl">63</span>, <span class="fl">69</span>, <span class="fl">60</span>, <span class="fl">65</span>, <span class="cn">NA</span>, <span class="fl">68</span>, <span class="fl">61</span>, <span class="fl">70</span>, <span class="fl">61</span>, <span class="fl">59</span>, <span class="fl">64</span>, <span class="fl">69</span>, <span class="fl">63</span>, <span class="fl">63</span>, <span class="cn">NA</span>, <span class="fl">72</span>, <span class="fl">65</span>, <span class="fl">64</span>, <span class="fl">70</span>, <span class="fl">63</span>, <span class="fl">65</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 1.</span></span>
+<span><span class="va">heights_no_na</span> <span class="op">&lt;-</span> <span class="va">heights</span><span class="op">[</span><span class="op">!</span><span class="fu">is.na</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co"># or</span></span>
+<span><span class="va">heights_no_na</span> <span class="op">&lt;-</span> <span class="fu">na.omit</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span></span>
+<span><span class="co"># or</span></span>
+<span><span class="va">heights_no_na</span> <span class="op">&lt;-</span> <span class="va">heights</span><span class="op">[</span><span class="fu">complete.cases</span><span class="op">(</span><span class="va">heights</span><span class="op">)</span><span class="op">]</span></span>
+<span></span>
+<span><span class="co"># 2.</span></span>
+<span><span class="fu">median</span><span class="op">(</span><span class="va">heights</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 3.</span></span>
+<span><span class="va">heights_above_67</span> <span class="op">&lt;-</span> <span class="va">heights_no_na</span><span class="op">[</span><span class="va">heights_no_na</span> <span class="op">&gt;</span> <span class="fl">67</span><span class="op">]</span></span>
+<span><span class="fu">length</span><span class="op">(</span><span class="va">heights_above_67</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -815,9 +823,9 @@ Page built on: 📆 2022-06-07 ‒ 🕢 02:04:01
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.0" class="external-link">sandpaper (0.6.0)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.6.2" class="external-link">sandpaper (0.6.2)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.0" class="external-link">varnish (0.2.0)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.1" class="external-link">varnish (0.2.1)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -839,7 +847,7 @@ Page built on: 📆 2022-06-07 ‒ 🕢 02:04:01
   "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/01-intro-to-r.html",
   "dateCreated": "2022-05-17",
   "dateModified": "2022-06-07",
-  "datePublished": "2022-06-21"
+  "datePublished": "2022-06-28"
 }
 
   </script><script>
