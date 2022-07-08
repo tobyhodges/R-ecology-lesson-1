@@ -465,8 +465,14 @@
     "farver": {
       "Package": "farver",
       "Version": "2.1.0",
-      "Source": "Repository",
+      "Source": "CRAN",
       "Repository": "RSPM",
+      "RemoteType": "standard",
+      "RemotePkgRef": "farver",
+      "RemoteRef": "farver",
+      "RemoteRepos": "https://packagemanager.rstudio.com/all/__linux__/focal/latest",
+      "RemotePkgPlatform": "source",
+      "RemoteSha": "2.1.0",
       "Hash": "c98eb5133d9cb9e1622b8691487f11bb",
       "Requirements": []
     },
