@@ -20,7 +20,7 @@ life_cycle: 'stable'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/fishtree-attempt/new-R-ecology-lesson/'
+source: 'https://github.com/fishtree-attempt/R-ecology-lesson/'
 
 # Default branch of your lesson
 branch: 'main'
@@ -50,6 +50,7 @@ episodes:
 - 03-dplyr.Rmd
 - 04-visualization-ggplot2.Rmd
 - 05-r-and-databases.Rmd
+- 06-pyramid-example.Rmd
 
 # Information for Learners
 learners: 
