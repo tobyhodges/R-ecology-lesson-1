@@ -78,11 +78,11 @@
   Data Analysis and Visualisation in R for Ecologists
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 20%" class="percentage">
-    20%
+<aside class="col-md-12 lesson-progress"><div style="width: 17%" class="percentage">
+    17%
   </div>
   <div class="progress data">
-    <div class="progress-bar data" role="progressbar" style="width: 20%" aria-valuenow="20" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar data" role="progressbar" style="width: 17%" aria-valuenow="17" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -202,6 +202,15 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="06-pyramid-example.html">7. Pull Request Workflow Example</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -253,14 +262,15 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introduction to R</h1>
-        <p> Last updated on 2022-07-09 | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//edit/main/episodes/01-intro-to-r.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-08-09 | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//edit/main/episodes/01-intro-to-r.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
 
         
 
-<hr><hr><section id="creating-objects-in-r"><h2 class="section-heading">Creating objects in R</h2>
+<hr><hr><section id="creating-objects-in-r"><h2 class="section-heading">Creating objects in R<a class="anchor" aria-label="anchor" href="#creating-objects-in-r"></a>
+</h2>
 <hr class="half-width"><p>You can get output from R simply by typing math in the console:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -291,7 +301,8 @@
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="objects-vs.-variables" class="callout-inner">
-<h3 class="callout-title">Objects vs. variables</h3>
+<h3 class="callout-title">Objects vs. variables<a class="anchor" aria-label="anchor" href="#objects-vs.-variables"></a>
+</h3>
 <div class="callout-content">
 <p>What are known as <code>objects</code> in <code>R</code> are known as <code>variables</code> in many other programming languages. Depending on the context, <code>object</code> and <code>variable</code> can have drastically different meanings. However, in this lesson, the two words are used synonymously. For more information see: <a href="https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Objects" class="external-link">https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Objects</a></p>
 </div>
@@ -349,7 +360,8 @@
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+</h3>
 <div class="callout-content">
 <p>What are the values after each statement in the following?</p>
 <div class="codewrapper sourceCode" id="cb8">
@@ -447,7 +459,8 @@
 </div>
 <p>It’s good practice to put the non-optional arguments (like the number you’re rounding) first in your function call, and to then specify the names of all optional arguments. If you don’t, someone reading your code might have to look up the definition of a function with unfamiliar arguments to understand what you’re doing.</p>
 </div>
-</section><section id="vectors-and-data-types"><h2 class="section-heading">Vectors and data types</h2>
+</section><section id="vectors-and-data-types"><h2 class="section-heading">Vectors and data types<a class="anchor" aria-label="anchor" href="#vectors-and-data-types"></a>
+</h2>
 <hr class="half-width"><p>A vector is the most common and basic data type in R, and is pretty much the workhorse of R. A vector is composed by a series of values, which can be either numbers or characters. We can assign a series of values to a vector using the <code>c()</code> function. For example we can create a vector of animal weights and assign it to a new object <code>weight_g</code>:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -516,7 +529,8 @@
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <ul><li><p>We’ve seen that atomic vectors can be of type character, numeric (or double), integer, and logical. But what happens if we try to mix these types in a single vector?</p></li>
 <li>
@@ -545,7 +559,8 @@
 </ul></div>
 </div>
 </div>
-</section><section id="subsetting-vectors"><h2 class="section-heading">Subsetting vectors</h2>
+</section><section id="subsetting-vectors"><h2 class="section-heading">Subsetting vectors<a class="anchor" aria-label="anchor" href="#subsetting-vectors"></a>
+</h2>
 <hr class="half-width"><p>If we want to extract one or several values from a vector, we must provide one or several indices in square brackets. For instance:</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -704,14 +719,16 @@
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-optional" class="callout-inner">
-<h3 class="callout-title">Challenge (optional)</h3>
+<h3 class="callout-title">Challenge (optional)<a class="anchor" aria-label="anchor" href="#challenge-optional"></a>
+</h3>
 <div class="callout-content">
 <ul><li>Can you figure out why <code>"four" &gt; "five"</code> returns <code>TRUE</code>?</li>
 </ul></div>
 </div>
 </div>
 </div>
-</section><section id="missing-data"><h2 class="section-heading">Missing data</h2>
+</section><section id="missing-data"><h2 class="section-heading">Missing data<a class="anchor" aria-label="anchor" href="#missing-data"></a>
+</h2>
 <hr class="half-width"><p>As R was designed to analyze datasets, it includes the concept of missing data (which is uncommon in other programming languages). Missing data are represented in vectors as <code>NA</code>.</p>
 <p>When doing operations on numbers, most functions will return <code>NA</code> if the data you are working with include missing values. This feature makes it harder to overlook the cases where you are dealing with missing data. You can add the argument <code>na.rm = TRUE</code> to calculate the result as if the missing values were removed (<code>rm</code> stands for ReMoved) first.</p>
 <div class="codewrapper sourceCode" id="cb53">
@@ -746,7 +763,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>
 <p>Using this vector of heights in inches, create a new vector, <code>heights_no_na</code>, with the NAs removed.</p>
@@ -769,7 +787,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb56">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -797,7 +815,7 @@
 </div>
 <p>Now that we have learned how to write scripts, and the basics of R’s data structures, we are ready to start working with the Portal dataset we have been using in the other lessons, and learn about data frames.</p>
 <p style="text-align: right; font-size: small;">
-Page built on: 📆 2022-07-09 ‒ 🕢 01:06:38
+Page built on: 📆 2022-08-09 ‒ 🕢 09:58:08
 </p>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
@@ -815,17 +833,17 @@ Page built on: 📆 2022-07-09 ‒ 🕢 01:06:38
       </div><!--/div.row-->
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
 				<p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
-				<p><a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//edit/main/episodes/01-intro-to-r.Rmd" class="external-link">Edit on Github</a> | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//blob/main/CONTRIBUTING.md" class="external-link">Contributing</a> | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//" class="external-link">Source</a></p>
-				<p><a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:zkamvar@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+				<p><a href="https://github.com/fishtree-attempt/R-ecology-lesson//edit/main/episodes/01-intro-to-r.Rmd" class="external-link">Edit on Github</a> | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//blob/main/CONTRIBUTING.md" class="external-link">Contributing</a> | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//" class="external-link">Source</a></p>
+				<p><a href="https://github.com/fishtree-attempt/R-ecology-lesson//blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:zkamvar@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
         
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper" class="external-link">sandpaper (0.8.1)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.1" class="external-link">varnish (0.2.1)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.9.1" class="external-link">sandpaper (0.9.1)</a>,
+        <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.3.0)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.3" class="external-link">varnish (0.2.3)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -837,17 +855,17 @@ Page built on: 📆 2022-07-09 ‒ 🕢 01:06:38
     {
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
-  "@id": "https://fishtree-attempt.github.io/new-R-ecology-lesson/01-intro-to-r.html",
+  "@id": "https://fishtree-attempt.github.io/R-ecology-lesson/01-intro-to-r.html",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/0.9-DRAFT-2020_12_08",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software,data,lesson,The Carpentries",
   "name": "Introduction to R",
   "creativeWorkStatus": "active",
-  "url": "https://fishtree-attempt.github.io/new-R-ecology-lesson/01-intro-to-r.html",
-  "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/01-intro-to-r.html",
-  "dateCreated": "2022-07-09",
-  "dateModified": "2022-07-09",
-  "datePublished": "2022-07-09"
+  "url": "https://fishtree-attempt.github.io/R-ecology-lesson/01-intro-to-r.html",
+  "identifier": "https://fishtree-attempt.github.io/R-ecology-lesson/01-intro-to-r.html",
+  "dateCreated": "2022-08-09",
+  "dateModified": "2022-08-09",
+  "datePublished": "2022-08-09"
 }
 
   </script><script>

@@ -78,11 +78,11 @@
   Data Analysis and Visualisation in R for Ecologists
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 40%" class="percentage">
-    40%
+<aside class="col-md-12 lesson-progress"><div style="width: 33%" class="percentage">
+    33%
   </div>
   <div class="progress data">
-    <div class="progress-bar data" role="progressbar" style="width: 40%" aria-valuenow="40" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar data" role="progressbar" style="width: 33%" aria-valuenow="33" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -204,6 +204,15 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="06-pyramid-example.html">7. Pull Request Workflow Example</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -255,14 +264,15 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Starting with data</h1>
-        <p> Last updated on 2022-07-09 | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//edit/main/episodes/02-starting-with-data.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-08-09 | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//edit/main/episodes/02-starting-with-data.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
 
         
 
-<hr><hr><section id="loading-the-survey-data"><h2 class="section-heading">Loading the survey data</h2>
+<hr><hr><section id="loading-the-survey-data"><h2 class="section-heading">Loading the survey data<a class="anchor" aria-label="anchor" href="#loading-the-survey-data"></a>
+</h2>
 <hr class="half-width"><p>We are investigating the animal species diversity and weights found within plots at our study site. The dataset is stored as a comma separated value (CSV) file. Each row holds information for a single animal, and the columns represent:</p>
 <table class="table"><thead><tr class="header"><th>Column</th>
 <th>Description</th>
@@ -380,7 +390,8 @@
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="note" class="callout-inner">
-<h3 class="callout-title">Note</h3>
+<h3 class="callout-title">Note<a class="anchor" aria-label="anchor" href="#note"></a>
+</h3>
 <div class="callout-content">
 <p><code>read_csv()</code> assumes that fields are delineated by commas. However, in several countries, the comma is used as a decimal separator and the semicolon (;) is used as a field delineator. If you want to read in this type of files in R, you can use the <code>read_csv2()</code> function. It behaves like <code>read_csv()</code> but uses different parameters for the decimal and the field separators. There is also the <code>read_tsv()</code> for tab separated data files and <code>read_delim()</code> for less common formats. Check out the help for <code>read_csv()</code> by typing <code>?read_csv</code> to learn more.</p>
 <p>In addition to the above versions of the csv format, you should develop the habits of looking at and recording some parameters of your csv files. For instance, the character encoding, control characters used for line ending, date format (if the date is not split into three variables), and the presence of unexpected <a href="https://en.wikipedia.org/wiki/Newline" class="external-link">newlines</a> are important characteristics of your data files. Those parameters will ease up the import step of your data in R.</p>
@@ -388,7 +399,8 @@
 </div>
 </div>
 </div>
-</section><section id="what-are-data-frames"><h2 class="section-heading">What are data frames?</h2>
+</section><section id="what-are-data-frames"><h2 class="section-heading">What are data frames?<a class="anchor" aria-label="anchor" href="#what-are-data-frames"></a>
+</h2>
 <hr class="half-width"><p>When we loaded the data into R, it got stored as an object of class <code>tibble</code>, which is a special kind of data frame (the difference is not important for our purposes, but you can learn more about tibbles <a href="https://tibble.tidyverse.org/" class="external-link">here</a>). Data frames are the <em>de facto</em> data structure for most tabular data, and what we use for statistics and plotting. Data frames can be created by hand, but most commonly they are generated by functions like <code>read_csv()</code>; in other words, when importing spreadsheets from your hard drive or the web.</p>
 <p>A data frame is the representation of data in the format of a table where the columns are vectors that all have the same length. Because columns are vectors, each column must contain a single type of data (e.g., characters, integers, factors). For example, here is a figure depicting a data frame comprising a numeric, a character, and a logical vector.</p>
 <figure><img src="./fig/data-frame.svg" alt="" class="figure mx-auto d-block"> We can see this also when inspecting the <b>str</b>ucture of a data frame with the function <code>str()</code>:</figure><div class="codewrapper sourceCode" id="cb10">
@@ -397,7 +409,8 @@
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">str</span><span class="op">(</span><span class="va">surveys</span><span class="op">)</span></span></code></pre>
 </div>
-</section><section id="inspecting-data-frames"><h2 class="section-heading">Inspecting data frames</h2>
+</section><section id="inspecting-data-frames"><h2 class="section-heading">Inspecting data frames<a class="anchor" aria-label="anchor" href="#inspecting-data-frames"></a>
+</h2>
 <hr class="half-width"><p>We already saw how the functions <code>head()</code> and <code>str()</code> can be useful to check the content and the structure of a data frame. Here is a non-exhaustive list of functions to get a sense of the content/structure of the data. Let’s try them out!</p>
 <ul><li>
 <p>Size:</p>
@@ -435,7 +448,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+</h3>
 <div class="callout-content">
 <p>Based on the output of <code>str(surveys)</code>, can you answer the following questions?</p>
 <ul><li>What is the class of the object <code>surveys</code>?</li>
@@ -450,7 +464,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -504,7 +518,8 @@
 </div>
 </div>
 </div>
-</section><section id="indexing-and-subsetting-data-frames"><h2 class="section-heading">Indexing and subsetting data frames</h2>
+</section><section id="indexing-and-subsetting-data-frames"><h2 class="section-heading">Indexing and subsetting data frames<a class="anchor" aria-label="anchor" href="#indexing-and-subsetting-data-frames"></a>
+</h2>
 <hr class="half-width"><p>Our survey data frame has rows and columns (it has 2 dimensions), if we want to extract some specific data from it, we need to specify the “coordinates” we want from it. Row numbers come first, followed by column numbers. However, note that different ways of specifying these coordinates lead to results with different classes.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -582,7 +597,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li><p>Create a <code>data.frame</code> (<code>surveys_200</code>) containing only the data in row 200 of the <code>surveys</code> dataset.</p></li>
 <li>
@@ -604,7 +620,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -625,7 +641,8 @@
 </div>
 </div>
 </div>
-</section><section id="factors"><h2 class="section-heading">Factors</h2>
+</section><section id="factors"><h2 class="section-heading">Factors<a class="anchor" aria-label="anchor" href="#factors"></a>
+</h2>
 <hr class="half-width"><p>When we did <code>str(surveys)</code> we saw that several of the columns consist of integers. The columns <code>genus</code>, <code>species</code>, <code>sex</code>, <code>plot_type</code>, … however, are of the class <code>character</code>. Arguably, these columns contain categorical data, that is, they can only take on a limited number of values.</p>
 <p>R has a special class for working with categorical data, called <code>factor</code>. Factors are very useful and actually contribute to making R particularly well suited to working with data. So we are going to spend a little time introducing them.</p>
 <p>Once created, factors can only contain a pre-defined set of values, known as <em>levels</em>. Factors are stored as integers associated with labels and they can be ordered or unordered. While factors look (and often behave) like character vectors, they are actually treated as integer vectors by R. So you need to be very careful when treating them as strings.</p>
@@ -690,7 +707,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li><p>Change the columns <code>taxa</code> and <code>genus</code> in the <code>surveys</code> data frame into a factor.</p></li>
 <li>
@@ -708,7 +726,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -831,7 +849,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
 <div class="callout-content">
 <ul><li>Rename “F” and “M” to “female” and “male” respectively.</li>
 <li>Now that we have renamed the factor level to “undetermined”, can you recreate the barplot such that “undetermined” is first (before “female”)?</li>
@@ -845,7 +864,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -864,7 +883,8 @@
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>
 <p>We have seen how data frames are created when using <code>read_csv()</code>, but they can also be created by hand with the <code>data.frame()</code> function. There are a few mistakes in this hand-crafted <code>data.frame</code>. Can you spot and fix them? Don’t hesitate to experiment!</p>
@@ -901,7 +921,8 @@
 <p>The automatic conversion of data type is sometimes a blessing, sometimes an annoyance. Be aware that it exists, learn the rules, and double check that data you import in R are of the correct type within your data frame. If not, use it to your advantage to detect mistakes that might have been introduced during data entry (for instance, a letter in a column that should only contain numbers).</p>
 <p>Learn more in this <a href="https://support.rstudio.com/hc/en-us/articles/218611977-Importing-Data-with-RStudio" class="external-link">RStudio tutorial</a></p>
 </div>
-</section><section id="formatting-dates"><h2 class="section-heading">Formatting dates</h2>
+</section><section id="formatting-dates"><h2 class="section-heading">Formatting dates<a class="anchor" aria-label="anchor" href="#formatting-dates"></a>
+</h2>
 <hr class="half-width"><p>A common issues that new (and experienced!) R users have is converting date and time information into a variable that is suitable for analyses. One way to store date information is to store each component of the date in a separate column. Using <code>str()</code>, we can confirm that our data frame does indeed have a separate column for day, month, and year, and that each of these columns contains integer values.</p>
 <div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1013,7 +1034,7 @@
 </div>
 <p>Why did these dates fail to parse? If you had to use these data for your analyses, how would you deal with this situation?</p>
 <p style="text-align: right; font-size: small;">
-Page built on: 📆 2022-07-09 ‒ 🕢 01:06:42
+Page built on: 📆 2022-08-09 ‒ 🕢 09:58:11
 </p>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
@@ -1031,17 +1052,17 @@ Page built on: 📆 2022-07-09 ‒ 🕢 01:06:42
       </div><!--/div.row-->
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
 				<p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
-				<p><a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//edit/main/episodes/02-starting-with-data.Rmd" class="external-link">Edit on Github</a> | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//blob/main/CONTRIBUTING.md" class="external-link">Contributing</a> | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//" class="external-link">Source</a></p>
-				<p><a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:zkamvar@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+				<p><a href="https://github.com/fishtree-attempt/R-ecology-lesson//edit/main/episodes/02-starting-with-data.Rmd" class="external-link">Edit on Github</a> | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//blob/main/CONTRIBUTING.md" class="external-link">Contributing</a> | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//" class="external-link">Source</a></p>
+				<p><a href="https://github.com/fishtree-attempt/R-ecology-lesson//blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:zkamvar@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
         
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper" class="external-link">sandpaper (0.8.1)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.1" class="external-link">varnish (0.2.1)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.9.1" class="external-link">sandpaper (0.9.1)</a>,
+        <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.3.0)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.3" class="external-link">varnish (0.2.3)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1053,17 +1074,17 @@ Page built on: 📆 2022-07-09 ‒ 🕢 01:06:42
     {
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
-  "@id": "https://fishtree-attempt.github.io/new-R-ecology-lesson/02-starting-with-data.html",
+  "@id": "https://fishtree-attempt.github.io/R-ecology-lesson/02-starting-with-data.html",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/0.9-DRAFT-2020_12_08",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software,data,lesson,The Carpentries",
   "name": "Starting with data",
   "creativeWorkStatus": "active",
-  "url": "https://fishtree-attempt.github.io/new-R-ecology-lesson/02-starting-with-data.html",
-  "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/02-starting-with-data.html",
-  "dateCreated": "2022-07-09",
-  "dateModified": "2022-07-09",
-  "datePublished": "2022-07-09"
+  "url": "https://fishtree-attempt.github.io/R-ecology-lesson/02-starting-with-data.html",
+  "identifier": "https://fishtree-attempt.github.io/R-ecology-lesson/02-starting-with-data.html",
+  "dateCreated": "2022-08-09",
+  "dateModified": "2022-08-09",
+  "datePublished": "2022-08-09"
 }
 
   </script><script>

@@ -77,11 +77,11 @@
   Data Analysis and Visualisation in R for Ecologists
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 80%" class="percentage">
-    80%
+<aside class="col-md-12 lesson-progress"><div style="width: 67%" class="percentage">
+    67%
   </div>
   <div class="progress data">
-    <div class="progress-bar data" role="progressbar" style="width: 80%" aria-valuenow="80" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar data" role="progressbar" style="width: 67%" aria-valuenow="67" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -207,6 +207,15 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="06-pyramid-example.html">7. Pull Request Workflow Example</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -258,7 +267,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data visualization with ggplot2</h1>
-        <p> Last updated on 2022-07-09 | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//edit/main/episodes/04-visualization-ggplot2.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-08-09 | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//edit/main/episodes/04-visualization-ggplot2.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
         
         <div class="text-end">
@@ -281,7 +290,7 @@
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">surveys_complete</span> <span class="op">&lt;-</span> <span class="fu">read_csv</span><span class="op">(</span><span class="st">"data/surveys_complete.csv"</span><span class="op">)</span></span></code></pre>
 </div>
-<section id="plotting-with-ggplot2"><h2 class="section-heading">Plotting with <strong><code>ggplot2</code></strong>
+<section id="plotting-with-ggplot2"><h2 class="section-heading">Plotting with <strong><code>ggplot2</code></strong><a class="anchor" aria-label="anchor" href="#plotting-with-ggplot2"></a>
 </h2>
 <hr class="half-width"><p><strong><code>ggplot2</code></strong> is a plotting package that provides helpful commands to create complex plots from data in a data frame. It provides a more programmatic interface for specifying what variables to plot, how they are displayed, and general visual properties. Therefore, we only need minimal changes if the underlying data change or if we decide to change from a bar plot to a scatterplot. This helps in creating publication quality plots with minimal amounts of adjustments and tweaking.</p>
 <p><strong><code>ggplot2</code></strong> refers to the name of the package itself. When using the package we use the function <strong><code>ggplot()</code></strong> to generate the plots, and so references to using the function will be referred to as <strong><code>ggplot()</code></strong> and the package as a whole as <strong><code>ggplot2</code></strong></p>
@@ -356,7 +365,8 @@
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-optional" class="callout-inner">
-<h3 class="callout-title">Challenge (optional)</h3>
+<h3 class="callout-title">Challenge (optional)<a class="anchor" aria-label="anchor" href="#challenge-optional"></a>
+</h3>
 <div class="callout-content">
 <p>Scatter plots can be useful exploratory tools for small datasets. For data sets with large numbers of observations, such as the <code>surveys_complete</code> data set, overplotting of points can be a limitation of scatter plots. One strategy for handling such settings is to use hexagonal binning of observations. The plot space is tessellated into hexagons. Each hexagon is assigned a color based on the number of observations that fall within its boundaries. To use hexagonal binning with <strong><code>ggplot2</code></strong>, first install the R package <code>hexbin</code> from CRAN:</p>
 <div class="codewrapper sourceCode" id="cb9">
@@ -378,7 +388,8 @@
 </ul></div>
 </div>
 </div>
-</section><section id="building-your-plots-iteratively"><h2 class="section-heading">Building your plots iteratively</h2>
+</section><section id="building-your-plots-iteratively"><h2 class="section-heading">Building your plots iteratively<a class="anchor" aria-label="anchor" href="#building-your-plots-iteratively"></a>
+</h2>
 <hr class="half-width"><p>Building plots with <strong><code>ggplot2</code></strong> is typically an iterative process. We start by defining the dataset we’ll use, lay out the axes, and choose a geom:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -416,7 +427,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+</h3>
 <div class="callout-content">
 <p>Use what you just learned to create a scatter plot of <code>weight</code> over <code>species_id</code> with the plot types showing in different colors. Is this a good way to show this type of data?</p>
 </div>
@@ -429,7 +441,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -443,7 +455,8 @@
 </div>
 </div>
 </div>
-</section><section id="boxplot"><h2 class="section-heading">Boxplot</h2>
+</section><section id="boxplot"><h2 class="section-heading">Boxplot<a class="anchor" aria-label="anchor" href="#boxplot"></a>
+</h2>
 <hr class="half-width"><p>We can use boxplots to visualize the distribution of weight within each species:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -467,7 +480,8 @@
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenges" class="callout-inner">
-<h3 class="callout-title">Challenges</h3>
+<h3 class="callout-title">Challenges<a class="anchor" aria-label="anchor" href="#challenges"></a>
+</h3>
 <div class="callout-content">
 <p>Boxplots are useful summaries, but hide the <em>shape</em> of the distribution. For example, if there is a bimodal distribution, it would not be observed with a boxplot. An alternative to the boxplot is the violin plot (sometimes known as a beanplot), where the shape (of the density of points) is drawn.</p>
 <ul><li>Replace the box plot with a violin plot; see <code>geom_violin()</code>.</li>
@@ -482,7 +496,8 @@
 <div class="blockquote">
 <p>Hint: Check the class for <code>plot_id</code>. Consider changing the class of <code>plot_id</code> from integer to factor. Why does this change how R makes the graph?</p>
 </div>
-</section><section id="plotting-time-series-data"><h2 class="section-heading">Plotting time series data</h2>
+</section><section id="plotting-time-series-data"><h2 class="section-heading">Plotting time series data<a class="anchor" aria-label="anchor" href="#plotting-time-series-data"></a>
+</h2>
 <hr class="half-width"><p>Let’s calculate number of counts per year for each genus. First we need to group the data and count records within each group:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -515,7 +530,8 @@
 <code class="sourceCode R"><span><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">yearly_counts</span>, <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">year</span>, y <span class="op">=</span> <span class="va">n</span>, color <span class="op">=</span> <span class="va">genus</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>    <span class="fu">geom_line</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<figure><img src="../fig/04-visualization-ggplot2-rendered-time-series-with-colors-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></section><section id="integrating-the-pipe-operator-with-ggplot2"><h2 class="section-heading">Integrating the pipe operator with ggplot2</h2>
+<figure><img src="../fig/04-visualization-ggplot2-rendered-time-series-with-colors-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></section><section id="integrating-the-pipe-operator-with-ggplot2"><h2 class="section-heading">Integrating the pipe operator with ggplot2<a class="anchor" aria-label="anchor" href="#integrating-the-pipe-operator-with-ggplot2"></a>
+</h2>
 <hr class="half-width"><p>In the previous lesson, we saw how to use the pipe operator <code>%&gt;%</code> to use different functions in a sequence and create a coherent workflow. We can also use the pipe operator to pass the <code>data</code> argument to the <code>ggplot()</code> function. The hard part is to remember that to build your ggplot, you need to use <code>+</code> and not <code>%&gt;%</code>.</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -537,7 +553,8 @@
 <span></span>
 <span><span class="va">yearly_counts_graph</span></span></code></pre>
 </div>
-<figure><img src="../fig/04-visualization-ggplot2-rendered-pipes-and-manipulation-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></section><section id="faceting"><h2 class="section-heading">Faceting</h2>
+<figure><img src="../fig/04-visualization-ggplot2-rendered-pipes-and-manipulation-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure></section><section id="faceting"><h2 class="section-heading">Faceting<a class="anchor" aria-label="anchor" href="#faceting"></a>
+</h2>
 <hr class="half-width"><p><code>ggplot</code> has a special technique called <em>faceting</em> that allows the user to split one plot into multiple plots based on a factor included in the dataset. We will use it to make a time series plot for each genus:</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -597,7 +614,8 @@
 </div>
 <figure><img src="../fig/04-visualization-ggplot2-rendered-average-weight-time-facet-sex-columns-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p><strong>Note:</strong> <code>ggplot2</code> before version 3.0.0 used formulas to specify how plots are faceted. If you encounter <code>facet_grid</code>/<code>wrap(...)</code> code containing <code>~</code>, please read <a href="https://ggplot2.tidyverse.org/news/#tidy-evaluation" class="external-link">https://ggplot2.tidyverse.org/news/#tidy-evaluation</a>.</p>
 </section><section id="ggplot2-themes"><h2 class="section-heading">
-<strong><code>ggplot2</code></strong> themes</h2>
+<strong><code>ggplot2</code></strong> themes<a class="anchor" aria-label="anchor" href="#ggplot2-themes"></a>
+</h2>
 <hr class="half-width"><p>Usually plots with white background look more readable when printed. Every single component of a <code>ggplot</code> graph can be customized using the generic <code>theme()</code> function, as we will see below. However, there are pre-loaded themes available that change the overall appearance of the graph without much effort.</p>
 <p>For example, we can change our previous graph to have a simpler white background using the <code>theme_bw()</code> function:</p>
 <div class="codewrapper sourceCode" id="cb30">
@@ -617,7 +635,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <p>Use what you just learned to create a plot that depicts how the average weight of each species changes through the years.</p>
 </div>
@@ -630,7 +649,7 @@
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -658,7 +677,8 @@
 </div>
 </div>
 </div>
-</section><section id="customization"><h2 class="section-heading">Customization</h2>
+</section><section id="customization"><h2 class="section-heading">Customization<a class="anchor" aria-label="anchor" href="#customization"></a>
+</h2>
 <hr class="half-width"><p>Take a look at the <a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf" class="external-link"><strong><code>ggplot2</code></strong> cheat sheet</a>, and think of ways you could improve the plot.</p>
 <p>Now, let’s change names of axes to something more informative than ‘year’ and ‘n’ and add a title to the figure:</p>
 <div class="codewrapper sourceCode" id="cb34">
@@ -725,7 +745,8 @@
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>With all of this information in hand, please take another five minutes to either improve one of the plots generated in this exercise or create a beautiful graph of your own. Use the RStudio <a href="https://www.rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf" class="external-link"><strong><code>ggplot2</code></strong> cheat sheet</a> for inspiration.</p>
 <p>Here are some ideas:</p>
@@ -735,7 +756,8 @@
 </ul></div>
 </div>
 </div>
-</section><section id="arranging-plots"><h2 class="section-heading">Arranging plots</h2>
+</section><section id="arranging-plots"><h2 class="section-heading">Arranging plots<a class="anchor" aria-label="anchor" href="#arranging-plots"></a>
+</h2>
 <hr class="half-width"><p>Faceting is a great tool for splitting one plot into multiple plots, but sometimes you may want to produce a single figure that contains multiple plots using different variables or even different data frames. The <strong><code>patchwork</code></strong> package allows us to combine separate ggplots into a single figure while keeping everything aligned properly. Like most R packages, we can install <code>patchwork</code> from CRAN, the R package repository:</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -762,7 +784,8 @@
 <span><span class="va">plot_weight</span> <span class="op">/</span> <span class="va">plot_count</span> <span class="op">+</span> <span class="fu">plot_layout</span><span class="op">(</span>heights <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="fl">3</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <figure><img src="../fig/04-visualization-ggplot2-rendered-patchwork-example-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>You can also use parentheses <code>()</code> to create more complex layouts. There are many useful examples on the <a href="https://patchwork.data-imaginist.com/" class="external-link">patchwork website</a></p>
-</section><section id="exporting-plots"><h2 class="section-heading">Exporting plots</h2>
+</section><section id="exporting-plots"><h2 class="section-heading">Exporting plots<a class="anchor" aria-label="anchor" href="#exporting-plots"></a>
+</h2>
 <hr class="half-width"><p>After creating your plot, you can save it to a file in your favorite format. The Export tab in the <strong>Plot</strong> pane in RStudio will save your plots at low resolution, which will not be accepted by many journals and will not scale well for posters. The <a href="https://exts.ggplot2.tidyverse.org/" class="external-link"><strong><code>ggplot2</code></strong> extensions website</a> provides a list of packages that extend the capabilities of <strong><code>ggplot2</code></strong>, including additional themes.</p>
 <p>Instead, use the <code>ggsave()</code> function, which allows you easily change the dimension and resolution of your plot by adjusting the appropriate arguments (<code>width</code>, <code>height</code> and <code>dpi</code>):</p>
 <div class="codewrapper sourceCode" id="cb40">
@@ -790,7 +813,7 @@
 </div>
 <p>Note: The parameters <code>width</code> and <code>height</code> also determine the font size in the saved plot.</p>
 <p style="text-align: right; font-size: small;">
-Page built on: 📆 2022-07-09 ‒ 🕢 01:07:04
+Page built on: 📆 2022-08-09 ‒ 🕢 09:58:31
 </p>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
@@ -808,17 +831,17 @@ Page built on: 📆 2022-07-09 ‒ 🕢 01:07:04
       </div><!--/div.row-->
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
 				<p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
-				<p><a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//edit/main/episodes/04-visualization-ggplot2.Rmd" class="external-link">Edit on Github</a> | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//blob/main/CONTRIBUTING.md" class="external-link">Contributing</a> | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//" class="external-link">Source</a></p>
-				<p><a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:zkamvar@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+				<p><a href="https://github.com/fishtree-attempt/R-ecology-lesson//edit/main/episodes/04-visualization-ggplot2.Rmd" class="external-link">Edit on Github</a> | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//blob/main/CONTRIBUTING.md" class="external-link">Contributing</a> | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//" class="external-link">Source</a></p>
+				<p><a href="https://github.com/fishtree-attempt/R-ecology-lesson//blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:zkamvar@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
         
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper" class="external-link">sandpaper (0.8.1)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.1" class="external-link">varnish (0.2.1)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.9.1" class="external-link">sandpaper (0.9.1)</a>,
+        <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.3.0)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.3" class="external-link">varnish (0.2.3)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -830,17 +853,17 @@ Page built on: 📆 2022-07-09 ‒ 🕢 01:07:04
     {
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
-  "@id": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor/04-visualization-ggplot2.html",
+  "@id": "https://fishtree-attempt.github.io/R-ecology-lesson/instructor/04-visualization-ggplot2.html",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/0.9-DRAFT-2020_12_08",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software,data,lesson,The Carpentries",
   "name": "Data visualization with ggplot2",
   "creativeWorkStatus": "active",
-  "url": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor/04-visualization-ggplot2.html",
-  "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor/04-visualization-ggplot2.html",
-  "dateCreated": "2022-07-09",
-  "dateModified": "2022-07-09",
-  "datePublished": "2022-07-09"
+  "url": "https://fishtree-attempt.github.io/R-ecology-lesson/instructor/04-visualization-ggplot2.html",
+  "identifier": "https://fishtree-attempt.github.io/R-ecology-lesson/instructor/04-visualization-ggplot2.html",
+  "dateCreated": "2022-08-09",
+  "dateModified": "2022-08-09",
+  "datePublished": "2022-08-09"
 }
 
   </script><script>

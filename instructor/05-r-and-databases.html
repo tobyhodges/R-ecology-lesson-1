@@ -77,11 +77,11 @@
   Data Analysis and Visualisation in R for Ecologists
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 100%" class="percentage">
-    100%
+<aside class="col-md-12 lesson-progress"><div style="width: 83%" class="percentage">
+    83%
   </div>
   <div class="progress data">
-    <div class="progress-bar data" role="progressbar" style="width: 100%" aria-valuenow="100" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar data" role="progressbar" style="width: 83%" aria-valuenow="83" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -203,6 +203,15 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="06-pyramid-example.html">7. Pull Request Workflow Example</a>
+    </div><!--/div.accordion-header-->
+        
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -245,16 +254,16 @@
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Previous and Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/04-visualization-ggplot2.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/06-pyramid-example.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
         <a class="chapter-link" href="../instructor/04-visualization-ggplot2.html" rel="prev"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous: Data visualization</a>
-        <a class="chapter-link float-end" href="../instructor/index.html" rel="next">Next: Data Analysis and... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/06-pyramid-example.html" rel="next">Next: Pull Request... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>SQL databases and R</h1>
-        <p> Last updated on 2022-07-09 | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//edit/main/episodes/05-r-and-databases.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <p> Last updated on 2022-08-09 | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//edit/main/episodes/05-r-and-databases.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
         
         <div class="text-end">
@@ -263,7 +272,8 @@
 
         
 
-<hr><hr><section id="introduction"><h2 class="section-heading">Introduction</h2>
+<hr><hr><section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
 <hr class="half-width"><p>So far, we have dealt with small datasets that easily fit into your computer’s memory. But what about datasets that are too large for your computer to handle as a whole? In this case, storing the data outside of R and organizing it in a database is helpful. Connecting to the database allows you to retrieve only the chunks needed for the current analysis.</p>
 <p>Even better, many large datasets are already available in public or private databases. You can query them without having to download the data first.</p>
 <p>R can connect to almost any existing database type. Most common database types have R packages that allow you to connect to them (e.g., <strong><code>RSQLite</code></strong>, RMySQL, etc). Furthermore, the <a href="https://cran.r-project.org/web/packages/dplyr/index.html" class="external-link"><strong><code>dplyr</code></strong></a> package you used in the previous chapter, in conjunction with <a href="https://cran.r-project.org/package=dbplyr" class="external-link"><strong><code>dbplyr</code></strong></a> supports connecting to the widely-used open source databases <a href="https://sqlite.org/" class="external-link">sqlite</a>, <a href="https://www.mysql.com/" class="external-link">mysql</a> and <a href="https://www.postgresql.org/" class="external-link">postgresql</a>, as well as Google’s <a href="https://cloud.google.com/bigquery/" class="external-link">bigquery</a>, and it can also be extended to other database types (a <a href="https://cran.r-project.org/web/packages/dbplyr/vignettes/new-backend.html" class="external-link">vignette</a> in the <strong><code>dplyr</code></strong> package explains how to do it). RStudio has created <a href="http://db.rstudio.com/" class="external-link">a website</a> that provides documentation and best practices to work on database interfaces.</p>
@@ -287,7 +297,8 @@
 <span>              destfile <span class="op">=</span> <span class="st">"data_raw/portal_mammals.sqlite"</span>, mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
-</section><section id="connecting-to-databases"><h2 class="section-heading">Connecting to databases</h2>
+</section><section id="connecting-to-databases"><h2 class="section-heading">Connecting to databases<a class="anchor" aria-label="anchor" href="#connecting-to-databases"></a>
+</h2>
 <hr class="half-width"><p>We can point R to this database using:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -328,7 +339,7 @@
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="co">#&gt; src:  sqlite 3.37.0 [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; src:  sqlite 3.37.0 [/home/runner/work/R-ecology-lesson-1/R-ecology-lesson-1/site/built/data_raw/portal_mammals.sqlite]</span></span>
 <span><span class="co">#&gt; tbls: plots, species, surveys</span></span></code></pre>
 </div>
 <p>Just like a spreadsheet with multiple worksheets, a SQLite database can contain multiple tables. In this case three of them are listed in the <code>tbls</code> row in the output above:</p>
@@ -370,7 +381,7 @@
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="co">#&gt; # Source:   lazy query [?? x 9]</span></span>
 <span><span class="co">#&gt; # Database: sqlite 3.37.0</span></span>
-<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson-1/R-ecology-lesson-1/site/built/data_raw/portal_mammals.sqlite]</span></span>
 <span><span class="co">#&gt;    record_id month   day  year plot_id species_id sex   hindfoot_length weight</span></span>
 <span><span class="co">#&gt;        &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;int&gt;  &lt;int&gt;</span></span>
 <span><span class="co">#&gt;  1         1     7    16  1977       2 NL         M                  32     NA</span></span>
@@ -429,7 +440,8 @@
 <p><strong><code>dplyr</code></strong> can translate many different query types into SQL allowing us to, e.g., <code>select()</code> specific columns, <code>filter()</code> rows, or join tables.</p>
 <p>To see this in action, let’s compose a few queries with <strong><code>dplyr</code></strong>.</p>
 </div>
-</section><section id="simple-database-queries"><h2 class="section-heading">Simple database queries</h2>
+</section><section id="simple-database-queries"><h2 class="section-heading">Simple database queries<a class="anchor" aria-label="anchor" href="#simple-database-queries"></a>
+</h2>
 <hr class="half-width"><p>First, let’s only request rows of the <code>surveys</code> table in which <code>weight</code> is less than 5 and keep only the species_id, sex, and weight columns.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -444,7 +456,7 @@
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="co">#&gt; # Source:   lazy query [?? x 3]</span></span>
 <span><span class="co">#&gt; # Database: sqlite 3.37.0</span></span>
-<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson-1/R-ecology-lesson-1/site/built/data_raw/portal_mammals.sqlite]</span></span>
 <span><span class="co">#&gt;    species_id sex   weight</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;  &lt;int&gt;</span></span>
 <span><span class="co">#&gt;  1 PF         M          4</span></span>
@@ -464,7 +476,8 @@
 <p>The last line:</p>
 <pre><code><span><span class="co"># ... with more rows</span></span></code></pre>
 <p>indicates that there are more results that fit our filtering criterion. Why was R lazy and only retrieved 10 of them?</p>
-</section><section id="laziness"><h2 class="section-heading">Laziness</h2>
+</section><section id="laziness"><h2 class="section-heading">Laziness<a class="anchor" aria-label="anchor" href="#laziness"></a>
+</h2>
 <hr class="half-width"><p>Hadley Wickham, the author of <strong><code>dplyr</code></strong> <a href="https://cran.r-project.org/web/packages/dbplyr/vignettes/dbplyr.html" class="external-link">explains</a>:</p>
 <div class="blockquote">
 <p>When working with databases, <strong><code>dplyr</code></strong> tries to be as lazy as possible:</p>
@@ -489,7 +502,7 @@
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="co">#&gt; # Source:   lazy query [?? x 2]</span></span>
 <span><span class="co">#&gt; # Database: sqlite 3.37.0</span></span>
-<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson-1/R-ecology-lesson-1/site/built/data_raw/portal_mammals.sqlite]</span></span>
 <span><span class="co">#&gt;    species_id weight</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;       &lt;int&gt;</span></span>
 <span><span class="co">#&gt;  1 PF              4</span></span>
@@ -517,7 +530,8 @@
 <span>  <span class="fu">collect</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <p>Now we have all 17 rows that match our query in a <code>data.frame</code> and can continue to work with them exclusively in R, without communicating with the database.</p>
-</section><section id="complex-database-queries"><h2 class="section-heading">Complex database queries</h2>
+</section><section id="complex-database-queries"><h2 class="section-heading">Complex database queries<a class="anchor" aria-label="anchor" href="#complex-database-queries"></a>
+</h2>
 <hr class="half-width"><p><strong><code>dplyr</code></strong> enables database queries across one or multiple database tables, using the same single- and multiple-table verbs you encountered previously. This means you can use the same commands regardless of whether you interact with a remote database or local dataset! This is a really useful feature if you work with large datasets: you can first prototype your code on a small subset that fits into memory, and when your code is ready, you can change the input dataset to your full database without having to change the syntax.</p>
 <p>On the other hand, being able to use SQL queries directly can be useful if your collaborators have already put together complex queries to prepare the dataset that you need for your analysis.</p>
 <p>To illustrate how to use <strong><code>dplyr</code></strong> with these complex queries, we are going to join the <code>plots</code> and <code>surveys</code> tables. The <code>plots</code> table in the database contains information about the different plots surveyed by the researchers. To access it, we point the <code>tbl()</code> command to it:</p>
@@ -533,7 +547,7 @@
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="co">#&gt; # Source:   table&lt;plots&gt; [?? x 2]</span></span>
 <span><span class="co">#&gt; # Database: sqlite 3.37.0</span></span>
-<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson-1/R-ecology-lesson-1/site/built/data_raw/portal_mammals.sqlite]</span></span>
 <span><span class="co">#&gt;    plot_id plot_type                </span></span>
 <span><span class="co">#&gt;      &lt;int&gt; &lt;chr&gt;                    </span></span>
 <span><span class="co">#&gt;  1       1 Spectab exclosure        </span></span>
@@ -560,7 +574,7 @@
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="co">#&gt; # Source:   table&lt;surveys&gt; [?? x 9]</span></span>
 <span><span class="co">#&gt; # Database: sqlite 3.37.0</span></span>
-<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data_raw/portal_mammals.sqlite]</span></span>
+<span><span class="co">#&gt; #   [/home/runner/work/R-ecology-lesson-1/R-ecology-lesson-1/site/built/data_raw/portal_mammals.sqlite]</span></span>
 <span><span class="co">#&gt;    record_id month   day  year plot_id species_id sex   hindfoot_length weight</span></span>
 <span><span class="co">#&gt;        &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           &lt;int&gt;  &lt;int&gt;</span></span>
 <span><span class="co">#&gt;  1         1     7    16  1977       2 NL         M                  32     NA</span></span>
@@ -621,7 +635,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+</h3>
 <div class="callout-content">
 <p>Write a query that returns the number of rodents observed in each plot in each year.</p>
 <p>Hint: Connect to the species table and write a query that joins the species and survey tables together to exclude all non-rodents. The query should return counts of rodents by year.</p>
@@ -689,7 +704,8 @@
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
 <div class="callout-content">
 <p>Write a query that returns the total number of rodents in each genus caught in the different plot types.</p>
 <p>Hint: Write a query that joins the species, plot, and survey tables together. The query should return counts of genus by plot type.</p>
@@ -746,7 +762,8 @@
 <pre class="output" tabindex="0"><code><span><span class="co">#&gt; Joining, by = "species_id"</span></span></code></pre>
 </div>
 <p><code>n_distinct</code>, like the other <strong><code>dplyr</code></strong> functions we have used in this lesson, works not only on database connections but also on regular data frames.</p>
-</section><section id="creating-a-new-sqlite-database"><h2 class="section-heading">Creating a new SQLite database</h2>
+</section><section id="creating-a-new-sqlite-database"><h2 class="section-heading">Creating a new SQLite database<a class="anchor" aria-label="anchor" href="#creating-a-new-sqlite-database"></a>
+</h2>
 <hr class="half-width"><p>So far, we have used a previously prepared SQLite database. But we can also use R to create a new database, e.g. from existing <code>csv</code> files. Let’s recreate the mammals database that we’ve been working with, in R. First let’s download and read in the <code>csv</code> files. We’ll import <strong><code>tidyverse</code></strong> to gain access to the <code>read_csv()</code> function.</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -859,7 +876,7 @@
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="co">#&gt; src:  sqlite 3.37.0 [/home/runner/work/R-ecology-lesson/R-ecology-lesson/site/built/data/portal-database-output.sqlite]</span></span>
+<pre class="output" tabindex="0"><code><span><span class="co">#&gt; src:  sqlite 3.37.0 [/home/runner/work/R-ecology-lesson-1/R-ecology-lesson-1/site/built/data/portal-database-output.sqlite]</span></span>
 <span><span class="co">#&gt; tbls:</span></span></code></pre>
 </div>
 <p>To add tables, we copy the existing data.frames into the database one by one:</p>
@@ -877,7 +894,8 @@
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
 <div class="callout-content">
 <p>Add the remaining species table to the <code>my_db</code> database and run some of your queries from earlier in the lesson to verify that you have faithfully recreated the mammals database.</p>
 </div>
@@ -886,17 +904,17 @@
 <p><strong>Note:</strong> In this example, we first loaded all of the data into the R session by reading the three <code>csv</code> files. Because all the data has to flow through R, this is not suitable for very large datasets.</p>
 <p><strong>Note:</strong> Finally, to close the connection to the mammals database you may use <code>DBI::dbDisconnect(mammals)</code>; this discards all pending work and frees resources, e.g. memory.</p>
 <p style="text-align: right; font-size: small;">
-Page built on: 📆 2022-07-09 ‒ 🕢 01:07:11
+Page built on: 📆 2022-08-09 ‒ 🕢 09:58:38
 </p>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/04-visualization-ggplot2.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
-        <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/06-pyramid-example.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
         <a class="chapter-link" href="../instructor/04-visualization-ggplot2.html" rel="prev"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous: Data visualization</a>
-        <a class="chapter-link float-end" href="../instructor/index.html" rel="next">Next: Data Analysis and... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/06-pyramid-example.html" rel="next">Next: Pull Request... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
     </nav></div> <!-- / div.primary-content.col-xs-12 -->
 <!-- END:   inst/pkgdown/templates/content-instructor.html-->
@@ -904,17 +922,17 @@ Page built on: 📆 2022-07-09 ‒ 🕢 01:07:11
       </div><!--/div.row-->
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
 				<p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
-				<p><a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//edit/main/episodes/05-r-and-databases.Rmd" class="external-link">Edit on Github</a> | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//blob/main/CONTRIBUTING.md" class="external-link">Contributing</a> | <a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//" class="external-link">Source</a></p>
-				<p><a href="https://github.com/fishtree-attempt/new-R-ecology-lesson//blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:zkamvar@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+				<p><a href="https://github.com/fishtree-attempt/R-ecology-lesson//edit/main/episodes/05-r-and-databases.Rmd" class="external-link">Edit on Github</a> | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//blob/main/CONTRIBUTING.md" class="external-link">Contributing</a> | <a href="https://github.com/fishtree-attempt/R-ecology-lesson//" class="external-link">Source</a></p>
+				<p><a href="https://github.com/fishtree-attempt/R-ecology-lesson//blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:zkamvar@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
         
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper" class="external-link">sandpaper (0.8.1)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.3.0" class="external-link">pegboard (0.3.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.1" class="external-link">varnish (0.2.1)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.9.1" class="external-link">sandpaper (0.9.1)</a>,
+        <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.3.0)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.2.3" class="external-link">varnish (0.2.3)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -926,17 +944,17 @@ Page built on: 📆 2022-07-09 ‒ 🕢 01:07:11
     {
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
-  "@id": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor/05-r-and-databases.html",
+  "@id": "https://fishtree-attempt.github.io/R-ecology-lesson/instructor/05-r-and-databases.html",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/0.9-DRAFT-2020_12_08",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software,data,lesson,The Carpentries",
   "name": "SQL databases and R",
   "creativeWorkStatus": "active",
-  "url": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor/05-r-and-databases.html",
-  "identifier": "https://fishtree-attempt.github.io/new-R-ecology-lesson/instructor/05-r-and-databases.html",
-  "dateCreated": "2022-07-09",
-  "dateModified": "2022-07-09",
-  "datePublished": "2022-07-09"
+  "url": "https://fishtree-attempt.github.io/R-ecology-lesson/instructor/05-r-and-databases.html",
+  "identifier": "https://fishtree-attempt.github.io/R-ecology-lesson/instructor/05-r-and-databases.html",
+  "dateCreated": "2022-08-09",
+  "dateModified": "2022-08-09",
+  "datePublished": "2022-08-09"
 }
 
   </script><script>
