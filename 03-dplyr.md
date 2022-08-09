@@ -5,13 +5,7 @@ author: Data Carpentry contributors
 
 
 
-### Manipulating and analyzing data with dplyr
-
-***
-
 ::::::::::::::::::::::::::::::::::::::  objectives
-
-### Learning Objectives
 
 - Describe the purpose of the **`dplyr`** and **`tidyr`** packages.
 - Select certain columns in a data frame with the **`dplyr`** function `select`.
@@ -27,9 +21,8 @@ author: Data Carpentry contributors
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-***
 
-# Data manipulation using **`dplyr`** and **`tidyr`**
+## Data manipulation using **`dplyr`** and **`tidyr`**
 
 Bracket subsetting is handy, but it can be cumbersome and difficult to read,
 especially for complicated operations. Enter **`dplyr`**. **`dplyr`** is a package for
@@ -245,7 +238,17 @@ surveys %>%
 
 
 
-### Mutate
+## Mutate
+
+:::::::::::::::::::::::::::::::::::::::::::: instructor
+
+While working with the example for mutate(), it is difficult to see the “weight” 
+columns on a zoomed in RStudio screen. **Including a select() command to select the
+columns “weight_kg” and “weight_lb” makes it easier to view how the “weight” 
+columns are changed.**
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 Frequently you'll want to create new columns based on the values in existing
 columns, for example to do unit conversions, or to find the ratio of values in two
@@ -323,14 +326,14 @@ surveys_hindfoot_cm <- surveys %>%
 
 
 
-### Split-apply-combine data analysis and the `summarize()` function
+## Split-apply-combine data analysis and the `summarize()` function
 
 Many data analysis tasks can be approached using the *split-apply-combine*
 paradigm: split the data into groups, apply some analysis to each group, and
 then combine the results. Key function of **`dplyr`** for this workflow are
 `group_by()` and `summarize()`.
 
-#### The `group_by()` and `summarize()` functions
+### The `group_by()` and `summarize()` functions
 
 `group_by()` is often used together with `summarize()`, which collapses each
 group into a single-row summary of that group.  `group_by()` takes as arguments
@@ -564,7 +567,7 @@ surveys %>%
 
 
 
-### Reshaping with gather and spread
+## Reshaping with gather and spread
 
 In the [spreadsheet
 lesson](https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/),
@@ -598,7 +601,7 @@ a variable.
 We can do both these of transformations with two `tidyr` functions, `spread()`
 and `gather()`.
 
-#### Spreading
+### Spreading
 
 `spread()` takes three principal arguments:
 
@@ -655,7 +658,7 @@ surveys_gw %>%
   head()
 ```
 
-#### Gathering
+### Gathering
 
 The opposing situation could occur if we had been provided with data in the
 form of `surveys_spread`, where the genus names are column names, but we
@@ -792,7 +795,7 @@ surveys_long %>%
 
 
 
-# Exporting data
+## Exporting data
 
 Now that you have learned how to use **`dplyr`** to extract information from
 or summarize your raw data, you may want to export these new data sets to share
@@ -860,6 +863,6 @@ write_csv(surveys_complete, file = "data/surveys_complete.csv")
 
 
 
-<p style="text-align: right; font-size: small;">Page built on: 📆 2022-07-09 ‒ 🕢 01:06:45</p>
+<p style="text-align: right; font-size: small;">Page built on: 📆 2022-08-09 ‒ 🕢 09:58:14</p>
 
 
