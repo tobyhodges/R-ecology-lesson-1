@@ -17,7 +17,7 @@ rendered lesson content that would be made by a pull request.
 pie(
   c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
   init.angle = 315, 
-  col = c("deepskyblue", "yellow", "yellow3"), 
+  col = c("deepskyblue", "hotpink", "olivedrab"), 
   border = FALSE
 )
 ```
