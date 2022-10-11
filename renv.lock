@@ -20,7 +20,7 @@
     "DBI": {
       "Package": "DBI",
       "Version": "1.1.1",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "DBI",
@@ -34,7 +34,7 @@
     "MASS": {
       "Package": "MASS",
       "Version": "7.3-55",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "MASS",
@@ -48,7 +48,7 @@
     "Matrix": {
       "Package": "Matrix",
       "Version": "1.4-0",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "Matrix",
@@ -72,7 +72,7 @@
     "RColorBrewer": {
       "Package": "RColorBrewer",
       "Version": "1.1-2",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "RColorBrewer",
@@ -86,7 +86,7 @@
     "RSQLite": {
       "Package": "RSQLite",
       "Version": "2.2.9",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "RSQLite",
@@ -108,7 +108,7 @@
     "Rcpp": {
       "Package": "Rcpp",
       "Version": "1.0.7",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "Rcpp",
@@ -140,7 +140,7 @@
     "backports": {
       "Package": "backports",
       "Version": "1.4.0",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "backports",
@@ -180,7 +180,7 @@
     "blob": {
       "Package": "blob",
       "Version": "1.2.2",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "blob",
@@ -197,7 +197,7 @@
     "broom": {
       "Package": "broom",
       "Version": "0.7.10",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "broom",
@@ -234,7 +234,7 @@
     "callr": {
       "Package": "callr",
       "Version": "3.7.0",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "callr",
@@ -262,7 +262,7 @@
     "cli": {
       "Package": "cli",
       "Version": "3.1.0",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "cli",
@@ -278,7 +278,7 @@
     "clipr": {
       "Package": "clipr",
       "Version": "0.7.1",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "clipr",
@@ -292,7 +292,7 @@
     "colorspace": {
       "Package": "colorspace",
       "Version": "2.0-2",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "colorspace",
@@ -314,7 +314,7 @@
     "crayon": {
       "Package": "crayon",
       "Version": "1.4.2",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "crayon",
@@ -344,7 +344,7 @@
     "dbplyr": {
       "Package": "dbplyr",
       "Version": "2.1.1",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "dbplyr",
@@ -382,7 +382,7 @@
     "dplyr": {
       "Package": "dplyr",
       "Version": "1.0.7",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "dplyr",
@@ -408,7 +408,7 @@
     "dtplyr": {
       "Package": "dtplyr",
       "Version": "1.2.0",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "dtplyr",
@@ -443,7 +443,7 @@
     "evaluate": {
       "Package": "evaluate",
       "Version": "0.14",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "evaluate",
@@ -457,7 +457,7 @@
     "fansi": {
       "Package": "fansi",
       "Version": "0.5.0",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "fansi",
@@ -471,8 +471,8 @@
     "farver": {
       "Package": "farver",
       "Version": "2.1.0",
-      "Source": "CRAN",
-      "Repository": "RSPM",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "farver",
       "RemoteRef": "farver",
@@ -506,7 +506,7 @@
     "fs": {
       "Package": "fs",
       "Version": "1.5.1",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "fs",
@@ -538,7 +538,7 @@
     "generics": {
       "Package": "generics",
       "Version": "0.1.1",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "generics",
@@ -552,7 +552,7 @@
     "ggplot2": {
       "Package": "ggplot2",
       "Version": "3.3.5",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "ggplot2",
@@ -577,7 +577,7 @@
     "glue": {
       "Package": "glue",
       "Version": "1.5.1",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "glue",
@@ -655,7 +655,7 @@
     "haven": {
       "Package": "haven",
       "Version": "2.4.3",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "haven",
@@ -712,7 +712,7 @@
     "htmltools": {
       "Package": "htmltools",
       "Version": "0.5.2",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "htmltools",
@@ -731,7 +731,7 @@
     "httr": {
       "Package": "httr",
       "Version": "1.4.2",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "httr",
@@ -791,7 +791,7 @@
     "jsonlite": {
       "Package": "jsonlite",
       "Version": "1.7.2",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "jsonlite",
@@ -805,7 +805,7 @@
     "knitr": {
       "Package": "knitr",
       "Version": "1.36",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "knitr",
@@ -863,8 +863,8 @@
     "magrittr": {
       "Package": "magrittr",
       "Version": "2.0.1",
-      "Source": "CRAN",
-      "Repository": "RSPM",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "magrittr",
       "RemoteRef": "magrittr",
@@ -934,7 +934,7 @@
     "nlme": {
       "Package": "nlme",
       "Version": "3.1-155",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "nlme",
@@ -950,7 +950,7 @@
     "openssl": {
       "Package": "openssl",
       "Version": "1.4.5",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "openssl",
@@ -977,7 +977,7 @@
     "pillar": {
       "Package": "pillar",
       "Version": "1.6.4",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "pillar",
@@ -1024,7 +1024,7 @@
     "processx": {
       "Package": "processx",
       "Version": "3.5.2",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "processx",
@@ -1054,7 +1054,7 @@
     "ps": {
       "Package": "ps",
       "Version": "1.6.0",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "ps",
@@ -1087,7 +1087,7 @@
     "readr": {
       "Package": "readr",
       "Version": "2.1.1",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "readr",
@@ -1113,7 +1113,7 @@
     "readxl": {
       "Package": "readxl",
       "Version": "1.3.1",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "readxl",
@@ -1185,7 +1185,7 @@
     "rlang": {
       "Package": "rlang",
       "Version": "0.4.12",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "rlang",
@@ -1199,7 +1199,7 @@
     "rmarkdown": {
       "Package": "rmarkdown",
       "Version": "2.11",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "rmarkdown",
@@ -1247,7 +1247,7 @@
     "scales": {
       "Package": "scales",
       "Version": "1.1.1",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "scales",
@@ -1280,7 +1280,7 @@
     "stringi": {
       "Package": "stringi",
       "Version": "1.7.6",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "https://carpentries.r-universe.dev",
       "RemoteType": "standard",
       "RemotePkgRef": "stringi",
@@ -1314,7 +1314,7 @@
     "tibble": {
       "Package": "tibble",
       "Version": "3.1.6",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "tibble",
@@ -1337,7 +1337,7 @@
     "tidyr": {
       "Package": "tidyr",
       "Version": "1.1.4",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "tidyr",
@@ -1363,7 +1363,7 @@
     "tidyselect": {
       "Package": "tidyselect",
       "Version": "1.1.1",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "tidyselect",
@@ -1383,7 +1383,7 @@
     "tidyverse": {
       "Package": "tidyverse",
       "Version": "1.3.1",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "tidyverse",
@@ -1427,7 +1427,7 @@
     "tinytex": {
       "Package": "tinytex",
       "Version": "0.35",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "tinytex",
@@ -1443,7 +1443,7 @@
     "tzdb": {
       "Package": "tzdb",
       "Version": "0.2.0",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "tzdb",
@@ -1467,7 +1467,7 @@
     "uuid": {
       "Package": "uuid",
       "Version": "1.0-3",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "uuid",
@@ -1481,7 +1481,7 @@
     "vctrs": {
       "Package": "vctrs",
       "Version": "0.3.8",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "vctrs",
@@ -1530,7 +1530,7 @@
     "withr": {
       "Package": "withr",
       "Version": "2.4.3",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "withr",
@@ -1544,7 +1544,7 @@
     "xfun": {
       "Package": "xfun",
       "Version": "0.28",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "xfun",
@@ -1566,8 +1566,8 @@
     "yaml": {
       "Package": "yaml",
       "Version": "2.2.1",
-      "Source": "CRAN",
-      "Repository": "RSPM",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "RemoteType": "standard",
       "RemotePkgRef": "yaml",
       "RemoteRef": "yaml",
