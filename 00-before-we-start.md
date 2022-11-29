@@ -418,7 +418,7 @@ sessionInfo()
 ```
 
 ```{.output}
-#> R version 4.2.1 (2022-06-23)
+#> R version 4.2.2 Patched (2022-11-10 r83330)
 #> Platform: x86_64-pc-linux-gnu (64-bit)
 #> Running under: Ubuntu 20.04.5 LTS
 #> 
@@ -450,11 +450,11 @@ sessionInfo()
 #> [25] fastmap_1.1.0    tzdb_0.2.0       fansi_0.5.0      highr_0.9       
 #> [29] broom_0.7.10     Rcpp_1.0.7       renv_0.16.0      scales_1.1.1    
 #> [33] backports_1.4.0  cachem_1.0.6     jsonlite_1.7.2   bit_4.0.4       
-#> [37] fs_1.5.1         hms_1.1.1        stringi_1.7.6    grid_4.2.1      
-#> [41] cli_3.1.0        tools_4.2.1      magrittr_2.0.1   crayon_1.4.2    
+#> [37] fs_1.5.1         hms_1.1.1        stringi_1.7.6    grid_4.2.2      
+#> [41] cli_3.1.0        tools_4.2.2      magrittr_2.0.1   crayon_1.4.2    
 #> [45] pkgconfig_2.0.3  ellipsis_0.3.2   xml2_1.3.3       reprex_2.0.1    
 #> [49] lubridate_1.8.0  assertthat_0.2.1 httr_1.4.2       rstudioapi_0.13 
-#> [53] R6_2.5.1         compiler_4.2.1
+#> [53] R6_2.5.1         compiler_4.2.2
 ```
 
 
@@ -500,6 +500,6 @@ comfortable eventually creating your own scripts.
 
 
 
-<p style="text-align: right; font-size: small;">Page built on: 📆 2022-10-04 ‒ 🕢 00:20:01</p>
+<p style="text-align: right; font-size: small;">Page built on: 📆 2022-11-29 ‒ 🕢 00:16:34</p>
 
 
