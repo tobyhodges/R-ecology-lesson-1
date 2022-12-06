@@ -420,11 +420,11 @@ sessionInfo()
 ```{.output}
 #> R version 4.2.2 Patched (2022-11-10 r83330)
 #> Platform: x86_64-pc-linux-gnu (64-bit)
-#> Running under: Ubuntu 20.04.5 LTS
+#> Running under: Ubuntu 22.04.1 LTS
 #> 
 #> Matrix products: default
-#> BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0
-#> LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+#> BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0
+#> LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
 #> 
 #> locale:
 #>  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
@@ -500,6 +500,6 @@ comfortable eventually creating your own scripts.
 
 
 
-<p style="text-align: right; font-size: small;">Page built on: 📆 2022-11-29 ‒ 🕢 00:16:34</p>
+<p style="text-align: right; font-size: small;">Page built on: 📆 2022-12-06 ‒ 🕢 00:18:56</p>
 
 
