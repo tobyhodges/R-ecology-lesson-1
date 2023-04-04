@@ -418,7 +418,7 @@ sessionInfo()
 ```
 
 ```{.output}
-#> R version 4.2.2 Patched (2022-11-10 r83330)
+#> R version 4.2.3 (2023-03-15)
 #> Platform: x86_64-pc-linux-gnu (64-bit)
 #> Running under: Ubuntu 22.04.2 LTS
 #> 
@@ -448,13 +448,13 @@ sessionInfo()
 #> [17] readxl_1.3.1     lifecycle_1.0.1  munsell_0.5.0    gtable_0.3.0    
 #> [21] cellranger_1.1.0 rvest_1.0.2      memoise_2.0.1    evaluate_0.14   
 #> [25] fastmap_1.1.0    tzdb_0.2.0       fansi_0.5.0      highr_0.9       
-#> [29] broom_0.7.10     Rcpp_1.0.7       renv_0.17.0-38   scales_1.1.1    
+#> [29] broom_0.7.10     Rcpp_1.0.7       renv_0.17.2      scales_1.1.1    
 #> [33] backports_1.4.0  cachem_1.0.6     jsonlite_1.7.2   bit_4.0.4       
-#> [37] fs_1.5.1         hms_1.1.1        stringi_1.7.6    grid_4.2.2      
-#> [41] cli_3.1.0        tools_4.2.2      magrittr_2.0.1   crayon_1.4.2    
+#> [37] fs_1.5.1         hms_1.1.1        stringi_1.7.6    grid_4.2.3      
+#> [41] cli_3.1.0        tools_4.2.3      magrittr_2.0.1   crayon_1.4.2    
 #> [45] pkgconfig_2.0.3  ellipsis_0.3.2   xml2_1.3.3       reprex_2.0.1    
 #> [49] lubridate_1.8.0  assertthat_0.2.1 httr_1.4.2       rstudioapi_0.13 
-#> [53] R6_2.5.1         compiler_4.2.2
+#> [53] R6_2.5.1         compiler_4.2.3
 ```
 
 
@@ -500,6 +500,6 @@ comfortable eventually creating your own scripts.
 
 
 
-<p style="text-align: right; font-size: small;">Page built on: 📆 2023-03-14 ‒ 🕢 00:11:54</p>
+<p style="text-align: right; font-size: small;">Page built on: 📆 2023-04-04 ‒ 🕢 00:51:31</p>
 
 
